@@ -303,7 +303,10 @@ section{padding:44px 0;border-top:1px solid var(--trait)}
   font-size:.68rem;color:var(--gris-2);font-variant-numeric:tabular-nums;white-space:nowrap}
 .pied-a{color:var(--gris-2)}
 .pied-b{color:var(--gris)}
-.pied-filet{flex:1;height:1px;background:var(--trait);min-width:14px}
+.pied-filet{flex:1;height:1px;background:var(--trait);min-width:20px;position:relative}
+.pied-filet::after{content:"";position:absolute;right:-1px;top:50%;width:5px;height:5px;
+  border-top:1px solid var(--trait);border-right:1px solid var(--trait);
+  transform:translateY(-50%) rotate(45deg)}
 /* ============ CARTES DE VILLE ============ */
 .villes-grille{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
 .ville-c{grid-column:span 2;position:relative;height:172px;border:1px solid var(--carte-trait);
@@ -1002,7 +1005,7 @@ html[lang="en"] .fr{display:none}
           <circle cx="390.0" cy="12.0" r="4.4" fill="var(--surface)" stroke="#7A2F8F" stroke-width="2.6"/>
         </svg>
         <div class="chiffre-pied">
-          <span class="pied-a"><span class="fr">17,7 · avril</span><span class="en">17.7 · April</span></span>
+          <span class="pied-a"><span class="fr">17,7 · avant</span><span class="en">17.7 · before</span></span>
           <span class="pied-filet" aria-hidden="true"></span>
           <span class="pied-b"><span class="fr">8,3 · 09/07/2026</span><span class="en">8.3 · 09/07/2026</span></span>
         </div>
@@ -1024,7 +1027,7 @@ html[lang="en"] .fr{display:none}
           <circle cx="390.0" cy="12.0" r="4.4" fill="var(--surface)" stroke="#7A2F8F" stroke-width="2.6"/>
         </svg>
         <div class="chiffre-pied">
-          <span class="pied-a"><span class="fr">29 000 · avril</span><span class="en">29 000 · April</span></span>
+          <span class="pied-a"><span class="fr">29 000 · avant</span><span class="en">29 000 · before</span></span>
           <span class="pied-filet" aria-hidden="true"></span>
           <span class="pied-b"><span class="fr">106 000 · 09/07/2026</span><span class="en">106 000 · 09/07/2026</span></span>
         </div>
@@ -1073,7 +1076,7 @@ html[lang="en"] .fr{display:none}
           <circle cx="390.0" cy="12.0" r="4.4" fill="var(--surface)" stroke="#2F7D5B" stroke-width="2.6"/>
         </svg>
         <div class="chiffre-pied">
-          <span class="pied-a"><span class="fr">0 % · avril</span><span class="en">0% · April</span></span>
+          <span class="pied-a"><span class="fr">0 % · avant</span><span class="en">0% · before</span></span>
           <span class="pied-filet" aria-hidden="true"></span>
           <span class="pied-b"><span class="fr">59 % · 10/08/2026</span><span class="en">59% · 10/08/2026</span></span>
         </div>
@@ -1559,7 +1562,7 @@ html[lang="en"] .fr{display:none}
           <circle cx="390.0" cy="12.0" r="4.4" fill="var(--surface)" stroke="#2F7D5B" stroke-width="2.6"/>
         </svg>
         <div class="chiffre-pied">
-          <span class="pied-a"><span class="fr">0 % · avril</span><span class="en">0% · April</span></span>
+          <span class="pied-a"><span class="fr">0 % · avant</span><span class="en">0% · before</span></span>
           <span class="pied-filet" aria-hidden="true"></span>
           <span class="pied-b"><span class="fr">59 % · 10/08/2026</span><span class="en">59% · 10/08/2026</span></span>
         </div>
