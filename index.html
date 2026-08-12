@@ -1,0 +1,1883 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="googlebot" content="noindex, nofollow">
+<title>Étude de cas : migration et restructuration SEO</title>
+<meta name="description" content="Étude de cas d'une migration de site et d'une restructuration en silos, avec les relevés datés qui la documentent.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Étude de cas : migration et restructuration SEO">
+<meta property="og:description" content="Étude de cas d'une migration de site et d'une restructuration en silos, avec les relevés datés qui la documentent.">
+<meta property="og:image" content="assets/i01-09c5e19f3c.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#4C1D73">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+</head>
+<body>
+<title>Smart BPJEPS : migration et restructuration SEO</title>
+<style>
+:root{
+  --violet-900:#1B0A3D;
+  --violet-800:#26104F;
+  --violet-700:#341561;
+  --violet-600:#4C1D73;
+  --violet-500:#7A2F8F;
+  --lavande:#EEEBFA;
+  --lavande-2:#F6F4FD;
+  --ambre:#F5A623;
+  --ambre-fonce:#B8720A;
+
+  --degrade:linear-gradient(100deg,#7A2F8F 0%,#4C1D73 45%,#1B0A3D 100%);
+  --degrade-doux:linear-gradient(100deg,rgba(122,47,143,.45) 0%,rgba(76,29,115,.45) 45%,rgba(27,10,61,.45) 100%);
+  --papier:#FFFFFF;
+  --surface:#FFFFFF;
+  --surface-2:#F7F5FC;
+  --encre:#14102A;
+  --encre-2:#3B3457;
+  --gris:#6B6485;
+  --gris-2:#8C85A6;
+  --trait:#E4E0F2;
+  --trait-fort:#CFC8E6;
+  --vert:#2F7D5B;
+  --vert-pale:#CFE9DA;
+  --vert-clair:#E4F3EB;
+  --vert-fonce:#215C42;
+  --rouge:#C2453C;
+
+  --panneau-fond:linear-gradient(150deg,#341561 0%,#26104F 48%,#1B0A3D 100%);
+  --panneau-texte:#EFEAFB;
+  --panneau-texte-2:#BCB1DC;
+  --panneau-trait:rgba(255,255,255,.14);
+  --panneau-carte:rgba(255,255,255,.07);
+
+  --ombre:0 1px 2px rgba(0,0,0,.04), 0 6px 16px -8px rgba(0,0,0,.09);
+  --ombre-forte:0 1px 3px rgba(0,0,0,.05), 0 14px 30px -14px rgba(0,0,0,.15);
+
+  --font-display:system-ui,-apple-system,"Helvetica Neue","Segoe UI",Roboto,sans-serif;
+  --font-body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  --font-data:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+}
+
+
+/* ============ BASE ============ */
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--encre);font-family:var(--font-body);
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--violet-500);text-decoration-thickness:1px;text-underline-offset:3px}
+:focus-visible{outline:2.5px solid var(--ambre);outline-offset:3px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.enveloppe{max-width:880px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;font-weight:900}
+h1{font-size:clamp(1.45rem,3.3vw,2.05rem);line-height:1.15;letter-spacing:-.03em}
+h2{font-size:clamp(1.5rem,3.3vw,2.05rem);line-height:1.12;letter-spacing:-.034em}
+h3{font-size:1.1rem;line-height:1.28;letter-spacing:-.022em;font-weight:800}
+p{margin:0}
+.etiquette{font-family:var(--font-data);font-size:.7rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--gris);font-weight:600}
+
+/* ============ BARRE ============ */
+.barre{position:sticky;top:0;z-index:20;border-radius:0;
+  background:var(--degrade);
+  border-bottom:1px solid rgba(255,255,255,.16);
+  box-shadow:0 8px 24px -14px rgba(20,16,42,.7)}
+.barre-i{max-width:880px;margin:0 auto;padding:12px 24px;display:flex;
+  align-items:center;justify-content:space-between;gap:16px}
+.marque{display:flex;align-items:baseline;gap:11px;flex-wrap:wrap;min-width:0}
+.marque .nom{font-family:var(--font-display);font-weight:900;font-size:.95rem;
+  letter-spacing:-.02em;color:#fff;display:flex;align-items:center;gap:9px}
+.pastille{width:8px;height:8px;border-radius:50%;background:#9F7BC4;flex:none}
+.marque .quoi{font-family:var(--font-data);font-size:.66rem;letter-spacing:.11em;
+  text-transform:uppercase;color:#B9A6DB;white-space:nowrap}
+.segmente{display:inline-flex;background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:3px;
+  backdrop-filter:blur(6px)}
+.segmente button{font-family:var(--font-data);font-size:.72rem;font-weight:700;
+  letter-spacing:.08em;border:0;background:none;color:#C4B4E0;padding:5px 13px;
+  border-radius:999px;cursor:pointer}
+.segmente button[aria-pressed="true"]{background:#fff;color:var(--violet-900)}
+@media (max-width:520px){.marque .quoi{display:none}}
+
+/* ============ SOMMAIRE DÉROULANT, TÉLÉPHONE UNIQUEMENT ============ */
+.somm-btn,.somm-m{display:none}
+@media (max-width:700px){
+  .barre-i{gap:10px}
+  .marque{flex:1}
+  .somm-btn{display:grid;place-items:center;width:38px;height:34px;flex:none;
+    border-radius:10px;border:1px solid rgba(255,255,255,.22);
+    background:rgba(255,255,255,.12);color:#fff;cursor:pointer;padding:0;
+    -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+    transition:background .2s ease}
+  .somm-btn svg{width:17px;height:17px}
+  .somm-btn svg .croix{opacity:0;transition:opacity .2s ease}
+  .somm-btn svg .traits{opacity:1;transition:opacity .2s ease}
+  .barre.menu-ouvert .somm-btn{background:rgba(255,255,255,.24)}
+  .barre.menu-ouvert .somm-btn svg .croix{opacity:1}
+  .barre.menu-ouvert .somm-btn svg .traits{opacity:0}
+
+  .somm-m{display:block;max-height:0;overflow:hidden;background:var(--degrade);
+    border-top:1px solid rgba(255,255,255,0);transition:max-height .32s ease,border-color .32s ease}
+  .barre.menu-ouvert .somm-m{max-height:72vh;overflow-y:auto;
+    border-top-color:rgba(255,255,255,.16)}
+  .somm-m a{display:block;padding:14px 20px;color:#fff;text-decoration:none;
+    font-size:.94rem;line-height:1.3;border-bottom:1px solid rgba(255,255,255,.1)}
+  .somm-m a:last-child{border-bottom:0}
+  .somm-m a:active{background:rgba(255,255,255,.14)}
+}
+
+/* ============ HÉROS ============ */
+.hero{background:var(--degrade);color:#fff;border-bottom:2px solid #1B0A3D}
+/* la pastille est posée sur du violet : elle devient du verre, pas un aplat */
+.hero-i{padding:60px 24px 52px;display:flex;flex-direction:column;gap:28px}
+.hero h1{font-size:clamp(1.42rem,3.1vw,1.96rem);line-height:1.22;letter-spacing:-.008em;
+  text-transform:uppercase;margin:0}
+.hero .meta{margin:0;padding-top:0}
+.hero-contexte{padding-top:26px;border-top:1px solid var(--trait);display:flex;flex-direction:column;gap:11px}
+.hero .chapeau{font-size:1.02rem;line-height:1.7;margin:0}
+.hero .phases{margin-top:4px;padding-bottom:26px;border-bottom:1px solid var(--trait)}
+.hero h1{color:#fff;margin:0 0 8px}
+.hero .etiquette{color:rgba(255,255,255,.66)}
+.hero .meta-k{color:rgba(255,255,255,.6)}
+.hero .meta-v{color:#fff}
+.hero .chapeau,.hero .chapeau b{color:rgba(255,255,255,.9)}
+.hero .chapeau b{font-weight:700;color:#fff}
+.hero .meta-logo{border-color:rgba(255,255,255,.25)}
+.hero-contexte{border-top-color:rgba(255,255,255,.17)}
+.hero .phases{border-bottom:0;padding-bottom:0;margin-top:10px}
+.hero .seg-1{background:rgba(138,226,178,.5)}
+.hero .seg-2{background:rgba(138,226,178,.5)}
+.hero .seg-3{background:#8AE2B2}
+.hero .seg-4{background:repeating-linear-gradient(45deg,rgba(255,255,255,.34) 0 3px,
+  rgba(255,255,255,.11) 3px 7px)}
+.hero .phases-noms span{color:#fff}
+.hero .phases-noms b{color:#fff}
+
+/* ============ EN-TÊTE ============ */
+.entete{padding:56px 0 40px}
+.entete .surtitre{margin-bottom:14px}
+.entete h1{margin-bottom:18px}
+/* ============ BARRE DE PHASES ============ */
+.phases{margin-top:34px;display:flex;flex-direction:column;gap:9px}
+.phases-barre,.phases-noms{display:grid;grid-template-columns:46fr 14fr 14fr 26fr;gap:7px}
+.phases-barre{height:11px}
+.seg{border-radius:999px;display:block}
+.seg-1{background:var(--vert-pale)}
+.seg-2{background:var(--vert-pale)}
+.seg-3{background:var(--vert)}
+.seg-4{background:repeating-linear-gradient(45deg,var(--vert) 0 3px,var(--vert-clair) 3px 7px)}
+.phases-noms span{font-family:var(--font-data);font-size:.7rem;letter-spacing:.04em;
+  color:var(--gris);line-height:1.35}
+.phases-noms b{color:var(--vert-fonce);font-weight:700}
+@media (max-width:620px){
+  .phases-barre,.phases-noms{grid-template-columns:1fr;gap:5px}
+  .phases-barre{height:auto}
+  .seg{height:9px}
+}
+
+/* ============ MÉTA D'EN-TÊTE ============ */
+.meta{margin-top:26px;
+  display:grid;grid-template-columns:auto 1fr;gap:18px 44px;align-items:start}
+.meta-item{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"k k" "i v";
+  gap:8px 10px;align-items:center;text-decoration:none;color:inherit}
+.meta-ico,.meta-logo{grid-area:i}
+.meta-k{grid-area:k}
+.meta-v{grid-area:v}
+.meta-k{font-family:var(--font-data);font-size:.65rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--gris-2)}
+.meta-v{font-size:.97rem;font-weight:600;color:var(--encre);line-height:1.45}
+.meta-logo{width:28px;height:28px;border-radius:8px;border:1px solid var(--trait);
+  background:#fff;padding:3px;flex:none}
+.meta-ico{width:28px;height:28px;border-radius:8px;background:#fff;flex:none;
+  display:grid;place-items:center;border:1px solid rgba(255,255,255,.28);
+  font-size:16px;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji",
+  "Noto Color Emoji",sans-serif}
+/* les quatre entrées occupent toute la largeur et se repoussent */
+.hero .meta{grid-template-columns:repeat(4,auto);justify-content:space-between;
+  gap:24px;align-items:start}
+@media (max-width:860px){
+  .hero .meta{grid-template-columns:repeat(2,auto);justify-content:start;gap:20px 46px}
+}
+@media (max-width:620px){.meta,.hero .meta{grid-template-columns:1fr;gap:16px}}
+
+/* ============ MOUVEMENT ============ */
+/* la barre de phases se dessine: c'est une frise, elle se lit dans le temps */
+.js-anim .seg{transform:scaleX(0);transform-origin:left center}
+.js-anim .phases-noms span{opacity:0}
+.js-anim .phases.joue .seg{animation:tirer .9s cubic-bezier(.22,.85,.3,1) forwards}
+.js-anim .phases.joue .seg-1{animation-delay:.25s}
+.js-anim .phases.joue .seg-2{animation-delay:.95s;animation-duration:.35s}
+.js-anim .phases.joue .seg-3{animation-delay:1.2s;animation-duration:.4s}
+.js-anim .phases.joue .seg-4{animation-delay:1.5s;animation-duration:.5s}
+.js-anim .phases.joue .phases-noms span{animation:monter .5s ease-out forwards}
+.js-anim .phases.joue .phases-noms span:nth-child(1){animation-delay:.7s}
+.js-anim .phases.joue .phases-noms span:nth-child(2){animation-delay:1.15s}
+.js-anim .phases.joue .phases-noms span:nth-child(3){animation-delay:1.5s}
+.js-anim .phases.joue .phases-noms span:nth-child(4){animation-delay:1.8s}
+@keyframes tirer{to{transform:scaleX(1)}}
+@keyframes monter{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* la frise se dessine étape par étape */
+.js-anim .frise li{opacity:0;transform:translateY(12px)}
+.js-anim .frise .tige{transform:scaleY(0);transform-origin:top center}
+.js-anim .frise.joue li{animation:surgir .5s cubic-bezier(.22,.85,.3,1) forwards}
+.js-anim .frise.joue .tige{animation:descendre .34s ease-out forwards}
+.js-anim .frise.joue li:nth-child(1){animation-delay:.05s}
+.js-anim .frise.joue li:nth-child(1) .tige{animation-delay:.30s}
+.js-anim .frise.joue li:nth-child(2){animation-delay:.50s}
+.js-anim .frise.joue li:nth-child(2) .tige{animation-delay:.75s}
+.js-anim .frise.joue li:nth-child(3){animation-delay:.95s}
+.js-anim .frise.joue li:nth-child(3) .tige{animation-delay:1.20s}
+.js-anim .frise.joue li:nth-child(4){animation-delay:1.40s}
+@keyframes surgir{to{opacity:1;transform:none}}
+@keyframes descendre{to{transform:scaleY(1)}}
+
+/* révélation discrète à l'entrée dans l'écran, une seule fois */
+.js-anim .reveler{opacity:0;transform:translateY(14px)}
+.js-anim .reveler.vu{opacity:1;transform:none;
+  transition:opacity .55s ease-out, transform .55s cubic-bezier(.22,.85,.3,1)}
+
+/* survols */
+.chiffre,.carte,.courbe,figure .cadre,.fenetre{transition:border-color .3s ease}
+.chiffre:hover,.carte:hover,.courbe:hover{border-color:var(--trait-fort)}
+.depot{transition:transform .25s cubic-bezier(.22,.85,.3,1), background .25s ease}
+.depot:hover{transform:translateY(-2px)}
+.segmente button{transition:background .2s ease,color .2s ease}
+
+@media (prefers-reduced-motion:reduce){
+  .js-anim .seg{transform:none!important;animation:none!important}
+  .js-anim .phases-noms span{opacity:1!important;animation:none!important}
+  .js-anim .reveler{opacity:1!important;transform:none!important}
+  .js-anim .frise li,.js-anim .frise .tige{opacity:1!important;transform:none!important;animation:none!important}
+  .depot:hover{transform:none}
+}
+
+.chapeau{font-size:1.15rem;color:var(--encre-2)}
+.fiche{margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:1px;background:var(--trait);border:1px solid var(--trait);border-radius:14px;overflow:hidden}
+.fiche div{background:var(--surface);padding:14px 16px}
+.fiche dt{font-family:var(--font-data);font-size:.66rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--gris-2);margin-bottom:5px}
+.fiche dd{margin:0;font-size:.93rem;font-weight:600;color:var(--encre)}
+
+/* ============ SECTIONS ============ */
+section{padding:44px 0;border-top:1px solid var(--trait)}
+.tete{display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
+.corps{display:flex;flex-direction:column;gap:22px}
+.corps p{color:var(--encre-2)}
+
+/* ============ CHIFFRES ============ */
+.chiffres{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:14px}
+.chiffre{border:2px solid transparent;border-radius:16px;
+  background:linear-gradient(var(--surface),var(--surface)) padding-box,var(--degrade-doux) border-box;
+  padding:20px 22px;box-shadow:var(--ombre);display:flex;flex-direction:column;gap:16px}
+.chiffre-tete{display:flex;align-items:center;gap:9px}
+.chiffre-tete svg{width:17px;height:17px;flex:none}
+.chiffre-tete .k{font-size:.94rem;font-weight:700;color:var(--encre);line-height:1.25}
+.chiffre-bas{display:flex;align-items:flex-end;justify-content:space-between;gap:18px}
+.chiffre-gauche{display:flex;flex-direction:column;gap:4px;min-width:0}
+.chiffre .d{font-family:var(--font-data);font-size:.74rem;color:var(--gris);
+  font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.chiffre .v{font-family:var(--font-display);font-size:2.1rem;font-weight:900;line-height:1;
+  letter-spacing:-.04em;font-variant-numeric:tabular-nums;color:var(--encre)}
+.courbette{width:118px;height:40px;flex:none}
+.chiffre.vedette{background:var(--surface);border:2px solid rgba(245,166,35,.5)}
+.chiffre.vedette .v{color:var(--ambre-fonce)}
+/* ============ CARTES DE VILLE ============ */
+.villes-grille{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.ville-c{grid-column:span 2;position:relative;height:172px;border:1px solid var(--trait);
+  border-radius:14px;overflow:hidden;box-shadow:var(--ombre);background:var(--surface-2)}
+.ville-c:nth-child(4),.ville-c:nth-child(5){grid-column:span 3}
+
+.ville-plan{position:absolute;inset:0;overflow:hidden}
+.mosa{position:absolute;top:50%;left:50%;display:grid;
+  width:calc(var(--cols) * 256px);height:calc(var(--rows) * 256px);
+  grid-template-columns:repeat(var(--cols),256px);
+  grid-template-rows:repeat(var(--rows),256px);
+  transform:translate(calc(-1 * var(--px)),calc(-1 * var(--py)))}
+.mosa img{width:256px;height:256px;display:block;max-width:none}
+.ville-pin{position:absolute;top:50%;left:50%;transform:translate(-50%,-100%);
+  width:26px;height:26px;filter:drop-shadow(0 2px 5px rgba(0,0,0,.35));z-index:2}
+
+.ville-bandeau{position:absolute;left:0;right:0;bottom:0;z-index:3;
+  padding:34px 16px 13px;display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  background:linear-gradient(to top,#fff 46%,rgba(255,255,255,.92) 70%,rgba(255,255,255,0))}
+.ville-nom{font-size:.92rem;font-weight:700;color:var(--encre);line-height:1.2;
+  display:flex;align-items:center;gap:7px;min-width:0}
+.ville-nom::before{content:"";width:7px;height:7px;border-radius:50%;
+  background:var(--violet-500);flex:none}
+.ville-imp{font-family:var(--font-display);font-size:1.12rem;font-weight:900;line-height:1.1;
+  letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:var(--violet-600);
+  white-space:nowrap;flex:none}
+.ville-imp em{font-family:var(--font-data);font-size:.55rem;font-weight:600;font-style:normal;
+  letter-spacing:.07em;text-transform:uppercase;color:var(--violet-500);margin-left:4px}
+.villes-credit{font-family:var(--font-data);font-size:.58rem;color:var(--trait-fort);
+  margin:7px 0 0;text-align:right;hyphens:none}
+.villes-credit a{color:var(--trait-fort);text-decoration:none}
+
+@media (max-width:820px){
+  .villes-grille{grid-template-columns:repeat(2,1fr)}
+  .ville-c,.ville-c:nth-child(4),.ville-c:nth-child(5){grid-column:span 1}
+}
+@media (max-width:460px){
+  .villes-grille{grid-template-columns:1fr}
+  .ville-c,.ville-c:nth-child(4),.ville-c:nth-child(5){grid-column:span 1}
+}
+
+/* ============ FRISE ============ */
+.frise{list-style:none;padding:0;margin:0;display:flex;flex-direction:column}
+.frise li{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:0 0 26px;position:relative}
+.frise li:last-child{padding-bottom:0}
+.jalon-col{display:flex;flex-direction:column;align-items:center;gap:0}
+.puce{width:24px;height:24px;border-radius:50%;flex:none;display:grid;place-items:center;
+  background:var(--surface);border:2px solid var(--trait-fort);margin-top:2px;position:relative}
+.puce svg{width:12px;height:12px}
+.tige{width:2px;flex:1;background:var(--trait);min-height:14px;margin-top:4px}
+.frise li:last-child .tige{display:none}
+
+.frise li.fait .puce{background:var(--vert);border-color:var(--vert)}
+.frise li.fait .puce svg{stroke:#fff}
+.frise li.fait .tige{background:var(--vert);opacity:.45}
+
+.frise li.encours .puce{border-color:var(--violet-500);border-width:2.5px}
+.frise li.encours .puce::after{content:"";width:8px;height:8px;border-radius:50%;
+  background:var(--violet-500)}
+.frise li.encours .tige{background:linear-gradient(var(--violet-500),var(--trait))}
+
+.frise li.prevu .puce{border-style:dashed;border-color:var(--trait-fort);background:var(--surface)}
+.frise li.prevu .tige{background:none;border-left:2px dashed var(--trait)}
+
+.frise .haut{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:5px}
+.frise .quand{font-family:var(--font-data);font-size:.68rem;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--gris);font-weight:700;margin:0}
+.etat{font-family:var(--font-data);font-size:.6rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.fait .etat{color:var(--vert-fonce);background:var(--vert-clair);border:1px solid var(--vert-pale)}
+.encours .etat{color:var(--violet-600);background:var(--lavande);border:1px solid var(--trait)}
+.prevu .etat{color:var(--ambre-fonce);background:rgba(245,166,35,.13);border:1px solid rgba(245,166,35,.35)}
+.frise h3{margin-bottom:4px;font-weight:800}
+.frise p{font-size:.93rem;color:var(--gris);margin:0}
+.frise li.prevu h3,.frise li.prevu .quand{color:var(--gris)}
+
+@media (prefers-reduced-motion:no-preference){
+  .frise li.encours .puce::after{animation:battre 2.4s ease-in-out infinite}
+}
+@keyframes battre{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(.72);opacity:.55}}
+
+/* ============ PANNEAU = décision / principe ============ */
+.panneau{position:relative;overflow:hidden;background:var(--panneau-fond);
+  color:var(--panneau-texte);border-radius:22px;padding:30px 28px}
+.panneau h3{color:#fff;margin-bottom:10px}
+.panneau p{color:var(--panneau-texte-2)}
+.panneau .etiquette{color:#C4A9E8}
+.panneau strong,.panneau b{color:#fff;font-weight:700}
+.panneau .etoile{position:absolute;pointer-events:none;opacity:.5}
+.panneau .rond{position:absolute;border-radius:50%;background:rgba(255,255,255,.045);pointer-events:none}
+.panneau > *{position:relative;z-index:1}
+.principe{font-family:var(--font-display);font-size:1.25rem;font-weight:800;color:#fff;
+  line-height:1.3;letter-spacing:-.028em}
+.panneau-liste{list-style:none;padding:0;margin:16px 0 0;display:flex;flex-direction:column;gap:8px}
+.panneau-liste li{background:var(--panneau-carte);border:1px solid var(--panneau-trait);
+  border-radius:12px;padding:11px 14px;font-size:.92rem;color:var(--panneau-texte)}
+
+/* ============ BLOC DÉCISION (blanc) ============ */
+.decision{background:var(--surface);border:1px solid var(--trait);border-left:3px solid var(--violet-500);
+  border-radius:14px;padding:24px 26px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--ombre)}
+.decision .enonce{font-size:1rem;font-weight:400;line-height:1.6;color:var(--encre);
+  text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+.decision .etiquette{display:flex;align-items:center;gap:8px}
+.decision .drapeau{width:14px;height:14px;flex:none}
+
+/* ============ BANDEAU ILLUSTRÉ DES CARTES ============ */
+.carte-bandeau{margin:-22px -22px 16px;height:104px;border-radius:17px 17px 0 0;
+  overflow:hidden;background:var(--surface-2);position:relative}
+.carte-bandeau img{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;display:block}
+
+/* ============ CARTE = preuve ============ */
+.carte{background:var(--surface);border:1px solid var(--trait);border-radius:18px;
+  padding:22px;box-shadow:var(--ombre)}
+.carte h3{margin-bottom:8px}
+.carte p{color:var(--encre-2);font-size:.96rem}
+.grille2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.rangs{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.rangs li{background:var(--surface);border:1px solid var(--trait);border-radius:12px;
+  padding:11px 15px;font-size:.83rem;line-height:1.4;color:var(--encre-2);box-shadow:var(--ombre);
+  display:flex;align-items:center;gap:11px;text-align:left;hyphens:none}
+.rangs li svg{width:16px;height:16px;flex:none;color:var(--violet-500)}
+.rangs li b{color:var(--encre);font-weight:700}
+.plan-cible{position:relative}
+.plan-cible .fenetre img{display:block;width:100%;cursor:zoom-in}
+.loupe{position:absolute;right:12px;bottom:12px;z-index:3;width:40px;height:40px;
+  border-radius:12px;border:1px solid rgba(20,16,42,.14);background:rgba(255,255,255,.94);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  display:grid;place-items:center;cursor:zoom-in;padding:0;
+  box-shadow:var(--ombre-forte);color:var(--violet-600)}
+.loupe svg{width:19px;height:19px}
+.loupe:hover{border-color:var(--violet-500)}
+.visio.solo .visio-prec,.visio.solo .visio-suiv,.visio.solo .visio-rang{display:none}
+.mono{font-family:var(--font-data);font-size:.86em;background:var(--lavande);
+  padding:1px 5px;border-radius:5px;color:var(--violet-600);border:1px solid var(--trait)}
+
+/* ============ CONSOLE D'AUDIT ============ */
+.console{border:1px solid var(--trait);border-radius:16px;overflow:hidden;background:var(--surface);
+  box-shadow:var(--ombre)}
+.console-tete{padding:16px 20px;display:flex;background:var(--degrade);
+  align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.console-tete h3{margin:0;color:#fff}
+.console-compte{font-family:var(--font-data);font-size:.7rem;letter-spacing:.06em;color:rgba(255,255,255,.72)}
+.console-legende{display:flex;gap:14px;flex-wrap:wrap;padding:0 20px 13px;
+  border-bottom:1px solid var(--trait);background:var(--degrade)}
+.console-legende span{font-family:var(--font-data);font-size:.66rem;letter-spacing:.05em;
+  color:rgba(255,255,255,.82);display:flex;align-items:center;gap:6px}
+.console-legende i{width:8px;height:8px;border-radius:2px;display:block;
+  box-shadow:0 0 0 1px rgba(255,255,255,.45)}
+
+.phase-sep{padding:12px 20px;background:var(--surface-2);border-bottom:1px solid var(--trait);
+  border-top:1px solid var(--trait);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.phase-sep b{font-family:var(--font-data);font-size:.67rem;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--encre-2)}
+.phase-sep span{font-family:var(--font-data);font-size:.65rem;color:var(--gris-2)}
+.ligne{border-bottom:1px solid var(--trait)}
+.ligne:last-child{border-bottom:0}
+.ligne > summary{list-style:none;cursor:pointer;padding:12px 20px;display:grid;
+  grid-template-columns:14px 92px 96px 1fr auto;gap:14px;align-items:center;
+  transition:background .18s ease}
+.ligne > summary::-webkit-details-marker{display:none}
+.ligne > summary:hover{background:var(--surface-2)}
+.chev{width:12px;height:12px;color:var(--gris-2);transition:transform .22s ease}
+.ligne[open] .chev{transform:rotate(90deg)}
+.grav{font-family:var(--font-data);font-size:.63rem;font-weight:700;letter-spacing:.07em;
+  text-transform:uppercase;padding:3px 8px;border-radius:6px;text-align:center;white-space:nowrap}
+.ligne.err .grav{color:#9E332C;background:rgba(194,69,60,.11)}
+.ligne.avert .grav{color:var(--ambre-fonce);background:rgba(245,166,35,.15)}
+.ligne.info .grav{color:var(--violet-600);background:var(--lavande)}
+.zone{font-family:var(--font-data);font-size:.72rem;color:var(--encre-2);font-weight:600}
+.msg{font-size:.92rem;color:var(--encre-2);min-width:0}
+.val{font-family:var(--font-data);font-size:.82rem;font-weight:700;font-variant-numeric:tabular-nums;
+  white-space:nowrap}
+.ligne.err .val{color:#9E332C}
+.ligne.avert .val{color:var(--ambre-fonce)}
+.ligne.info .val{color:var(--violet-500)}
+.detail{padding:2px 20px 18px 156px;display:flex;flex-direction:column;gap:8px}
+.detail p{font-size:.89rem;color:var(--gris);margin:0;hyphens:none;
+  text-align:justify;text-justify:inter-word}
+.detail p b{color:var(--encre-2)}
+.detail .src{font-family:var(--font-data);font-size:.68rem;color:var(--gris-2)}
+@media (max-width:640px){
+  .ligne > summary{grid-template-columns:14px 88px 1fr;row-gap:8px}
+  .zone{grid-column:2/4}.msg{grid-column:1/4}.val{grid-column:1/4;text-align:left}
+  .detail{padding:2px 20px 18px 20px}
+}
+
+/* ============ ÉTAPES (barre de progression) ============ */
+.etapes-cadre{position:relative;padding-left:30px}
+.etapes-cadre::before{content:"";position:absolute;left:0;top:2px;bottom:2px;width:9px;
+  background:var(--vert-pale);border-radius:999px}
+.jauge{position:absolute;left:0;top:2px;width:9px;height:0;background:var(--vert);
+  border-radius:999px;transition:height .1s linear}
+.etapes{list-style:none;padding:0;margin:0}
+.etapes li{padding:15px 0}
+.etapes li:first-child{padding-top:0}
+.etapes li:last-child{padding-bottom:0}
+.etapes h3{margin-bottom:5px}
+.etapes p{font-size:.94rem;color:var(--encre-2);margin:0}
+.migration-intro{margin-bottom:22px}
+@media (max-width:520px){
+  .etapes-cadre{padding-left:22px}
+  .etapes-cadre::before,.jauge{width:7px}
+}
+
+/* ============ SOUS-ÉTAPES COCHÉES ============ */
+.coches{list-style:none;padding:0;margin:11px 0 0;border-top:1px solid var(--trait);padding-top:9px}
+.coche{display:flex;align-items:flex-start;gap:9px;padding:2.5px 0}
+.coche-case{width:14px;height:14px;flex:none;margin-top:3px}
+.coche-lbl{flex:1;min-width:0;font-size:.86rem;line-height:1.4;color:var(--gris);hyphens:none}
+
+/* les cases sont vides au départ, et se cochent au passage de la lecture */
+.js-anim .coche-case rect{fill-opacity:0;stroke:var(--trait-fort);
+  transition:fill-opacity .25s ease,stroke .25s ease}
+.js-anim .coche-case path{stroke-dashoffset:1}
+.js-anim .coche.cochee .coche-case rect{fill-opacity:.12;stroke:var(--vert)}
+.js-anim .coche.cochee .coche-case path{animation:cocher .26s cubic-bezier(.23,1,.32,1) forwards}
+@keyframes cocher{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){
+  .js-anim .coche.cochee .coche-case path{stroke-dashoffset:0}
+}
+
+/* ============ ACCORDÉON DE QUESTIONS ============ */
+.faq{display:flex;flex-direction:column;gap:11px;margin-top:24px}
+.faq details{border:1px solid var(--trait);border-radius:12px;background:var(--surface);
+  overflow:hidden;transition:border-color .2s ease,box-shadow .2s ease}
+.faq details[open]{border-color:var(--trait-fort);box-shadow:var(--ombre)}
+.faq-r p{text-align:justify;text-justify:inter-word}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:13px;
+  padding:14px 16px;transition:background .18s ease}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{background:var(--surface-2)}
+.faq details[open] summary{background:var(--surface-2);border-bottom:1px solid var(--trait)}
+.faq summary:focus-visible{outline:2.5px solid var(--ambre);outline-offset:-3px}
+.faq-ico{width:19px;height:19px;flex:none;color:var(--violet-500)}
+.faq-q{flex:1;min-width:0;font-family:var(--font-display);font-size:1rem;font-weight:800;
+  letter-spacing:-.016em;color:var(--encre);line-height:1.32;text-wrap:balance}
+.faq-n{font-family:var(--font-data);font-size:.64rem;font-weight:700;letter-spacing:.11em;
+  color:var(--gris-2);flex:none}
+.faq details[open] .faq-n{color:var(--violet-500)}
+.faq-chev{width:15px;height:15px;flex:none;color:var(--gris-2);transition:transform .22s ease}
+.faq details[open] .faq-chev{transform:rotate(180deg)}
+.faq-r{padding:13px 17px 15px;border-left:3px solid var(--violet-600);
+  font-size:.92rem;color:var(--encre-2);line-height:1.62;hyphens:none}
+.faq-r p{margin:0}
+.faq-r p + p{margin-top:9px}
+.faq-r b{color:var(--encre);font-weight:700}
+@media (max-width:520px){.faq-n{display:none}}
+
+/* ============ COURBES ============ */
+.courbes{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
+.courbe{background:var(--surface);border:1px solid var(--trait);border-radius:18px;
+  padding:20px;box-shadow:var(--ombre)}
+.courbe .titre{font-family:var(--font-display);font-weight:900;letter-spacing:-.02em;font-size:1rem;
+  margin-bottom:3px;color:var(--encre)}
+.courbe .sous{font-size:.85rem;color:var(--gris);margin-bottom:14px}
+.courbe svg{width:100%;height:auto;display:block}
+.verdict{margin-top:13px;font-size:.87rem;font-weight:700;font-family:var(--font-display)}
+.verdict.ko{color:var(--rouge)}
+.verdict.ok{color:var(--vert)}
+
+/* ============ COMPARATEUR AVANT / APRÈS ============ */
+.aa-vue{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--trait);
+  box-shadow:var(--ombre-forte);--x:50%}
+.aa-vue > img{display:block;width:100%;filter:blur(6px);transform:scale(1.05)}
+.aa-gris{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--x)) 0 0)}
+.aa-gris img{display:block;width:100%;height:auto;
+  filter:grayscale(1) contrast(1.04) brightness(.94) blur(6px);transform:scale(1.05)}
+.aa-voile{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:rgba(6,4,16,.36)}
+.aa-rangee{position:absolute;inset:0;z-index:4;pointer-events:none;
+  display:grid;grid-template-columns:1fr auto 1fr;grid-template-rows:auto auto;
+  align-content:center;justify-items:center;align-items:center;
+  column-gap:clamp(10px,3vw,34px);row-gap:13px;padding:0 18px;text-align:center}
+.aa-v{grid-row:1;font-family:var(--font-display);font-weight:900;line-height:.92;
+  font-size:clamp(2.3rem,6.6vw,4.1rem);letter-spacing:-.05em;font-variant-numeric:tabular-nums;
+  color:#fff;white-space:nowrap}
+.aa-v.aa-g{grid-column:1}
+.aa-v.aa-d{grid-column:3}
+.aa-vs{grid-row:1;grid-column:2;font-family:var(--font-data);font-weight:700;
+  font-size:clamp(.72rem,1.5vw,1rem);letter-spacing:.16em;color:#fff;
+  text-transform:uppercase;line-height:1}
+.aa-s{font-size:.96rem;line-height:1.42;color:#fff}
+.aa-sg{grid-row:2;grid-column:1}
+.aa-sd{grid-row:2;grid-column:3}
+@media (max-width:560px){
+  .aa-v{font-size:1.9rem}.aa-s{font-size:.7rem}.aa-rangee{row-gap:8px;padding:0 10px}
+}
+.aa-src{font-size:.79rem;color:var(--gris-2);margin:11px 0 0;line-height:1.5;hyphens:none}
+
+/* ============ TABLEAU COMPARATIF ============ */
+.cmp-env{overflow-x:auto;margin:26px 0 0;border:1px solid var(--trait);border-radius:16px;
+  box-shadow:var(--ombre);background:var(--surface)}
+.cmp{border-collapse:collapse;width:100%;min-width:660px}
+.cmp th,.cmp td{padding:15px 18px;vertical-align:top;border-bottom:1px solid var(--trait);
+  text-align:left}
+.cmp tr:last-child th,.cmp tr:last-child td{border-bottom:0}
+.cmp thead tr{background:var(--degrade)}
+.cmp thead th{background:transparent;border-bottom:0;font-family:var(--font-data);font-size:.63rem;
+  letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#fff;
+  padding-top:15px;padding-bottom:15px;white-space:nowrap}
+.cmp thead th.avec{color:#fff}
+.cmp thead th.sans::before{content:"";display:inline-block;width:7px;height:7px;
+  border-radius:50%;background:#FEBC2E;margin-right:8px;vertical-align:middle}
+.cmp thead th.avec::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;
+  background:#8AE2B2;margin-right:8px;vertical-align:middle}
+.cmp tbody th{width:24%;font-size:.87rem;font-weight:700;color:#fff;border:0;
+  vertical-align:middle;
+  /* la colonne montre EXACTEMENT le premier quart du dégradé de l'en-tête,
+     à 90 degrés pour qu'aucune couture n'apparaisse d'une ligne à l'autre */
+  background-image:linear-gradient(90deg,#7A2F8F 0%,#4C1D73 45%,#1B0A3D 100%);
+  background-size:417% 100%;
+  background-position:left top;background-repeat:no-repeat}
+.cmp tbody th .lig{display:flex;align-items:center;gap:9px;line-height:1.3}
+.cmp tbody th svg{width:17px;height:17px;color:#fff;flex:none}
+.cmp td{font-size:.86rem;color:var(--gris);line-height:1.55;width:38%;hyphens:none;
+  text-align:justify;text-justify:inter-word;
+  border-bottom:1px solid rgba(20,16,42,.055)}
+.cmp td.avec{color:var(--encre-2)}
+.cmp-lbl{display:none}
+.cmp tr.pivot td{background:var(--surface)}
+.cmp tr.pivot td.avec{color:var(--violet-600);font-weight:400}
+
+/* ============ POSTE DE TRAVAIL ============ */
+.stack{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;
+  gap:13px 28px;margin-top:22px}
+.stack-i{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;font-weight:600;
+  color:var(--encre-2);white-space:nowrap}
+.stack-i img{width:18px;height:18px;border-radius:4px;display:block;flex:none}
+
+/* ============ FENÊTRE NAVIGATEUR (captures pleine page) ============ */
+.fenetre{border:1px solid var(--trait);border-radius:14px;overflow:hidden;
+  box-shadow:var(--ombre-forte);background:var(--surface)}
+.fenetre .chrome{display:flex;align-items:center;gap:8px;padding:10px 14px;
+  background:var(--degrade)}
+.fenetre .pt{width:11px;height:11px;border-radius:50%;flex:none;
+  box-shadow:inset 0 0 0 .5px rgba(0,0,0,.14)}
+.fenetre .pt:nth-child(1){background:#FF5F57}
+.fenetre .pt:nth-child(2){background:#FEBC2E}
+.fenetre .pt:nth-child(3){background:#28C840}
+.fenetre .adresse{font-family:var(--font-data);font-size:.68rem;color:rgba(255,255,255,.86);
+  margin-left:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fenetre .vue{max-height:520px;overflow-y:auto;overscroll-behavior:contain;background:#fff}
+.defile{font-size:.78rem;color:var(--gris-2);font-family:var(--font-data);
+  margin-top:7px;display:block}
+
+/* ============ GALERIE ============ */
+.galerie{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:12px}
+.galerie figure{gap:0;position:relative}
+.galerie figure .cadre{aspect-ratio:1;border-radius:12px}
+.galerie figure .cadre img{width:100%;height:100%;object-fit:cover;object-position:top left}
+.galerie figure.bande .cadre{background:#fff}
+.galerie figure.bande .cadre img{object-fit:contain;padding:10px}
+.galerie figcaption{display:none}
+figure{margin:0;display:flex;flex-direction:column;gap:9px}
+figure .cadre{border:1px solid var(--trait);border-radius:14px;overflow:hidden;
+  background:var(--surface-2);box-shadow:var(--ombre)}
+figcaption{font-size:.85rem;color:var(--gris);display:flex;gap:9px;align-items:baseline;flex-wrap:wrap}
+figcaption .date{font-family:var(--font-data);font-size:.7rem;letter-spacing:.05em;
+  color:var(--violet-500);background:var(--lavande);border:1px solid var(--trait);
+  padding:2px 7px;border-radius:999px;font-weight:600;flex:none}
+
+/* ============ VISIONNEUSE ============ */
+.galerie figure{cursor:zoom-in}
+.galerie figure .cadre{transition:border-color .2s ease,box-shadow .2s ease}
+.galerie figure:hover .cadre{border-color:var(--violet-500);box-shadow:var(--ombre-forte)}
+.galerie figure:focus-visible{outline:2.5px solid var(--ambre);outline-offset:5px;border-radius:16px}
+
+.visio{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;
+  padding:26px;background:rgba(12,8,28,.72);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.visio.ouvert{display:flex}
+.visio-boite{max-width:1040px;width:100%;max-height:100%;display:flex;flex-direction:column;gap:12px}
+.visio-img{max-width:100%;max-height:74vh;object-fit:contain;border-radius:12px;
+  background:#fff;box-shadow:0 22px 60px rgba(0,0,0,.45);margin:0 auto;display:block}
+.visio-leg{font-size:.86rem;color:rgba(255,255,255,.86);display:flex;gap:9px;align-items:baseline;
+  flex-wrap:wrap;justify-content:center;text-align:center;hyphens:none}
+.visio-leg .date{font-family:var(--font-data);font-size:.7rem;letter-spacing:.05em;color:#fff;
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);padding:2px 7px;
+  border-radius:999px;font-weight:600;flex:none}
+.visio-rang{font-family:var(--font-data);font-size:.68rem;letter-spacing:.1em;
+  color:rgba(255,255,255,.55);text-align:center}
+.visio button{position:absolute;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.12);
+  color:#fff;border-radius:50%;width:46px;height:46px;display:grid;place-items:center;cursor:pointer;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:background .2s ease}
+.visio button:hover{background:rgba(255,255,255,.25)}
+.visio button svg{width:22px;height:22px}
+.visio-prec{left:18px;top:50%;transform:translateY(-50%)}
+.visio-suiv{right:18px;top:50%;transform:translateY(-50%)}
+.visio-fermer{top:18px;right:18px;width:42px;height:42px}
+@media (max-width:620px){
+  .visio{padding:14px}
+  .visio-prec{left:8px}.visio-suiv{right:8px}
+  .visio button{width:40px;height:40px}
+}
+
+/* ============ JALON PLANIFIÉ ============ */
+.jalon{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-data);
+  font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ambre-fonce);background:rgba(245,166,35,.14);
+  border:1px solid rgba(245,166,35,.42);padding:4px 11px;border-radius:999px}
+
+/* ============ VITRINE (capture longue qui défile) ============ */
+.vitrine{margin-top:22px;display:flex;flex-direction:column;gap:9px}
+.vitrine img{width:100%;display:block;border:1px solid var(--trait);border-radius:16px;
+  box-shadow:var(--ombre-forte);background:var(--surface)}
+
+/* ============ EMPLACEMENT EN ATTENTE ============ */
+.chiffres.une{grid-template-columns:1fr;text-align:center}
+.chiffres.une .chiffre{align-items:center;background:var(--surface);
+  border:1px solid rgba(20,16,42,.07);
+  box-shadow:0 1px 2px rgba(20,16,42,.04), 0 10px 22px -14px rgba(20,16,42,.24),
+             inset 0 1px 0 rgba(255,255,255,.9)}
+.chiffres.une .chiffre-tete{justify-content:center}
+.chiffres.une .chiffre-bas{justify-content:center}
+.chiffres.une .chiffre-gauche{align-items:center;text-align:center}
+.chiffres.une .s{text-align:center}
+.corps > p.cta-centre{text-align:center;margin-top:18px;hyphens:none}
+
+/* ============ LIEN DÉPÔT ============ */
+.filet-perf{border:0;border-top:1px solid var(--trait);margin:28px 0 20px}
+.speed-duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.speed-duo figure,.speed-total{margin:0}
+/* les deux captures n'ont pas le même format : on les cale sur une boîte commune */
+.speed-duo .cadre{aspect-ratio:910/730;display:grid;place-items:center}
+.speed-duo .cadre img{width:100%;height:100%;object-fit:contain}
+.speed-total{margin-top:14px}
+.speed-duo .cadre,.speed-total .cadre{border:1px solid var(--trait);border-radius:14px;
+  overflow:hidden;background:#fff;box-shadow:var(--ombre);padding:10px}
+@media (max-width:620px){.speed-duo{grid-template-columns:1fr}}
+.depot img{display:block;flex:none}
+.depot{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-data);
+  font-size:.82rem;font-weight:700;text-decoration:none;color:#fff;
+  background:var(--degrade);border-radius:12px;padding:12px 18px}
+.depot:hover{filter:brightness(1.15)}
+
+/* ============ SOMMAIRE LATÉRAL ============ */
+.sommaire{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:30;
+  display:flex;flex-direction:column;gap:10px;align-items:flex-end;padding:14px 12px;
+  border-radius:16px;transition:background .25s ease,box-shadow .25s ease}
+.som-l{display:flex;align-items:center;gap:11px;text-decoration:none;justify-content:flex-end;
+  cursor:pointer;background:none;border:0;padding:0;font:inherit}
+.som-b{display:block;height:2px;width:13px;border-radius:2px;background:var(--trait-fort);
+  transition:width .22s ease,background .22s ease;flex:none}
+.som-l.chap .som-b{width:22px;height:3px;background:var(--gris-2)}
+.som-l.vu .som-b{background:var(--violet-500);width:26px}
+.som-l.chap.vu .som-b{background:var(--violet-600);width:34px}
+.som-t{order:-1;font-family:var(--font-body);font-size:.79rem;letter-spacing:0;
+  font-weight:600;line-height:1.2;
+  color:var(--gris);white-space:nowrap;opacity:0;transform:translateX(8px);
+  transition:opacity .22s ease,transform .22s ease;pointer-events:none;text-align:right}
+.som-l.chap .som-t{color:var(--encre-2);font-weight:700}
+.sommaire:hover .som-t,.sommaire:focus-within .som-t{opacity:1;transform:none}
+.som-l:hover .som-b,.som-l:focus-visible .som-b{background:var(--violet-600);width:34px}
+.som-l:focus-visible{outline:2.5px solid var(--ambre);outline-offset:4px;border-radius:4px}
+.voile-som{position:fixed;inset:0;z-index:25;pointer-events:none;opacity:0;
+  transition:opacity .28s ease;background:rgba(20,16,42,.22);
+  -webkit-backdrop-filter:blur(4px) brightness(.62);backdrop-filter:blur(4px) brightness(.62)}
+body.som-ouvert .voile-som{opacity:1}
+body.som-ouvert .sommaire{background-image:var(--degrade);
+  box-shadow:0 20px 48px -22px rgba(0,0,0,.7)}
+body.som-ouvert .som-t,body.som-ouvert .som-l.chap .som-t{color:#fff}
+body.som-ouvert .som-b{background:rgba(255,255,255,.26)}
+body.som-ouvert .som-l.chap .som-b{background:rgba(255,255,255,.34)}
+body.som-ouvert .som-l.vu .som-b,body.som-ouvert .som-l.chap.vu .som-b{background:#fff}
+@media (max-width:1180px){
+  .enveloppe,.barre-i{padding-right:54px}
+  .sommaire{right:8px;padding:12px 4px}
+  .som-l.chap .som-b{width:18px}
+  .som-l.vu .som-b,.som-l:hover .som-b,.som-l.chap.vu .som-b{width:26px}
+}
+@media (max-width:700px){.sommaire{display:none}.enveloppe,.barre-i{padding-right:24px}}
+
+/* ============================================================
+   RESPONSIVE : tablette puis téléphone
+   ============================================================ */
+
+/* ---- tablette : on resserre sans changer les structures ---- */
+@media (max-width:900px){
+  .enveloppe{padding-left:20px;padding-right:20px}
+  .hero-i{padding:48px 20px 44px;gap:24px}
+  section{padding-top:44px}
+  .console-tete,.console-legende,.ligne > summary{padding-left:16px;padding-right:16px}
+  .detail{padding-left:16px;padding-right:16px}
+}
+
+/* ---- téléphone ---- */
+@media (max-width:700px){
+
+  /* le héros se centre : titre, puis quatre blocs icône, étiquette, valeur */
+  .hero h1{text-align:center}
+  .hero .meta{grid-template-columns:1fr;gap:24px;justify-items:center}
+  .hero .meta-ico,.hero .meta-logo{width:46px;height:46px;border-radius:13px}
+  .hero .meta-ico{font-size:25px}
+  .hero .meta-logo{padding:5px}
+  .meta-item{grid-template-columns:1fr;grid-template-areas:"i" "k" "v";
+    justify-items:center;text-align:center;gap:7px}
+  .hero .meta-v{font-size:.92rem;line-height:1.3}
+  .hero .meta-k{font-size:.6rem}
+
+  /* la légende de la frise se pousse aux deux bords */
+  .phases-noms > span:nth-child(even){justify-content:flex-end;text-align:right}
+
+  /* la console : en-tête et légende centrés, les valeurs chiffrées se retirent */
+  .console-tete{flex-direction:column;align-items:center;text-align:center;gap:6px}
+  .console-legende{justify-content:center;gap:12px}
+  .val{display:none}
+
+  /* les en-têtes de section et les sous-titres se centrent */
+  .tete{text-align:center}
+  .tete > .etiquette{text-align:center}
+  h3{text-align:center}
+  .tete .etiquette{display:block}
+  .villes-credit{text-align:center}
+
+  /* la frise du héros : la barre garde ses proportions, les noms deviennent une légende */
+  .phases{gap:14px}
+  .phases-barre{grid-template-columns:46fr 14fr 14fr 26fr;height:10px;gap:5px}
+  .phases-noms{grid-template-columns:1fr 1fr;gap:10px 14px}
+  .phases-noms > span{display:flex;align-items:center;gap:8px;font-size:.68rem;line-height:1.3}
+  .phases-noms > span::before{content:"";width:10px;height:10px;border-radius:3px;flex:none}
+  .hero .phases-noms > span:nth-child(1)::before,
+  .hero .phases-noms > span:nth-child(2)::before{background:rgba(138,226,178,.5)}
+  .hero .phases-noms > span:nth-child(3)::before{background:#8AE2B2}
+  .hero .phases-noms > span:nth-child(4)::before{
+    background:repeating-linear-gradient(45deg,rgba(255,255,255,.4) 0 2px,rgba(255,255,255,.12) 2px 4px)}
+
+  /* la console d'audit : trois niveaux au lieu de cinq colonnes */
+  .ligne > summary{grid-template-columns:16px auto auto 1fr;gap:8px 10px;
+    padding:13px 16px;align-items:center}
+  .chev{grid-area:1/1/2/2}
+  .grav{grid-area:1/2/2/3;justify-self:start}
+  .zone{grid-area:1/3/2/4}
+  .val{grid-area:1/4/2/5;justify-self:end;text-align:right;white-space:normal}
+  .msg{grid-area:2/2/3/5;font-size:.88rem;line-height:1.42}
+  .detail{padding:0 16px 16px 16px}
+
+  /* le tableau comparatif : une carte par ligne, plus de défilement latéral */
+  .cmp-env{overflow:hidden}
+  .cmp{min-width:0;display:block}
+  .cmp thead{display:none}
+  .cmp tbody,.cmp tr{display:block}
+  .cmp tr{border-bottom:1px solid var(--trait)}
+  .cmp tr:last-child{border-bottom:0}
+  .cmp tbody th{display:block;width:auto;padding:13px 16px;vertical-align:baseline;
+    background-image:var(--degrade);background-size:100% 100%}
+  .cmp tbody th .lig{gap:10px}
+  .cmp td{display:block;width:auto;border:0;padding:14px 16px 0;
+    text-align:justify;text-justify:inter-word}
+  .cmp tr td:last-child{padding-bottom:16px}
+  .cmp-lbl{display:flex;align-items:center;gap:7px;margin-bottom:7px;
+    font-family:var(--font-data);font-size:.6rem;letter-spacing:.11em;
+    text-transform:uppercase;font-weight:700;color:var(--gris-2)}
+  .cmp-lbl::before{content:"";width:7px;height:7px;border-radius:50%;flex:none}
+  .cmp-lbl.sans::before{background:#FEBC2E}
+  .cmp-lbl.avec::before{background:#8AE2B2}
+
+  /* la vignette de comparaison */
+  .aa-rangee{column-gap:8px;row-gap:9px;padding:0 8px}
+  .aa-v{font-size:1.55rem;letter-spacing:-.04em}
+  .aa-s{font-size:.62rem;line-height:1.35}
+  .aa-vs{font-size:.6rem;letter-spacing:.1em}
+
+  /* le reste */
+  .speed-duo figcaption,.speed-total figcaption{justify-content:center;text-align:center}
+  .fenetre .vue{max-height:340px}
+  .galerie{grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:9px}
+  .etapes-cadre{padding-left:22px}
+  .etapes-cadre::before,.jauge{width:7px}
+  .chiffres{grid-template-columns:1fr}
+  .console-tete h3{font-size:1rem}
+}
+
+/* ---- petit téléphone ---- */
+@media (max-width:400px){
+  .enveloppe{padding-left:16px;padding-right:16px}
+  .hero-i{padding:40px 16px 36px}
+  .ligne > summary{gap:7px 9px;padding-left:14px;padding-right:14px}
+  .grav{font-size:.58rem;padding:3px 6px}
+  .zone{font-size:.68rem}
+}
+
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+/* ============ PIED ============ */
+footer{border-top:1px solid var(--trait);padding:36px 0 64px;color:var(--encre);font-size:.88rem}
+footer p{margin-bottom:10px}
+.note-src{font-family:var(--font-data);font-size:.72rem;line-height:1.8;color:var(--gris-2)}
+
+/* ============ JUSTIFICATION ============ */
+.chapeau,
+.tete > p,
+.corps > p,
+.carte p,
+.etapes p,
+.rangs li,
+.panneau-liste li,
+footer p{
+  text-align:justify;
+  text-justify:inter-word;
+  -webkit-hyphens:auto;
+  hyphens:auto;
+}
+/* jamais justifier le typographique court: il ferait des trous */
+.principe,.verdict,.pourquoi,figcaption,.defile,.note-src,
+.chiffre .k,.chiffre .s{text-align:left;hyphens:none}
+
+html[lang="fr"] .en{display:none}
+html[lang="en"] .fr{display:none}
+</style>
+
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;pointer-events:none">
+  <defs><linearGradient id="degradeIco" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#7A2F8F"/><stop offset=".45" stop-color="#4C1D73"/><stop offset="1" stop-color="#1B0A3D"/>
+  </linearGradient></defs>
+</svg>
+<div class="barre">
+  <div class="barre-i">
+    <span class="marque">
+      <span class="nom"><span class="fr">Étude de cas réelle</span><span class="en">Case study</span></span>
+      <span class="quoi"><span class="fr">11 mois de chantier</span><span class="en">11 months of work</span></span>
+    </span>
+    <div class="segmente" role="group" aria-label="Langue / Language">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="enveloppe hero-i">
+    <h1><span class="fr">De 29 000 à 106 000 impressions par trimestre avec migration et refonte structurelle</span><span class="en">From 29,000 to 106,000 impressions per quarter with a migration and a structural overhaul</span></h1>
+    <div class="meta">
+      <div class="meta-item">
+        <img class="meta-logo" src="assets/i01-09c5e19f3c.png" alt="">
+        <span class="meta-k"><span class="fr">Projet</span><span class="en">Project</span></span>
+        <span class="meta-v"><span class="fr">Smart BPJEPS</span><span class="en">Smart BPJEPS</span></span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-ico" aria-hidden="true">🏗️</span>
+        <span class="meta-k"><span class="fr">Rôle</span><span class="en">Role</span></span>
+        <span class="meta-v"><span class="fr">Migration &amp; Restructuration</span><span class="en">Migration &amp; Restructuring</span></span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-ico" aria-hidden="true">🎓</span>
+        <span class="meta-k"><span class="fr">Secteur</span><span class="en">Industry</span></span>
+        <span class="meta-v"><span class="fr">Éducation</span><span class="en">Education</span></span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-ico" aria-hidden="true">🇫🇷</span>
+        <span class="meta-k"><span class="fr">Localisation</span><span class="en">Location</span></span>
+        <span class="meta-v"><span class="fr">France</span><span class="en">France</span></span>
+      </div>
+    </div>
+
+    <div class="hero-contexte">
+      <p class="etiquette"><span class="fr">Contexte</span><span class="en">Context</span></p>
+      <p class="chapeau"><span class="fr">Le BPJEPS est le diplôme d'État qui autorise à exercer comme éducateur sportif rémunéré en France. Sans lui, encadrer une séance contre rémunération est interdit. C'est une certification de niveau 4, définie par arrêté ministériel, et actuellement en pleine réforme. Smart BPJEPS accompagne les candidats jusqu'à l'obtention du diplôme. Le terrain est occupé par les centres de formation eux-mêmes, publics et privés, installés de longue date sur ces requêtes. Smart BPJEPS n'y avait aucune place : c'est un accompagnement, pas un organisme de formation.</span><span class="en">The BPJEPS is the French state diploma required to work as a paid sports instructor. Without it, coaching a session for money is not allowed. It is a level-4 qualification defined by ministerial order, and currently being reformed. Smart BPJEPS supports candidates through to certification. The ground is held by the training centres themselves, public and private, long established on these queries. Smart BPJEPS had no place there: it is a support service, not a training body.</span></p>
+    </div>
+    <div class="phases">
+      <div class="phases-barre">
+        <span class="seg seg-1"></span><span class="seg seg-2"></span><span class="seg seg-3"></span><span class="seg seg-4"></span>
+      </div>
+      <div class="phases-noms">
+        <span><span class="fr">Éditorial et local</span><span class="en">Editorial and local</span></span>
+        <span><b>Migration</b></span>
+        <span><b><span class="fr">Gel</span><span class="en">Freeze</span></b></span>
+        <span><b><span class="fr">Restructuration</span><span class="en">Restructuring</span></b></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="enveloppe">
+
+  <!-- COUP D'ŒIL -->
+  <section style="border-top:0;padding-top:52px">
+    <div class="tete">
+      <p class="etiquette"><span class="fr">01 · En un coup d'œil</span><span class="en">01 · At a glance</span></p>
+      <h2><span class="fr">Ce que les chiffres disent</span><span class="en">What the numbers say</span></h2>
+      <p><span class="fr">Chaque chiffre de cette page vient d'un relevé daté et archivé. Les captures d'origine, avec leur date et leur fenêtre de mesure, sont reproduites en fin de page. Rien n'est reconstitué de mémoire : un chiffre sans sa date ne se réutilise pas.</span><span class="en">Every figure on this page comes from a dated, archived reading. The original screenshots, with their date and measurement window, are reproduced at the end of the page. Nothing is reconstructed from memory: a figure without its date cannot be reused.</span></p>
+    </div>
+    <div class="chiffres">
+
+      <div class="chiffre">
+        <div class="chiffre-tete"><svg viewBox="0 0 24 24" fill="none" stroke="#7A2F8F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg><span class="k"><span class="fr">Positions gagnées</span><span class="en">Positions gained</span></span></div>
+        <div class="chiffre-bas">
+          <div class="chiffre-gauche">
+            <span class="d">17,7 → 8,3</span>
+            <span class="v">+9,4</span>
+          </div>
+          <svg class="courbette" viewBox="0 0 120 40" role="img" aria-label="Position moyenne : 17,7 puis 11,8 puis 10,2 puis 8,3 : axe inversé, la montée est une amélioration">
+            <path d="M4 35 L42 11 L80 5 L116 6" fill="none" stroke="#7A2F8F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 35 L42 11 L80 5 L116 6 L116 40 L4 40 Z" fill="#7A2F8F" opacity=".07"/>
+            <circle cx="116" cy="6" r="3" fill="#7A2F8F"/>
+          </svg>
+        </div>
+        <span class="s">GSC · 3 <span class="fr">mois glissants · relevé du</span><span class="en">rolling months · read</span> 09/07/2026</span>
+      </div>
+
+      <div class="chiffre">
+        <div class="chiffre-tete"><svg viewBox="0 0 24 24" fill="none" stroke="#7A2F8F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg><span class="k"><span class="fr">Impressions par trimestre</span><span class="en">Impressions per quarter</span></span></div>
+        <div class="chiffre-bas">
+          <div class="chiffre-gauche">
+            <span class="d">29 000 → 106 000</span>
+            <span class="v">+266 %</span>
+          </div>
+          <svg class="courbette" viewBox="0 0 120 40" role="img" aria-label="Impressions : 29 000 puis 45 400 puis 55 700 puis 106 000">
+            <path d="M4 35 L42 27 L80 11 L116 5" fill="none" stroke="#7A2F8F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 35 L42 27 L80 11 L116 5 L116 40 L4 40 Z" fill="#7A2F8F" opacity=".07"/>
+            <circle cx="116" cy="5" r="3" fill="#7A2F8F"/>
+          </svg>
+        </div>
+        <span class="s">GSC · 3 <span class="fr">mois glissants · relevé du</span><span class="en">rolling months · read</span> 09/07/2026</span>
+      </div>
+
+      <div class="chiffre vedette">
+        <div class="chiffre-tete"><svg viewBox="0 0 24 24" fill="none" stroke="#B8720A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><polyline points="8 12.5 11 15.5 16.5 9"/></svg><span class="k"><span class="fr">Pages migrées, aucune perdue</span><span class="en">Pages migrated, none lost</span></span></div>
+        <div class="chiffre-bas">
+          <div class="chiffre-gauche">
+            <span class="d"><span class="fr">26 redirections</span><span class="en">26 redirects</span></span>
+            <span class="v">40/40</span>
+          </div>
+          <svg class="courbette" viewBox="0 0 120 40" role="img" aria-label="Ligne plate : rien n'a bougé au moment de la bascule">
+            <line x1="4" y1="12" x2="116" y2="12" stroke="#F5A623" stroke-width="2.4" stroke-linecap="round"/>
+            <rect x="4" y="12" width="112" height="28" fill="#F5A623" opacity=".07"/>
+            <line x1="60" y1="4" x2="60" y2="40" stroke="#B8720A" stroke-width="1.2" stroke-dasharray="3 3" opacity=".55"/>
+            <circle cx="116" cy="12" r="3" fill="#F5A623"/>
+          </svg>
+        </div>
+        <span class="s"><span class="fr">Crawl de parité · avant et après le</span><span class="en">Parity crawl · before and after</span> 19/07/2026</span>
+      </div>
+
+      <div class="chiffre">
+        <div class="chiffre-tete"><svg viewBox="0 0 24 24" fill="#2F7D5B" aria-hidden="true"><path d="M12 0c.6 6 5.4 10.8 12 12-6.6 1.2-11.4 6-12 12-.6-6-5.4-10.8-12-12C6.6 10.8 11.4 6 12 0z"/></svg><span class="k"><span class="fr">Réponses d'IA qui citent la marque</span><span class="en">AI answers citing the brand</span></span></div>
+        <div class="chiffre-bas">
+          <div class="chiffre-gauche">
+            <span class="d"><span class="fr">de 0 à 59 %</span><span class="en">from 0 to 59%</span></span>
+            <span class="v">59 %</span>
+          </div>
+          <svg class="courbette" viewBox="0 0 120 40" role="img" aria-label="Le taux de citation part de zéro, les robots d'IA étant bloqués avant la bascule, et atteint 59 pour cent">
+            <path d="M4 34 L40 30 L76 20 L116 8" fill="none" stroke="#2F7D5B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 34 L40 30 L76 20 L116 8 L116 40 L4 40 Z" fill="#2F7D5B" opacity=".1"/>
+            <circle cx="116" cy="8" r="3" fill="#2F7D5B"/>
+          </svg>
+        </div>
+        <span class="s"><span class="fr">Quatre moteurs LLM · 10/08/2026</span><span class="en">Four LLM engines · 10/08/2026</span></span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FRISE -->
+  <section>
+    <div class="tete">
+      <p class="etiquette"><span class="fr">02 · Le déroulé</span><span class="en">02 · Sequence</span></p>
+      <h2><span class="fr">Quatre temps, jamais mélangés</span><span class="en">Four phases, never mixed</span></h2>
+      <p><span class="fr">L'ordre est la décision la plus structurante du projet. Mener deux chantiers en même temps aurait rendu tout résultat inexplicable.</span><span class="en">The order is the project's most structural decision. Running two workstreams at once would have made every result impossible to explain.</span></p>
+    </div>
+    <ol class="frise">
+      <li class="fait">
+        <div class="jalon-col"><span class="puce"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4.5 12.5 9.5 17.5 19.5 6.5"/></svg></span><span class="tige"></span></div>
+        <div>
+          <div class="haut">
+            <p class="quand"><span class="fr">Oct. 2025 → juil. 2026</span><span class="en">Oct 2025 → Jul 2026</span></p>
+            <span class="etat"><span class="fr">Terminé</span><span class="en">Done</span></span>
+          </div>
+          <h3><span class="fr">Le travail éditorial et local</span><span class="en">Editorial and local work</span></h3>
+          <p><span class="fr">Sur l'ancienne plateforme, malgré ses limites. C'est ce qui a produit l'essentiel des impressions.</span><span class="en">On the old platform, despite its limits. This is what produced most of the impressions.</span></p>
+        </div>
+      </li>
+      <li class="fait">
+        <div class="jalon-col"><span class="puce"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4.5 12.5 9.5 17.5 19.5 6.5"/></svg></span><span class="tige"></span></div>
+        <div>
+          <div class="haut">
+            <p class="quand">19 <span class="fr">juillet</span><span class="en">July</span> 2026</p>
+            <span class="etat"><span class="fr">Terminé</span><span class="en">Done</span></span>
+          </div>
+          <h3><span class="fr">La migration, à l'identique</span><span class="en">The like-for-like migration</span></h3>
+          <p><span class="fr">Mêmes contenus, mêmes adresses, même structure. Aucune amélioration pendant la bascule.</span><span class="en">Same content, same addresses, same structure. No improvements during the switch.</span></p>
+        </div>
+      </li>
+      <li class="encours">
+        <div class="jalon-col"><span class="puce"></span><span class="tige"></span></div>
+        <div>
+          <div class="haut">
+            <p class="quand"><span class="fr">Juil. → août 2026</span><span class="en">Jul → Aug 2026</span></p>
+            <span class="etat"><span class="fr">En cours</span><span class="en">In progress</span></span>
+          </div>
+          <h3><span class="fr">Gel, puis le technique seul</span><span class="en">Freeze, then technical work only</span></h3>
+          <p><span class="fr">Balisage en entités, signaux d'autorité, dates de fraîcheur, refonte du blog. Rien qui touche aux adresses ni au maillage.</span><span class="en">Entity markup, authority signals, freshness dates, blog redesign. Nothing touching addresses or internal linking.</span></p>
+        </div>
+      </li>
+      <li class="prevu">
+        <div class="jalon-col"><span class="puce"></span></div>
+        <div>
+          <div class="haut">
+            <p class="quand"><span class="fr">À partir du 20 août 2026</span><span class="en">From 20 August 2026</span></p>
+            <span class="etat"><span class="fr">En attente de déploiement</span><span class="en">Awaiting deployment</span></span>
+          </div>
+          <h3><span class="fr">La restructuration en silos</span><span class="en">Restructuring into silos</span></h3>
+          <p><span class="fr">Le plan est arrêté et daté : l'exécution est calée sur la sortie de la période de gel, au 20 août 2026.</span><span class="en">The plan is settled and dated: execution is scheduled for the end of the freeze period, on 20 August 2026.</span></p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ANALYSE -->
+  <section>
+    <div class="tete">
+      <p class="etiquette"><span class="fr">03 · L'analyse</span><span class="en">03 · The analysis</span></p>
+      <h2><span class="fr">Un site passé par quatre plateformes en trois ans</span><span class="en">A site that went through four platforms in three years</span></h2>
+    </div>
+    <div class="corps">
+      <p><span class="fr">Webflow, puis Podia, puis Squarespace. Chaque déménagement a laissé des traces : des adresses abandonnées, des articles perdus, des redirections jamais faites. En octobre 2025, le trafic organique était en grande partie accidentel : aucune page ne ciblait de requête précise. Quatre sources ont été croisées pour établir l'état réel : l'historique Search Console sur seize mois, un crawl technique complet, le profil de liens entrants et l'inventaire de toutes les adresses. Aucune conclusion n'a été tirée d'une seule d'entre elles.</span><span class="en">Webflow, then Podia, then Squarespace. Each move left traces behind: abandoned addresses, lost articles, redirects never set up. By October 2025 organic traffic was largely accidental: no page targeted a specific query. Four sources were cross-checked to establish the real state: sixteen months of Search Console history, a full technical crawl, the backlink profile, and an inventory of every address. No conclusion was drawn from any single one.</span></p>
+
+      <div class="console">
+        <div class="console-tete">
+          <h3><span class='fr'>Console d'audit</span><span class='en'>Audit console</span></h3>
+          <span class="console-compte">21 <span class='fr'>constats · l'état du site avant la bascule</span><span class='en'>findings · the state of the site before the switch</span></span>
+        </div>
+        <div class="console-legende">
+          <span><i style="background:#C2453C"></i><span class='fr'>Erreur</span><span class='en'>Error</span></span>
+          <span><i style="background:#F5A623"></i><span class='fr'>Avertissement</span><span class='en'>Warning</span></span>
+          <span><i style="background:#7A2F8F"></i><span class='fr'>Constat stratégique</span><span class='en'>Strategic finding</span></span>
+        </div>
+      <details name="console" class="ligne err"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Erreur</span><span class="zone">indexation</span><span class="msg"><span class='fr'>Pages en erreur 404, héritées de trois plateformes</span><span class='en'>Pages returning 404, inherited from three platforms</span></span><span class="val">68</span></summary><div class="detail"><p><span class='fr'>Anciennes adresses Webflow, Podia et Squarespace, de 2023 à 2025. Décision : rediriger uniquement vers un équivalent réel. Les pages sans équivalent restent en 404 et disparaissent en trois à six mois : une redirection de masse vers l'accueil est traitée comme une erreur déguisée, et l'historique est perdu.</span><span class='en'>Old Webflow, Podia and Squarespace addresses, 2023 to 2025. Decision: redirect only where a real equivalent exists. Pages without one stay 404 and drop out within three to six months: a blanket redirect to the homepage is treated as a disguised error, and the history is lost.</span></p><p class="src">Search Console · Indexation</p></div></details>
+      <details name="console" class="ligne avert"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Avert.</span><span class="zone">indexation</span><span class="msg"><span class='fr'>Pages protégées par mot de passe, sans consigne de non-indexation</span><span class='en'>Password-protected pages with no no-index directive</span></span><span class="val">401</span></summary><div class="detail"><p><span class='fr'>Trois pages renvoyaient un refus d'accès tout en restant candidates à l'indexation. Corrigé par une consigne explicite plutôt qu'en laissant le moteur deviner.</span><span class='en'>Three pages returned an access refusal while remaining candidates for indexing. Fixed with an explicit directive rather than letting the engine guess.</span></p><p class="src">Search Console · Indexation</p></div></details>
+      <details name="console" class="ligne avert"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Avert.</span><span class="zone">indexation</span><span class="msg"><span class='fr'>Page incorrecte dans le plan du site</span><span class='en'>Incorrect page in the sitemap</span></span><span class="val">1</span></summary><div class="detail"><p><span class='fr'>Un plan de site qui déclare une page qui n'a rien à y faire envoie le moteur explorer dans le vide, et abîme la confiance qu'il accorde au fichier.</span><span class='en'>A sitemap declaring a page that has no business being there sends the engine crawling into a void, and erodes the trust it places in the file.</span></p><p class="src">SEMrush · 15/07/2026</p></div></details>
+      <details name="console" class="ligne err"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Erreur</span><span class="zone">balisage</span><span class="msg"><span class='fr'>Déclarations de données structurées invalides</span><span class='en'>Invalid structured-data declarations</span></span><span class="val">40</span></summary><div class="detail"><p><span class='fr'>Presque toutes venaient d'un bloc d'établissement injecté automatiquement par la plateforme, vide et non modifiable. Il n'a pas été reconduit sur le nouveau site, où tout le balisage est écrit et validé à la main.</span><span class='en'>Nearly all came from a business block injected automatically by the platform, empty and un-editable. It was not carried over to the new site, where all markup is hand-written and validated.</span></p><p class="src">SEMrush · 15/07/2026</p></div></details>
+      <details name="console" class="ligne err"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Erreur</span><span class="zone">balisage</span><span class="msg"><span class='fr'>Deux blocs déclaraient chacun une FAQ sur la même page</span><span class='en'>Two blocks each declared a FAQ on the same page</span></span><span class="val">&times;2</span></summary><div class="detail"><p><span class='fr'>Une seule déclaration est autorisée par page ; deux se neutralisent. Trouvé en lisant le code source, non signalé par les outils.</span><span class='en'>Only one declaration is allowed per page; two cancel out. Found by reading the source, not flagged by any tool.</span></p><p class="src"><span class='fr'>Audit manuel du code source</span><span class='en'>Manual source audit</span></p></div></details>
+      <details name="console" class="ligne err"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Erreur</span><span class="zone">balisage</span><span class="msg"><span class='fr'>Page déclarant plusieurs adresses canoniques</span><span class='en'>Page declaring several canonical addresses</span></span><span class="val">1</span></summary><div class="detail"><p><span class='fr'>Deux canoniques sur une même page, c'est demander au moteur de choisir. Il choisit, et rarement celle qu'on voulait.</span><span class='en'>Two canonicals on one page means asking the engine to choose. It does, and rarely the one you wanted.</span></p><p class="src">SEMrush · 15/07/2026</p></div></details>
+      <details name="console" class="ligne err"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Erreur</span><span class="zone"><span class='fr'>liens</span><span class='en'>links</span></span><span class="msg"><span class='fr'>Liens internes pointant vers des pages inexistantes</span><span class='en'>Internal links pointing at missing pages</span></span><span class="val">5</span></summary><div class="detail"><p><span class='fr'>Dont une variante accentuée d'une même adresse : <span class='mono'>/blog/diplômes-coach-sportif</span> à côté de <span class='mono'>/blog/diplomes-coach-sportif</span>. Le genre d'erreur qu'aucun outil ne signale comme telle.</span><span class='en'>Including an accented variant of the same address: <span class='mono'>/blog/diplômes-coach-sportif</span> next to <span class='mono'>/blog/diplomes-coach-sportif</span>. The kind of error no tool reports as one.</span></p><p class="src">Broken Link Check · SEMrush</p></div></details>
+      <details name="console" class="ligne avert"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Avert.</span><span class="zone"><span class='fr'>liens</span><span class='en'>links</span></span><span class="msg"><span class='fr'>Liens externes cassés · domaines toxiques désavoués</span><span class='en'>Broken outbound links · toxic domains disavowed</span></span><span class="val">3 · 2</span></summary><div class="detail"><p><span class='fr'>Les deux domaines toxiques ont été désavoués en juin 2026. Le même examen a produit la liste des pages porteuses de liens entrants, celles qu'une migration ne peut pas se permettre de perdre. Certains de ces liens ont trois ans d'ancienneté.</span><span class='en'>The two toxic domains were disavowed in June 2026. The same review produced the list of pages carrying inbound links, the ones a migration cannot afford to lose. Some of those links are three years old.</span></p><p class="src">SEMrush · Search Console · 05/06/2026</p></div></details>
+      <details name="console" class="ligne err"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Erreur</span><span class="zone">performance</span><span class="msg"><span class='fr'>Affichage du contenu principal, sur mobile</span><span class='en'>Largest contentful paint, on mobile</span></span><span class="val">19,5 s</span></summary><div class="detail"><p><span class='fr'>Pour un seuil recommandé à 2,5 secondes. Score de performance : 55 sur mobile, 77 sur ordinateur, avec un premier affichage à 5,4 s et un indice de vitesse à 7,6 s. C'est l'un des motifs directs de la migration.</span><span class='en'>Against a 2.5-second recommended threshold. Performance score: 55 on mobile, 77 on desktop, with a first paint at 5.4 s and a speed index of 7.6 s. One of the direct reasons for migrating.</span></p><p class="src">PageSpeed Insights</p></div></details>
+      <details name="console" class="ligne err"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Erreur</span><span class="zone">performance</span><span class="msg"><span class='fr'>Poids récupérable sur six images seulement</span><span class='en'>Recoverable weight on six images alone</span></span><span class="val">1 700 Kio</span></summary><div class="detail"><p><span class='fr'>Servies à leur taille d'origine, sans redimensionnement ni format moderne. Le fichier d'en-tête à lui seul pesait plus d'un mégaoctet.</span><span class='en'>Served at original size, without resizing or a modern format. The header file alone weighed more than a megabyte.</span></p><p class="src">PageSpeed Insights</p></div></details>
+      <details name="console" class="ligne avert"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Avert.</span><span class="zone"><span class='fr'>plateforme</span><span class='en'>platform</span></span><span class="msg"><span class='fr'>Code non modifiable imposé sur chaque page</span><span class='en'>Un-editable code imposed on every page</span></span><span class="val">~850 Kio</span></summary><div class="detail"><p><span class='fr'>132 Kio de CSS inutilisé, 147 Kio de feuilles de style verrouillées, environ 700 Kio de JavaScript natif jamais appelé et 48 Kio de rustines de compatibilité. Rien de tout cela n'était accessible. C'est le motif de fond de la migration : on ne peut pas optimiser ce qu'on ne peut pas ouvrir.</span><span class='en'>132 KiB of unused CSS, 147 KiB of locked stylesheets, around 700 KiB of native JavaScript never called, and 48 KiB of compatibility shims. None of it was accessible. This is the underlying reason for migrating: you cannot optimise what you cannot open.</span></p><p class="src"><span class='fr'>Audit de code source</span><span class='en'>Source code audit</span></p></div></details>
+      <details name="console" class="ligne avert"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Avert.</span><span class="zone">performance</span><span class="msg"><span class='fr'>Logo servi treize fois plus grand que son affichage</span><span class='en'>Logo served thirteen times larger than displayed</span></span><span class="val">548 → 40 px</span></summary><div class="detail"><p><span class='fr'>Une image de 548 pixels de côté pour un affichage à 40. Au-delà du poids, un écart pareil provoque un décalage visuel au chargement: le lecteur clique à l'endroit où l'élément était il y a une demi-seconde.</span><span class='en'>A 548-pixel image displayed at 40. Beyond the weight, a gap like this causes a layout shift on load: the reader clicks where the element was half a second ago.</span></p><p class="src">PageSpeed Insights</p></div></details>
+      <details name="console" class="ligne avert"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Avert.</span><span class="zone">performance</span><span class="msg"><span class='fr'>Polices externes non préchargées · balise de suivi bloquante</span><span class='en'>External fonts not preloaded · blocking tag manager</span></span><span class="val">~900 ms</span></summary><div class="detail"><p><span class='fr'>Les polices étaient téléchargées depuis un domaine tiers sans préchargement, et le gestionnaire de balises se chargeait avant le contenu. Le visiteur attendait des ressources qui ne lui servaient à rien pour lire la page.</span><span class='en'>Fonts were downloaded from a third-party domain without preloading, and the tag manager loaded before the content. The visitor was waiting on resources that did nothing to help them read the page.</span></p><p class="src">PageSpeed Insights</p></div></details>
+      <details name="console" class="ligne avert"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Avert.</span><span class="zone"><span class='fr'>plateforme</span><span class='en'>platform</span></span><span class="msg"><span class='fr'>Durée de cache navigateur imposée, non réglable</span><span class='en'>Browser cache lifetime imposed, not configurable</span></span><span class="val">1 h</span></summary><div class="detail"><p><span class='fr'>Un an est la valeur recommandée. Le réglage n'était pas accessible: chaque visiteur retéléchargeait tout au bout d'une heure.</span><span class='en'>One year is the recommended value. The setting was not accessible: every visitor re-downloaded everything after an hour.</span></p><p class="src">PageSpeed Insights</p></div></details>
+      <details name="console" class="ligne avert"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Avert.</span><span class="zone"><span class='fr'>accessibilité</span><span class='en'>accessibility</span></span><span class="msg"><span class='fr'>Score d'accessibilité</span><span class='en'>Accessibility score</span></span><span class="val">83 %</span></summary><div class="detail"><p><span class='fr'>Sous le seuil visé de 95 % pour une conformité raisonnable. Contrastes insuffisants et arborescence mal formée : ce qui gêne un lecteur d'écran gêne aussi un robot.</span><span class='en'>Below the 95% target for reasonable conformance. Insufficient contrast and a malformed accessibility tree: what hinders a screen reader also hinders a crawler.</span></p><p class="src"><span class='fr'>Audit WCAG 2.2 AA</span><span class='en'>WCAG 2.2 AA audit</span></p></div></details>
+      <details name="console" class="ligne err"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Erreur</span><span class="zone"><span class='fr'>contenu</span><span class='en'>content</span></span><span class="msg"><span class='fr'>Page performante repositionnée sur une autre requête</span><span class='en'>A performing page repositioned onto another query</span></span><span class="val"><span class='fr'>cannibalisation</span><span class='en'>cannibalisation</span></span></summary><div class="detail"><p><span class='fr'>Mon erreur. Une page qui faisait 12 % de clics a été réécrite pour viser une seconde requête : elle a cessé de performer sur les deux. Correction : contenu d'origine restauré, page dédiée créée pour la seconde requête. Règle posée depuis : on ne repositionne jamais une adresse qui fonctionne.</span><span class='en'>My mistake. A page with a 12% click rate was rewritten to target a second query: it stopped performing on both. Fix: original content restored, a dedicated page created for the second query. Rule since: never reposition a working address.</span></p><p class="src"><span class='fr'>Identifiée par la donnée, pas par un outil</span><span class='en'>Identified by the data, not by a tool</span></p></div></details>
+      <details name="console" class="ligne avert"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Avert.</span><span class="zone"><span class='fr'>contenu</span><span class='en'>content</span></span><span class="msg"><span class='fr'>Pages à très faible ratio texte sur code</span><span class='en'>Pages with a very low text-to-code ratio</span></span><span class="val">39</span></summary><div class="detail"><p><span class='fr'>Conséquence des scripts superflus chargés par la plateforme sur chaque page. Le contenu utile se noyait dans le code, sur les trois quarts du site.</span><span class='en'>A consequence of superfluous scripts loaded by the platform on every page. Useful content drowned in code, across three quarters of the site.</span></p><p class="src">SEMrush · 15/07/2026</p></div></details>
+      <details name="console" class="ligne avert"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Avert.</span><span class="zone"><span class='fr'>contenu</span><span class='en'>content</span></span><span class="msg"><span class='fr'>Couples titre et H1 dupliqués entre pages</span><span class='en'>Duplicate title and H1 pairs across pages</span></span><span class="val">6</span></summary><div class="detail"><p><span class='fr'>Deux pages qui se présentent de la même façon demandent au moteur d'arbitrer entre elles. C'est le premier symptôme d'une architecture qui n'a pas été pensée.</span><span class='en'>Two pages presenting themselves identically ask the engine to arbitrate between them. The first symptom of an architecture that was never designed.</span></p><p class="src">SEMrush · 15/07/2026</p></div></details>
+      <details name="console" class="ligne avert"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Avert.</span><span class="zone"><span class='fr'>contenu</span><span class='en'>content</span></span><span class="msg"><span class='fr'>Titres trop longs · pages sans méta-description</span><span class='en'>Overlong titles · pages with no meta description</span></span><span class="val">7 · 5</span></summary><div class="detail"><p><span class='fr'>Un titre tronqué et une description absente laissent le moteur composer lui-même l'extrait affiché. On abandonne alors la seule phrase que l'internaute lit avant de cliquer.</span><span class='en'>A truncated title and a missing description let the engine compose the snippet itself. You give up the one sentence a reader sees before clicking.</span></p><p class="src">SEMrush · 15/07/2026</p></div></details>
+      <details name="console" class="ligne avert"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Avert.</span><span class="zone"><span class='fr'>mesure</span><span class='en'>measurement</span></span><span class="msg"><span class='fr'>Deux comptes de mesure distincts, site et plateforme</span><span class='en'>Two separate analytics accounts, site and platform</span></span><span class="val">&times;2</span></summary><div class="detail"><p><span class='fr'>Le site et la plateforme de vente comptaient chacun de leur côté, sans se parler. Impossible de suivre un visiteur d'une page ville jusqu'à l'achat, donc impossible de savoir quelle page rapportait vraiment. Unifié avant la bascule, avec le suivi inter-domaines.</span><span class='en'>The site and the sales platform each counted separately, without talking to each other. Impossible to follow a visitor from a city page through to a purchase, so impossible to know which page actually earned anything. Unified before the switch, with cross-domain tracking.</span></p><p class="src"><span class='fr'>Audit analytics · mai 2026</span><span class='en'>Analytics audit · May 2026</span></p></div></details>
+      <details name="console" class="ligne info"><summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 17 12 9 19"/></svg><span class="grav">Constat</span><span class="zone"><span class='fr'>local</span><span class='en'>local</span></span><span class="msg"><span class='fr'>Fiche d'établissement supprimée par le moteur</span><span class='en'>Business listing removed by the engine</span></span><span class="val">Reims</span></summary><div class="detail"><p><span class='fr'>Google a restreint les fiches sans adresse physique, et en a supprimé une. La création de nouvelles est devenue impossible. C'est ce qui a décidé du basculement : transformer une visibilité qu'on ne contrôle pas en pages qu'on possède.</span><span class='en'>Google restricted listings without a physical address and removed one. Creating new ones became impossible. That decided the shift: turning visibility you don't control into pages you own.</span></p><p class="src">Google Business Profile · 2026</p></div></details>
+      </div>
+
+
+      <div class="decision">
+        <p class="etiquette"><svg class="drapeau" viewBox="0 0 24 24" fill="none" stroke="#C2453C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 22V3.5"/><path d="M5 4.5h11l-2.2 3.6L16 11.7H5z" fill="#C2453C" stroke="none"/></svg><span class="fr">La décision</span><span class="en">The decision</span></p>
+        <p class="enonce"><span class="fr">Le motif de la migration n'était pas le confort. La plateforme empêchait de corriger ce que l'audit avait déjà identifié.</span><span class="en">The reason for migrating wasn't comfort. The platform made it impossible to fix what the audit had already found.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO LOCAL -->
+  <section>
+    <div class="tete">
+      <p class="etiquette"><span class="fr">04 · Le SEO local</span><span class="en">04 · Local SEO</span></p>
+      <h2><span class="fr">Ce qui a réellement produit les impressions</span><span class="en">What actually produced the impressions</span></h2>
+    </div>
+    <div class="corps">
+      <p><span class="fr">En amont de la migration, le référencement local a été déployé à petite échelle, comme un test grandeur nature. Le signal ne venait pas d'une intuition : cinq fiches d'établissement locales, ouvertes deux ans plus tôt, avaient déjà mesuré la demande : 15 584 vues et 6 809 recherches, dont 978 sur la seule requête « bpjeps montpellier » et 351 sur « bpjeps aix-en-provence ». C'est ce constat qui a décidé de la création d'un hub national et d'un premier lot de pages par ville, déployé juste avant la bascule et volontairement limité en nombre.</span><span class="en">Ahead of the migration, local SEO was rolled out at small scale, as a live test. The signal didn't come from a hunch: five local business listings, opened two years earlier, had already measured demand: 15,584 views and 6,809 searches, including 978 on the single query “bpjeps montpellier” and 351 on “bpjeps aix-en-provence”. That finding decided the creation of a national hub and a first batch of city pages, deployed just before the switch and deliberately limited in number.</span></p>
+
+      <div class="villes-grille">
+        <div class="ville-c">
+          <div class="ville-plan" aria-hidden="true">
+            <div class="mosa" style="--px:353.6px;--py:146.0px;--cols:2;--rows:2"><img src="assets/i02-542a4cab1e.jpg" alt="" loading="lazy"><img src="assets/i03-82d0e70027.jpg" alt="" loading="lazy"><img src="assets/i04-d6cd19dfb0.jpg" alt="" loading="lazy"><img src="assets/i05-9942b54626.jpg" alt="" loading="lazy"></div>
+            <svg class="ville-pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#4C1D73"/><circle cx="12" cy="9" r="2.7" fill="#fff"/></svg>
+          </div>
+          <div class="ville-bandeau">
+            <span class="ville-nom">Paris</span>
+            <span class="ville-imp">10 917<em><span class="fr">impressions</span><span class="en">impr.</span></em></span>
+          </div>
+        </div>
+        <div class="ville-c">
+          <div class="ville-plan" aria-hidden="true">
+            <div class="mosa" style="--px:269.9px;--py:194.8px;--cols:2;--rows:2"><img src="assets/i06-f9fa466e9d.jpg" alt="" loading="lazy"><img src="assets/i07-31239a0919.jpg" alt="" loading="lazy"><img src="assets/i08-ad9cdf90f3.jpg" alt="" loading="lazy"><img src="assets/i09-ede65c06d2.jpg" alt="" loading="lazy"></div>
+            <svg class="ville-pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#4C1D73"/><circle cx="12" cy="9" r="2.7" fill="#fff"/></svg>
+          </div>
+          <div class="ville-bandeau">
+            <span class="ville-nom">Montpellier</span>
+            <span class="ville-imp">6 273<em><span class="fr">impressions</span><span class="en">impr.</span></em></span>
+          </div>
+        </div>
+        <div class="ville-c">
+          <div class="ville-plan" aria-hidden="true">
+            <div class="mosa" style="--px:386.5px;--py:135.4px;--cols:3;--rows:2"><img src="assets/i10-a947923f8f.jpg" alt="" loading="lazy"><img src="assets/i11-648ee70bb2.jpg" alt="" loading="lazy"><img src="assets/i12-8728df5e92.jpg" alt="" loading="lazy"><img src="assets/i13-6b14e23d85.jpg" alt="" loading="lazy"><img src="assets/i14-063d1a72c9.jpg" alt="" loading="lazy"><img src="assets/i15-a264f3a282.jpg" alt="" loading="lazy"></div>
+            <svg class="ville-pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#4C1D73"/><circle cx="12" cy="9" r="2.7" fill="#fff"/></svg>
+          </div>
+          <div class="ville-bandeau">
+            <span class="ville-nom">Lyon</span>
+            <span class="ville-imp">5 764<em><span class="fr">impressions</span><span class="en">impr.</span></em></span>
+          </div>
+        </div>
+        <div class="ville-c">
+          <div class="ville-plan" aria-hidden="true">
+            <div class="mosa" style="--px:396.3px;--py:313.4px;--cols:3;--rows:2"><img src="assets/i16-d27facd584.jpg" alt="" loading="lazy"><img src="assets/i17-431a062f20.jpg" alt="" loading="lazy"><img src="assets/i18-7f97112a7a.jpg" alt="" loading="lazy"><img src="assets/i19-0e7e8a44b0.png" alt="" loading="lazy"><img src="assets/i20-ec8c35da62.jpg" alt="" loading="lazy"><img src="assets/i21-c4b82aab78.jpg" alt="" loading="lazy"></div>
+            <svg class="ville-pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#4C1D73"/><circle cx="12" cy="9" r="2.7" fill="#fff"/></svg>
+          </div>
+          <div class="ville-bandeau">
+            <span class="ville-nom">Marseille</span>
+            <span class="ville-imp">3 877<em><span class="fr">impressions</span><span class="en">impr.</span></em></span>
+          </div>
+        </div>
+        <div class="ville-c">
+          <div class="ville-plan" aria-hidden="true">
+            <div class="mosa" style="--px:253.4px;--py:357.9px;--cols:2;--rows:2"><img src="assets/i22-a029d45753.jpg" alt="" loading="lazy"><img src="assets/i23-c602f870a1.jpg" alt="" loading="lazy"><img src="assets/i24-da1241907f.jpg" alt="" loading="lazy"><img src="assets/i25-adacfcd56c.jpg" alt="" loading="lazy"></div>
+            <svg class="ville-pin" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#4C1D73"/><circle cx="12" cy="9" r="2.7" fill="#fff"/></svg>
+          </div>
+          <div class="ville-bandeau">
+            <span class="ville-nom">Aix-en-Provence</span>
+            <span class="ville-imp">2 216<em><span class="fr">impressions</span><span class="en">impr.</span></em></span>
+          </div>
+        </div>
+      </div>
+      <p class="villes-credit">Fonds de plan © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a></p>
+
+      <div class="decision">
+        <p class="etiquette"><svg class="drapeau" viewBox="0 0 24 24" fill="none" stroke="#C2453C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 22V3.5"/><path d="M5 4.5h11l-2.2 3.6L16 11.7H5z" fill="#C2453C" stroke="none"/></svg><span class="fr">La décision</span><span class="en">The decision</span></p>
+        <p class="enonce"><span class="fr">Le test a été un franc succès. Cinq fiches d'établissement, ouvertes deux ans plus tôt, avaient mesuré la traction ville par ville avant qu'une seule ligne soit écrite : 15 584 vues et 6 809 recherches locales. Douze pages ont ensuite été créées sur cette base, et elles portent aujourd'hui 31 423 impressions sur trois mois, dont 29 047 pour les cinq premières. Dix-sept villes restent à déployer sur les vingt-neuf du plan : elles sont prêtes, et attendent la fin de la période de gel post-migration.</span><span class="en">The test was a clear success. Five business listings, opened two years earlier, had measured traction city by city before a single line was written: 15,584 views and 6,809 local searches. Twelve pages were then created on that basis, and they now carry 31,423 impressions over three months, 29,047 of them from the first five. Seventeen cities remain to be deployed out of the twenty-nine planned: they are ready, and are waiting for the post-migration freeze to end.</span></p>
+        <p class="enonce"><span class="fr">L'analyse a fait apparaître un second constat : ce sont les pages filles qui portent le trafic, pas la page mère. Sur l'export Search Console de juin 2026, 936 requêtes et 30 195 impressions, les dix-neuf requêtes qui contiennent « coach sportif » totalisent 197 impressions et zéro clic. La page censée fédérer le sujet n'existe pour personne. C'est ce constat qui a déclenché la restructuration en silos.</span><span class="en">The analysis surfaced a second finding: the traffic is carried by the child pages, not the parent. In the June 2026 Search Console export, 936 queries and 30,195 impressions, the nineteen queries containing “coach sportif” total 197 impressions and zero clicks. The page meant to unify the topic exists for no one. That finding is what triggered the silo restructuring.</span></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 02 LA MIGRATION -->
+  <section>
+    <div class="tete">
+      <p class="etiquette"><span class="fr">05 · La migration</span><span class="en">05 · The migration</span></p>
+      <h2><span class="fr">Le protocole, dans l'ordre où il s'est fait</span><span class="en">The protocol, in the order it was carried out</span></h2>
+    </div>
+    <div class="corps">
+      <p class="migration-intro"><span class="fr">Une migration ne casse presque jamais ce qu'on regarde. Elle casse ce qu'on ne regarde pas : une balise canonique restée sur l'ancienne plateforme, une redirection qui en appelle une autre, une consigne de non-indexation oubliée dans un réglage. Rien de tout cela ne se voit à l'écran, et tout cela se paye en positions, plusieurs semaines plus tard, quand il est trop tard pour savoir laquelle des vingt choses changées ce jour-là en est responsable. D'où un protocole écrit avant de commencer, et déroulé dans cet ordre.</span><span class="en">A migration almost never breaks what you are looking at. It breaks what you are not: a canonical tag left pointing at the old platform, a redirect that calls another one, a no-index directive forgotten in a setting. None of it shows on screen, and all of it is paid for in rankings weeks later, once it is too late to know which of the twenty things changed that day caused it. Hence a protocol written before starting, and followed in this order.</span></p>
+      <div class="etapes-cadre">
+        <span class="jauge" aria-hidden="true"></span>
+        <ol class="etapes">
+        <li><div>
+          <h3><span class="fr">La photo de référence</span><span class="en">The reference snapshot</span></h3>
+          <p><span class="fr">Crawl complet du site en place : pour chaque adresse, le titre, la méta-description, le H1, la balise canonique, le code de réponse et le nombre de mots. Puis l'export Search Console sur 16 mois, et la liste des pages porteuses de liens externes.</span><span class="en">Full crawl of the live site: for every address, the title, meta description, H1, canonical tag, status code and word count. Then the 16-month Search Console export, and the list of pages carrying external links.</span></p>
+          <ul class="coches">
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Crawl complet du site en place avec Screaming Frog : adresses, titres, méta-descriptions, H1, canoniques, codes de réponse</span><span class="en">Full crawl of the live site with Screaming Frog: addresses, titles, meta descriptions, H1s, canonicals, response codes</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Export Search Console sur seize mois : pages, requêtes, rapport d'indexation</span><span class="en">Sixteen-month Search Console export: pages, queries, indexing report</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Inventaire de toutes les adresses, y compris celles qui portent des liens entrants</span><span class="en">Inventory of every address, including those carrying inbound links</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Photo conservée telle quelle : c'est elle qui servira de référence après la bascule</span><span class="en">Snapshot kept untouched: it is the reference used after the switch</span></span></li>
+          </ul>
+        </div></li>
+        <li><div>
+          <h3><span class="fr">Les arbitrages</span><span class="en">The trade-offs</span></h3>
+          <p><span class="fr">12 adresses conservées à l'identique, celles qui portaient l'essentiel du trafic. 7 redirigées, faible trafic ou liens cassés. Le reste documenté et assumé.</span><span class="en">12 addresses kept unchanged, the ones carrying most of the traffic. 7 redirected, low traffic or broken links. The rest documented and accepted.</span></p>
+          <ul class="coches">
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Pages qui rankent : adresse conservée à l'identique</span><span class="en">Ranking pages: address kept exactly as is</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Pages à faible trafic ou aux liens cassés : redirigées vers un équivalent réel</span><span class="en">Low-traffic or broken pages: redirected to a real equivalent</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Pages sans équivalent : laissées en 404, choix documenté</span><span class="en">Pages with no equivalent: left as 404, decision documented</span></span></li>
+          </ul>
+        </div></li>
+        <li><div>
+          <h3><span class="fr">Le plan de redirections</span><span class="en">The redirect plan</span></h3>
+          <p><span class="fr">26 redirections permanentes, jamais temporaires. Un seul saut par redirection, aucune chaîne. Aucune redirection groupée vers l'accueil : une page sans équivalent renvoyée à l'accueil est traitée comme une erreur déguisée, et son historique est perdu.</span><span class="en">26 permanent redirects, never temporary. One hop each, no chains. No blanket redirect to the homepage: a page sent there without an equivalent is treated as a disguised error, and its history is lost.</span></p>
+          <ul class="coches">
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Plan construit à partir du crawl, jamais de mémoire</span><span class="en">Plan built from the crawl, never from memory</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Redirections permanentes uniquement, jamais temporaires</span><span class="en">Permanent redirects only, never temporary</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Un seul saut par redirection, aucune chaîne</span><span class="en">One hop per redirect, no chains</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Aucun renvoi groupé vers l'accueil</span><span class="en">No blanket redirect to the homepage</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Plan posé dans Rank Math avant la bascule</span><span class="en">Plan loaded into Rank Math before the switch</span></span></li>
+          </ul>
+        </div></li>
+        <li><div>
+          <h3><span class="fr">Où l'assistance par IA intervient</span><span class="en">Where AI assistance comes in</span></h3>
+          <p><span class="fr">Extraction des titres et méta-descriptions, production des 26 redirections, déploiement. Elle n'a décidé ni quelles adresses méritaient d'être conservées, ni le seuil d'alerte, ni le moment d'arrêter. La migration a été faite avec l'IA. Elle ne lui a pas été confiée.</span><span class="en">Extracting titles and meta descriptions, producing the 26 redirects, deploying. It decided neither which addresses deserved to be kept, nor the alert threshold, nor when to stop. The migration was done with AI. It was not handed over to it.</span></p>
+        </div></li>
+        <li><div>
+          <h3><span class="fr">La parité des pages</span><span class="en">On-page parity</span></h3>
+          <p><span class="fr">Titres et méta-descriptions reproduits à l'identique, jamais régénérés. Balises canoniques repointées : aucune ne devait continuer à désigner l'ancienne plateforme. Liens internes réécrits vers les nouvelles adresses en direct, sans passer par les redirections. Données structurées réimplémentées en entier, textes alternatifs des images conservés.</span><span class="en">Titles and meta descriptions reproduced exactly, never regenerated. Canonical tags repointed: none was allowed to keep naming the old platform. Internal links rewritten to the new addresses directly, not routed through redirects. Structured data fully reimplemented, image alt text preserved.</span></p>
+          <ul class="coches">
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Titres et méta-descriptions recopiés dans Rank Math depuis la photo de référence, jamais régénérés</span><span class="en">Titles and meta descriptions copied into Rank Math from the reference snapshot, never regenerated</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Balises canoniques repointées, aucune ne désigne l'ancienne plateforme</span><span class="en">Canonical tags repointed, none names the old platform</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Liens internes réécrits vers les nouvelles adresses en direct, sans passer par les redirections</span><span class="en">Internal links rewritten straight to the new addresses, not through the redirects</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Données structurées réimplémentées en entier, puis validées au test des résultats enrichis</span><span class="en">Structured data fully re-implemented, then validated with the rich results test</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Textes alternatifs des images conservés</span><span class="en">Image alt text preserved</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Aucune refonte, aucune réécriture sur les pages qui rankent</span><span class="en">No redesign, no rewriting on ranking pages</span></span></li>
+          </ul>
+        </div></li>
+        <li><div>
+          <h3><span class="fr">Le filet, préparé avant d'en avoir besoin</span><span class="en">The safety net, prepared before it was needed</span></h3>
+          <p><span class="fr">Blocage d'indexation retiré puis vérifié dans le code source, pas seulement décoché dans une interface. Durée de vie DNS abaissée en amont pour permettre un retour arrière rapide. Ancienne plateforme laissée active plusieurs semaines : à la fois plan de repli et référence de comparaison. Bascule programmée en période creuse.</span><span class="en">Indexing block removed and then verified in the page source, not merely unticked in an interface. DNS time-to-live lowered beforehand to allow a fast rollback. Old platform left running for several weeks: both a fallback plan and a comparison reference. Switch scheduled in a low season.</span></p>
+          <ul class="coches">
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Sauvegarde complète de la base de données avant la première modification</span><span class="en">Full database backup before the first change</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Blocage d'indexation retiré, puis vérifié dans le code source et pas seulement dans l'interface</span><span class="en">Indexing block removed, then verified in the source and not only in the interface</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Durée de vie DNS abaissée en amont pour permettre un retour arrière rapide</span><span class="en">DNS time-to-live lowered in advance to allow a fast rollback</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Bascule DNS par enregistrement A et non par serveurs de noms : les enregistrements de messagerie restent intacts</span><span class="en">DNS switch by A record rather than name servers: the mail records stay intact</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Ancienne plateforme laissée active : plan de repli et référence de comparaison</span><span class="en">Old platform left running: fallback plan and comparison reference</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Bascule programmée en période creuse</span><span class="en">Switch scheduled in a quiet period</span></span></li>
+          </ul>
+        </div></li>
+        <li><div>
+          <h3><span class="fr">Le contrôle technique d'après</span><span class="en">The technical check afterwards</span></h3>
+          <p><span class="fr">Le 29 juillet, le contrôle de parité : le crawl de départ est rejoué et comparé ligne à ligne avec la photo de référence. 40 pages sur 40 répondent normalement, aucune consigne de non-indexation n'a été oubliée, aucune balise canonique n'est restée sur l'ancienne plateforme, les 8 redirections contrôlées sont exactement celles du plan, et 36 titres sur 40 sont identiques à l'avant, les 4 écarts sont des archives de catégorie, sans enjeu de requête. En parallèle : plan du site resoumis dès le lendemain de la bascule, 45 pages découvertes, et moniteur de 404 laissé actif : il a fait remonter 4 adresses qu’aucun crawl ne pouvait connaître, puisqu’elles n’existaient plus nulle part, redirigées le 2 août.</span><span class="en">On 29 July, the parity check: the initial crawl is re-run and compared line by line with the reference snapshot. 40 pages out of 40 respond normally, no no-index directive was left behind, no canonical tag still points at the old platform, the 8 redirects checked match the plan exactly, and 36 titles out of 40 are identical to before, the 4 differences are category archives, with no query at stake. Alongside: sitemap resubmitted the day after the switch, 45 pages discovered, and the 404 monitor left running: it surfaced 4 addresses no crawl could have known, since they no longer existed anywhere, redirected on 2 August.</span></p>
+          <ul class="coches">
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Certificat de sécurité émis et site servi en HTTPS</span><span class="en">Security certificate issued and site served over HTTPS</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Adresse canonique forcée : sans www vers www, HTTP vers HTTPS</span><span class="en">Canonical address enforced: non-www to www, HTTP to HTTPS</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Toutes les pages retestées en HTTPS réel, sans dépendre du cache DNS local</span><span class="en">Every page retested over real HTTPS, without relying on the local DNS cache</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Aucun contenu mixte, aucune ressource restée en HTTP</span><span class="en">No mixed content, no asset left on HTTP</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">robots.txt, llms.txt et plan du site accessibles et corrects</span><span class="en">robots.txt, llms.txt and sitemap reachable and correct</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Crawl de parité rejoué avec Screaming Frog et comparé ligne à ligne à la photo de référence</span><span class="en">Parity crawl re-run with Screaming Frog and compared line by line with the reference snapshot</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Plan du site resoumis dans Search Console, indexation demandée sur les pages clés</span><span class="en">Sitemap resubmitted in Search Console, indexing requested on the key pages</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Moniteur de 404 laissé actif, redirections oubliées rattrapées ensuite</span><span class="en">404 monitor left running, forgotten redirects caught afterwards</span></span></li>
+            <li class="coche"><svg class="coche-case" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" rx="3.5" fill="var(--vert)" fill-opacity=".12" stroke="var(--vert)" stroke-width="1.4"/><path d="M 3.5 7.5 L 6 10 L 10.5 4.5" fill="none" stroke="var(--vert)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="0"/></svg><span class="coche-lbl"><span class="fr">Suivi Search Console pendant quatre à huit semaines : positions, impressions, erreurs</span><span class="en">Search Console follow-up for four to eight weeks: positions, impressions, errors</span></span></li>
+          </ul>
+        </div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 LIRE LES CHIFFRES -->
+  <section>
+    <div class="tete">
+      <p class="etiquette"><span class="fr">Lire les chiffres</span><span class="en">Reading the numbers</span></p>
+      <h2><span class="fr">Distinguer un vrai problème d'un faux</span><span class="en">Telling a real problem from a false one</span></h2>
+    </div>
+    <div class="corps">
+      <p><span class="fr">Le suivi ne s'arrête pas à la bascule : la Search Console est surveillée pendant les quatre à huit semaines qui suivent. Fin juillet, elle remonte une baisse sur vingt-huit jours : 853 clics contre 1 020 avant la bascule, et une position moyenne passée de 8,1 à 9,0. L'analyse automatisée qui accompagne ce suivi conclut à « un signal technique ou de structure post-migration ». Cette conclusion était fausse, et c'est ce qu'il a fallu établir avant de toucher à quoi que ce soit.</span><span class="en">Monitoring does not stop at the switch: Search Console is watched for the four to eight weeks that follow. In late July it reports a twenty-eight-day decline: 853 clicks against 1,020 before the switch, and an average position that moved from 8.1 to 9.0. The automated analysis that comes with this monitoring concludes there is "a technical or structural post-migration signal". That conclusion was wrong, and establishing so came before touching anything.</span></p>
+
+      <div class="courbes">
+        <div class="courbe">
+          <p class="titre"><span class="fr">Une vraie casse technique</span><span class="en">A real technical break</span></p>
+          <p class="sous"><span class="fr">La chute commence le jour même</span><span class="en">The drop starts on the day itself</span></p>
+          <svg viewBox="0 0 300 130" role="img" aria-label="Courbe en marche d'escalier : plate puis chute brutale au jour de la bascule">
+            <line x1="24" y1="110" x2="290" y2="110" stroke="#CFC8E6" stroke-width="1"/>
+            <line x1="24" y1="18" x2="24" y2="110" stroke="#CFC8E6" stroke-width="1"/>
+            <line x1="185" y1="14" x2="185" y2="110" stroke="#7A2F8F" stroke-width="1.5" stroke-dasharray="4 4" opacity=".8"/>
+            <text x="185" y="9" fill="#7A2F8F" font-size="8.5" font-family="ui-monospace,monospace" text-anchor="middle" font-weight="700">jour J</text>
+            <path d="M24 38 L60 36 L100 39 L140 37 L185 38 L185 88 L225 90 L265 89 L288 90" fill="none" stroke="#C2453C" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+            <circle cx="185" cy="38" r="3.4" fill="#C2453C"/><circle cx="185" cy="88" r="3.4" fill="#C2453C"/>
+          </svg>
+          <p class="verdict ko"><span class="fr">Marche d'escalier : c'est la migration</span><span class="en">A step down: the migration caused it</span></p>
+        </div>
+        <div class="courbe">
+          <p class="titre"><span class="fr">Ce qui s'est réellement passé</span><span class="en">What actually happened</span></p>
+          <p class="sous"><span class="fr">La baisse a démarré huit jours plus tôt</span><span class="en">The decline started eight days earlier</span></p>
+          <svg viewBox="0 0 300 130" role="img" aria-label="Courbe en pente : la baisse démarre huit jours avant la bascule et se poursuit sans rupture">
+            <line x1="24" y1="110" x2="290" y2="110" stroke="#CFC8E6" stroke-width="1"/>
+            <line x1="24" y1="18" x2="24" y2="110" stroke="#CFC8E6" stroke-width="1"/>
+            <line x1="185" y1="14" x2="185" y2="110" stroke="#7A2F8F" stroke-width="1.5" stroke-dasharray="4 4" opacity=".8"/>
+            <text x="185" y="9" fill="#7A2F8F" font-size="8.5" font-family="ui-monospace,monospace" text-anchor="middle" font-weight="700">jour J</text>
+            <line x1="131" y1="20" x2="131" y2="110" stroke="#8C85A6" stroke-width="1.2" stroke-dasharray="3 3" opacity=".7"/>
+            <text x="131" y="9" fill="#6B6485" font-size="8.5" font-family="ui-monospace,monospace" text-anchor="middle" font-weight="700">J−8</text>
+            <path d="M24 36 L60 35 L100 37 L131 38 L160 48 L185 57 L225 70 L265 79 L288 84" fill="none" stroke="#2F7D5B" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+            <circle cx="131" cy="38" r="3.4" fill="#2F7D5B"/>
+          </svg>
+          <p class="verdict ok"><span class="fr">Pente continue : c'est la saison</span><span class="en">A continuous slope: it's seasonal</span></p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <details name="faq-chiffres">
+          <summary><svg class="faq-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 7 9.5 13.5 13.5 9.5 21 17"/><polyline points="21 11 21 17 15 17"/></svg><span class="faq-q"><span class="fr">Une chute a été détectée après la bascule. Est-ce que c'est grave ?</span><span class="en">A drop was detected after the switch. Is it serious?</span></span><span class="faq-n">01</span><svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="faq-r">
+          <p><span class="fr">Non, et la date le prouve. La baisse démarre vers le 11 juillet. La bascule est du 19. Huit jours d'écart.</span><span class="en">No, and the date proves it. The decline starts around 11 July. The switch was on the 19th. Eight days apart.</span></p>
+          <p><span class="fr">Une vraie casse technique produit une marche d'escalier le jour même, pas une pente entamée une semaine plus tôt. La forme de la courbe est un diagnostic à elle seule.</span><span class="en">A genuine technical break produces a step down on the day itself, not a slope that began a week earlier. The shape of the curve is a diagnosis in itself.</span></p>
+          </div>
+        </details>
+        <details name="faq-chiffres">
+          <summary><svg class="faq-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="17" rx="2.5"/><line x1="3" y1="9.5" x2="21" y2="9.5"/><line x1="8" y1="2.5" x2="8" y2="6.5"/><line x1="16" y1="2.5" x2="16" y2="6.5"/></svg><span class="faq-q"><span class="fr">Qu'est-ce qui permet d'affirmer que c'est saisonnier ?</span><span class="en">What makes it possible to say this is seasonal?</span></span><span class="faq-n">02</span><svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="faq-r">
+          <p><span class="fr">Un indice qui ne ment pas : les impressions baissent aussi, de 1 900 à 1 200 par jour. Si le classement était en cause, elles se maintiendraient et seuls les clics tomberaient.</span><span class="en">A signal that doesn't lie: impressions fall too, from 1,900 to 1,200 a day. If ranking were the cause, they would hold and only clicks would drop.</span></p>
+          <p><span class="fr">Les deux qui baissent ensemble désignent la demande, pas la position. Et le métier est cyclique : en juillet, les examens sont passés et les vacances ont commencé.</span><span class="en">Both falling together points to demand, not position. And the business is cyclical: by July, exams are over and the holidays have started.</span></p>
+          </div>
+        </details>
+        <details name="faq-chiffres">
+          <summary><svg class="faq-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="15" y1="6" x2="15" y2="18"/><circle cx="15" cy="12" r="2.6"/></svg><span class="faq-q"><span class="fr">À partir de quel moment une intervention se justifie-t-elle ?</span><span class="en">At what point does an intervention become justified?</span></span><span class="faq-n">03</span><svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="faq-r">
+          <p><span class="fr">À partir d'un seuil fixé avant de regarder les chiffres : −10 % sur trente jours, contre une position de référence de 8,6 relevée la veille de la bascule.</span><span class="en">At a threshold set before looking at any numbers: −10% over thirty days, against a reference position of 8.6 recorded the day before the switch.</span></p>
+          <p><span class="fr">Mesure du 4 au 31 juillet : 9,3, soit −8 %. Sous le seuil, donc aucune intervention. Un seuil décidé après coup n'est pas un seuil, c'est une justification.</span><span class="en">Measured 4 to 31 July: 9.3, i.e. −8%. Below the threshold, so no intervention. A threshold decided afterwards isn't a threshold, it's a justification.</span></p>
+          </div>
+        </details>
+        <details name="faq-chiffres">
+          <summary><svg class="faq-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="20" x2="4" y2="11"/><line x1="10" y1="20" x2="10" y2="4"/><line x1="16" y1="20" x2="16" y2="14"/><line x1="22" y1="20" x2="22" y2="8"/></svg><span class="faq-q"><span class="fr">Que vaut la position moyenne comme indicateur ?</span><span class="en">What is average position worth as an indicator?</span></span><span class="faq-n">04</span><svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="faq-r">
+          <p><span class="fr">Peu de chose, prise seule. Elle agrège plusieurs centaines de requêtes : elle mélange celles que le site domine et celles où il apparaît en quatrième page.</span><span class="en">Little, on its own. It aggregates several hundred queries: it mixes the ones the site dominates with the ones where it shows up on page four.</span></p>
+          <p><span class="fr">Sur les requêtes de cœur de métier, le site est en première position, et sur certaines, cité deux fois dans les cinq premiers résultats. Une moyenne ne se lit jamais seule.</span><span class="en">On core queries the site ranks first, and on some it appears twice in the top five results. An average is never read on its own.</span></p>
+          </div>
+        </details>
+        <details name="faq-chiffres">
+          <summary><svg class="faq-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/></svg><span class="faq-q"><span class="fr">Y a-t-il des choses à corriger ?</span><span class="en">Was there anything to fix?</span></span><span class="faq-n">05</span><svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <div class="faq-r">
+          <p><span class="fr">Oui, mais pas là où l'alerte les désignait. L'analyse a mis au jour le vrai gisement : 36 972 impressions pour 2,3 % de clics. Sur la majorité des meilleures requêtes, aucune page dédiée n'existe : c'est l'accueil ou un article générique qui remonte, et l'internaute ne reconnaît pas sa réponse dans le titre.</span><span class="en">Yes, but not where the alert pointed. The analysis surfaced the real opportunity: 36,972 impressions for a 2.3% click rate. For most top queries no dedicated page exists: the homepage or a generic article surfaces instead, and readers don't recognise their answer in the title.</span></p>
+          <p><span class="fr">L'effort a donc été réaffecté à la réécriture des titres et au découpage des pages existantes, plutôt qu'à une correction technique qui n'avait pas lieu d'être. La conclusion n'a pas été « tout va bien », mais « le problème n'est pas là, il est ici ».</span><span class="en">Effort was therefore redirected to rewriting titles and splitting existing pages, rather than to a technical fix that had no reason to exist. The conclusion wasn't « everything is fine », it was « the problem isn't there, it's here ».</span></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 APRÈS LA BASCULE -->
+  <section>
+    <div class="tete">
+      <p class="etiquette"><span class="fr">Après la bascule</span><span class="en">After the switch</span></p>
+      <h2><span class="fr">Ce qu'on s'autorise pendant une période de gel</span><span class="en">What is allowed during a freeze period</span></h2>
+    </div>
+    <div class="corps">
+      <p><span class="fr">Une migration ne se juge pas le jour même mais quatre à six semaines après. Pendant cette fenêtre, l'existant ne se touche pas : ni les adresses, ni le maillage, ni les contenus qui rankent. Restent les chantiers techniques globaux, réversibles, qui ne modifient aucune de ces trois choses. Aucun contenu n'a été retiré et aucune page n'a été réécrite : tout ce qui a été fait s'ajoute par-dessus l'existant.</span><span class="en">A migration isn't judged on the day but four to six weeks later. During that window the existing site is left alone: not the addresses, not the internal linking, not the ranking content. What remains are global, reversible technical workstreams that change none of those three. No content was removed and no page was rewritten: everything done here is added on top of what was already there.</span></p>
+
+      <div class="grille2">
+        <div class="carte">
+          <div class="carte-bandeau"><img src="assets/i26-44311985be.jpg" alt="Code source affiche a l'ecran, balises et attributs colores" loading="lazy"></div>
+          <h3><span class="fr">Balisage en entités</span><span class="en">Entity markup</span></h3>
+          <p><span class="fr">61 déclarations sur 16 types, l'organisation reliée à ses profils externes, sa date de fondation et son auteur. Les 12 pages villes déclarées en tant que lieux.</span><span class="en">61 declarations across 16 types, the organisation linked to its external profiles, founding date and author. The 12 city pages declared as places.</span></p>
+        </div>
+        <div class="carte">
+          <div class="carte-bandeau"><img src="assets/i27-910ac2f119.jpg" alt="Fil d'articles sur une tablette, chaque billet avec sa vignette d'auteur et sa date" loading="lazy"></div>
+          <h3><span class="fr">Signaux d'expertise</span><span class="en">Expertise signals</span></h3>
+          <p><span class="fr">Une vraie page auteur, reliée depuis chaque contenu, plutôt qu'une signature décorative. Les diplômes et l'autorité externe rendus explicites et vérifiables.</span><span class="en">A genuine author page, linked from every piece of content, rather than a decorative byline. Qualifications and external authority made explicit and verifiable.</span></p>
+        </div>
+        <div class="carte">
+          <div class="carte-bandeau"><img src="assets/i28-667b77d5ff.jpg" alt="Calendrier mural, une date entouree et epinglee" loading="lazy"></div>
+          <h3><span class="fr">Fraîcheur du contenu</span><span class="en">Content freshness</span></h3>
+          <p><span class="fr">Les dates de mise à jour vérifiées une par une, les références réglementaires relues sur le texte officiel. Onze pages corrigées, deux laissées volontairement à leur ancienne date.</span><span class="en">Update dates checked one by one, regulatory references re-read against the official text. Eleven pages corrected, two deliberately left on their old date.</span></p>
+        </div>
+        <div class="carte">
+          <div class="carte-bandeau"><img src="assets/i29-a5de154e09.jpg" alt="Maquettes de pages web dessinees a l'aquarelle, blocs et colonnes" loading="lazy"></div>
+          <h3><span class="fr">La forme, pas le fond</span><span class="en">The form, not the substance</span></h3>
+          <p><span class="fr">Un sommaire, un découpage en sections qui se suffisent à elles-mêmes, des encarts et des questions fréquentes. Aucun texte réécrit, aucune adresse déplacée.</span><span class="en">A table of contents, a split into sections that stand on their own, callouts and frequently asked questions. No text rewritten, no address moved.</span></p>
+        </div>
+      </div>
+
+            <div class="decision">
+        <p class="etiquette"><svg class="drapeau" viewBox="0 0 24 24" fill="none" stroke="#2F7D5B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 22V3.5"/><path d="M5 4.5h11l-2.2 3.6L16 11.7H5z" fill="#2F7D5B" stroke="none"/></svg><span class="fr">Le résultat</span><span class="en">The result</span></p>
+        <p class="enonce"><span class="fr">Le moteur a commencé à découper les articles, section par section. Dans le relevé, vingt-six lignes ne désignent pas des pages mais des sections d'articles : l'adresse pointe à l'intérieur du texte. Un même article y apparaît huit fois : lui-même, puis chacune de ses sept sections, avec ses propres impressions et sa propre position.</span><span class="en">The engine started slicing the articles section by section. In the reading, twenty-six rows point not to pages but to sections inside articles: the address targets a place within the text. One article appears eight times: itself, then each of its seven sections, with its own impressions and its own position.</span></p>
+        <p class="enonce"><span class="fr">Ce n'est pas un réglage qu'on active. C'est la conséquence d'un sommaire et d'un découpage où chaque section se suffit à elle-même. Le moteur cesse de renvoyer vers l'article : il renvoie vers le passage.</span><span class="en">This isn't a setting you switch on. It follows from a table of contents and a structure where each section stands on its own. The engine stops pointing at the article: it points at the passage.</span></p>
+        <p class="enonce"><span class="fr">Ce que ça vaut pour les moteurs d'IA: ils ne citent pas des pages, ils citent des passages. Une structure que Google sait découper est une structure qu'un modèle sait extraire. Ça ne prouve pas que les citations augmentent, ça prouve que la condition d'entrée est remplie.</span><span class="en">What this is worth for AI engines: they don't cite pages, they cite passages. A structure Google can slice is a structure a model can extract. It doesn't prove citations increase, it proves the entry condition is met.</span></p>
+      </div>
+
+      <div>
+        <div class="fenetre">
+          <div class="chrome"><span class="pt"></span><span class="pt"></span><span class="pt"></span><span class="adresse">smart-bpjeps.com/blog/fin-bpjeps-af</span></div>
+          <div class="vue"><img src="assets/i30-621407b42c.jpg" alt="Article de blog complet: dates de publication et de mise à jour, sommaire, sections structurées, encarts et questions fréquentes" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- L'IA COMME ASSISTANT -->
+  <section>
+    <div class="tete">
+      <p class="etiquette"><span class="fr">L'IA comme assistant</span><span class="en">AI as an assistant</span></p>
+      <h2><span class="fr">Le métier ne change pas. La vitesse et le périmètre, oui.</span><span class="en">The craft doesn't change. The speed and the scope do.</span></h2>
+    </div>
+    <div class="corps">
+      <p><span class="fr">Les audits ont été faits à la main : crawls lancés, exports dépouillés, code source lu, textes réglementaires ouverts à la source. Les données ont ensuite été co-analysées avec l'IA : elle a proposé ses angles, ils ont été discutés et croisés avec mes connaissances du métier et du terrain, puis les décisions ont été prises. Le déploiement n'est venu qu'après. C'est ce qu'on apporte en entrée qui fait la valeur de ce qui sort : des connaissances plutôt qu'une consigne. C'est de là que viennent le gain de vitesse, l'élargissement du périmètre et la qualité de l'exécution, et c'est exactement ce qui manque quand on se contente de demander à une IA de faire le travail.</span><span class="en">The audits were done by hand: crawls run, exports worked through, source code read, regulatory texts opened at the source. The data were then co-analysed with the AI: it offered its angles, they were discussed and cross-checked against what I know of the craft and the field, and the decisions followed. Deployment came only after that. What you bring in is what determines the value of what comes out: knowledge rather than an instruction. That is where the gain in speed, the wider scope and the quality of execution come from, and it is exactly what is missing when you simply ask an AI to do the work.</span></p>
+
+      <div class="aa-vue">
+        <img src="assets/i31-60f7d0e3a4.jpg" alt="Page d'accueil de Smart BPJEPS">
+        <div class="aa-gris" aria-hidden="true"><img src="assets/i31-60f7d0e3a4.jpg" alt=""></div>
+        <div class="aa-voile" aria-hidden="true"></div>
+        <div class="aa-rangee">
+          <span class="aa-v aa-g">23 %</span>
+          <span class="aa-vs">vs</span>
+          <span class="aa-v aa-d">100 %</span>
+          <span class="aa-s aa-sg"><span class="fr">des sites retrouvent leur trafic<br>sans assistance de l'IA</span><span class="en">of sites regain their traffic<br>without AI assistance</span></span>
+          <span class="aa-s aa-sd"><span class="fr">du trafic organique conservé<br>avec l'assistance de l'IA</span><span class="en">of organic traffic kept<br>with AI assistance</span></span>
+        </div>
+      </div>
+      <p class="aa-src"><span class="fr">23 % des migrations retrouvent leur trafic organique en moins de quatre-vingt-dix jours, sur 1 052 migrations de domaine mesurées : médiane de reprise à 304 jours, et 13,9 % sans aucune reprise après trois ans (<a href="https://salt.agency/blog/27-of-domain-migrations-recover-in-90-days/" target="_blank" rel="noopener">étude du 26 juin 2026</a>). Sur les <a href="https://www.searchenginejournal.com/study-how-long-should-seo-migration-take/492050/" target="_blank" rel="noopener">892 migrations du relevé précédent</a>, la reprise la plus rapide jamais observée est de 19 jours : aucune migration mesurée n'est repartie sans rien perdre. Ici, il n'y a rien eu à rattraper.</span><span class="en">23% of migrations regain their organic traffic in under ninety days, across 1,052 domain migrations measured: median recovery at 304 days, and 13.9% with no recovery at all after three years (<a href="https://salt.agency/blog/27-of-domain-migrations-recover-in-90-days/" target="_blank" rel="noopener">study of 26 June 2026</a>). Across the <a href="https://www.searchenginejournal.com/study-how-long-should-seo-migration-take/492050/" target="_blank" rel="noopener">892 migrations of the previous dataset</a>, the fastest recovery ever observed is 19 days: no measured migration came through without losing anything. Here, there was nothing to make up.</span></p>
+
+      <div class="cmp-env">
+        <table class="cmp">
+          <thead>
+            <tr>
+              <th scope="col"><span class="fr">Ce qui change</span><span class="en">What changes</span></th>
+              <th scope="col" class="sans"><span class="fr">Sans assistance de l'IA</span><span class="en">Without AI assistance</span></th>
+              <th scope="col" class="avec"><span class="fr">Avec assistance de l'IA</span><span class="en">With AI assistance</span></th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row"><span class="lig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8.5"/><polyline points="12 8.5 12 13 15 15"/><line x1="9" y1="2" x2="15" y2="2"/></svg><span class="fr">Le temps du chantier</span><span class="en">Time on the clock</span></span></th>
+            <td><span class="cmp-lbl sans"><span class="fr">Sans assistance de l'IA</span><span class="en">Without AI assistance</span></span><span class="fr">Entre l'audit, le plan et la bascule, les phases se suivent. Selon la taille du site, l'ensemble du processus peut aller jusqu'à vingt semaines.</span><span class="en">Between the audit, the plan and the switch, the phases follow one another. Depending on the size of the site, the whole process can run up to twenty weeks.</span></td>
+            <td class="avec"><span class="cmp-lbl avec"><span class="fr">Avec assistance de l'IA</span><span class="en">With AI assistance</span></span><span class="fr">Trois semaines en tout, de bout en bout : de l'audit au crawl de référence, puis à la mise en ligne.</span><span class="en">Three weeks in all, end to end: from the audit to the reference crawl, then to going live.</span></td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="lig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2.5 22 8 12 13.5 2 8"/><polyline points="2 12.5 12 18 22 12.5"/><polyline points="2 17 12 22.5 22 17"/></svg><span class="fr">Périmètre du chantier</span><span class="en">Scope of the work</span></span></th>
+            <td><span class="cmp-lbl sans"><span class="fr">Sans assistance de l'IA</span><span class="en">Without AI assistance</span></span><span class="fr">Le référencement et le développement sont généralement gérés séparément.</span><span class="en">SEO and development are usually handled separately.</span></td>
+            <td class="avec"><span class="cmp-lbl avec"><span class="fr">Avec assistance de l'IA</span><span class="en">With AI assistance</span></span><span class="fr">Les corrections se déploient très vite, et la migration comme la restructuration s'appliquent directement côté développement.</span><span class="en">Fixes are deployed very fast, and both the migration and the restructuring are applied directly on the development side.</span></td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="lig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 20 6v6c0 4.6-3.2 8.6-8 9.5-4.8-.9-8-4.9-8-9.5V6Z"/><polyline points="8.6 12 11 14.4 15.6 9.8"/></svg><span class="fr">Trouver les failles</span><span class="en">Finding the flaws</span></span></th>
+            <td><span class="cmp-lbl sans"><span class="fr">Sans assistance de l'IA</span><span class="en">Without AI assistance</span></span><span class="fr">Extraire toutes les données et les lire prend beaucoup de temps : il faut les réorganiser, les mettre en tableaux, en faire des rapports. Le temps disponible finit par décider de ce qu'on regarde et de ce qu'on laisse. Ce qu'on ne regarde pas reste invisible, et fait parfois prendre de mauvaises décisions.</span><span class="en">Pulling all the data out and reading it takes a long time: it has to be reorganised, put into tables, turned into reports. The time available ends up deciding what gets looked at and what gets left. What is not looked at stays invisible, and sometimes leads to the wrong call.</span></td>
+            <td class="avec"><span class="cmp-lbl avec"><span class="fr">Avec assistance de l'IA</span><span class="en">With AI assistance</span></span><span class="fr">Un balayage complet : on donne toute la donnée et on obtient un premier aperçu. Ensuite, ce sont les connaissances du métier qui décident des directions, et qui font descendre de plus en plus profond pour faire parler les données.</span><span class="en">A full sweep: you hand over all the data and get a first overview. From there it is craft knowledge that decides which directions to take, and that digs deeper and deeper to make the data talk.</span></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="stack">
+        <span class="stack-i"><img src="assets/i32-eec203c4d8.svg" alt="" loading="lazy">Cursor</span><span class="stack-i"><img src="assets/i33-c7bffbb55f.svg" alt="" loading="lazy">Claude Code</span><span class="stack-i"><img src="assets/i34-a5e66e9e87.png" alt="" loading="lazy">Wispr Flow</span><span class="stack-i"><img src="assets/i35-bfc8b98559.jpg" alt="" loading="lazy">Local</span><span class="stack-i"><img src="assets/i36-c6985fdca3.jpg" alt="" loading="lazy">WP-CLI</span><span class="stack-i"><img src="assets/i37-4b02307c30.svg" alt="" loading="lazy">GitHub</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 VISIBILITÉ IA -->
+  <section>
+    <div class="tete">
+      <p class="etiquette"><span class="fr">06 · Visibilité dans les LLM</span><span class="en">06 · Visibility in LLMs</span></p>
+      <h2><span class="fr">Le SEO vise le trafic. Le GEO vise la mention.</span><span class="en">SEO aims at traffic. GEO aims at the mention.</span></h2>
+    </div>
+    <div class="corps">
+      <p><span class="fr">En SEO, l'objectif est le trafic : une position, un clic, une visite. Dans une réponse d'IA, il n'y a pas de clic à gagner : l'objectif est d'être la source citée. C'est un autre objet, et il demande un autre instrument, parce qu'une réponse d'IA n'est pas déterministe : posée deux fois, la même question ne donne pas le même résultat. Le principe retenu est simple : on échantillonne. La même question est reposée à intervalle régulier, et c'est la fréquence, assortie d'une marge d'erreur, qui rend le résultat lisible.</span><span class="en">In SEO the objective is traffic: a position, a click, a visit. In an AI answer there is no click to win: the objective is to be the cited source. That is a different object, and it needs a different instrument, because an AI answer is not deterministic: asked twice, the same question does not return the same result. The principle is simple: you sample. The same question is asked again at regular intervals, and it is the frequency, paired with a margin of error, that makes the result readable.</span></p>
+      <p><span class="fr">L'inventaire des questions se fait avec les outils du métier : le bloc « Autres questions posées » de Google, consulté en navigation privée, les données de Semrush et d'Ahrefs, AlsoAsked pour étendre l'arborescence, et les échanges avec les clients.</span><span class="en">The inventory of questions is built with the tools of the trade: Google's "People also ask" block, consulted in private browsing, Semrush and Ahrefs data, AlsoAsked to extend the tree, and conversations with clients.</span></p>
+      <p><span class="fr">Le point de départ est un zéro mesuré : à l’audit manuel de départ, aucune des questions posées ne faisait ressortir la marque, les robots d’IA étant bloqués par l’ancienne plateforme. Tout ce qui précède y concourt : la structure des pages, le balisage en entités, le découpage en sections qui se suffisent à elles-mêmes. Aujourd'hui, 59 % des réponses citent la marque, et le taux reste stable.</span><span class="en">The starting point is a measured zero: in the initial manual audit, none of the questions asked surfaced the brand, the AI crawlers being blocked by the old platform. Everything above feeds into it: the structure of the pages, the entity markup, the split into sections that stand on their own. Today, 59% of answers cite the brand, and the rate stays stable.</span></p>
+      <div class="chiffres une">
+        <div class="chiffre">
+        <div class="chiffre-tete"><svg viewBox="0 0 24 24" fill="#2F7D5B" aria-hidden="true"><path d="M12 0c.6 6 5.4 10.8 12 12-6.6 1.2-11.4 6-12 12-.6-6-5.4-10.8-12-12C6.6 10.8 11.4 6 12 0z"/></svg><span class="k"><span class="fr">Réponses d'IA qui citent la marque</span><span class="en">AI answers citing the brand</span></span></div>
+        <div class="chiffre-bas">
+          <div class="chiffre-gauche">
+            <span class="d"><span class="fr">de 0 à 59 %</span><span class="en">from 0 to 59%</span></span>
+            <span class="v">59 %</span>
+          </div>
+          <svg class="courbette" viewBox="0 0 120 40" role="img" aria-label="Le taux de citation part de zéro, les robots d'IA étant bloqués avant la bascule, et atteint 59 pour cent">
+            <path d="M4 34 L40 30 L76 20 L116 8" fill="none" stroke="#2F7D5B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 34 L40 30 L76 20 L116 8 L116 40 L4 40 Z" fill="#2F7D5B" opacity=".1"/>
+            <circle cx="116" cy="8" r="3" fill="#2F7D5B"/>
+          </svg>
+        </div>
+        <span class="s"><span class="fr">Claude · ChatGPT · Perplexity · AI&nbsp;Overviews · 10/08/2026</span><span class="en">Claude · ChatGPT · Perplexity · AI&nbsp;Overviews · 10/08/2026</span></span>
+      </div>
+      </div>
+      <figure class="vitrine">
+        <img src="assets/i38-1fce577d18.jpg" alt="Tableau de bord du tracker GEO : taux de citation, part de voix et matrice des questions par moteur" loading="lazy">
+      </figure>
+      <p class="cta-centre"><a class="depot" href="https://github.com/marionbuilds/iametre" target="_blank" rel="noopener"><img src="assets/i39-e94faba868.svg" alt="" width="17" height="17"><span class="fr">Voir sur GitHub</span><span class="en">View on GitHub</span></a></p>
+    </div>
+  </section>
+
+  <!-- 07 PERFORMANCES -->
+  <section>
+    <div class="tete">
+      <p class="etiquette"><span class="fr">07 · Les performances</span><span class="en">07 · Performance</span></p>
+      <h2><span class="fr">De 19,5 secondes à 1,3 seconde sur mobile</span><span class="en">From 19.5 seconds to 1.3 seconds on mobile</span></h2>
+    </div>
+    <div class="corps">
+      <p><span class="fr">L'audit relevait 19,5 secondes pour l'affichage du contenu principal sur mobile. Le détail en était connu, et aucune de ses lignes n'était corrigeable : environ 850 Kio de code imposés sur chaque page par la plateforme, une durée de cache navigateur non réglable, des polices externes non préchargées, un logo servi treize fois plus grand que son affichage, et 1 700 Kio récupérables sur six images seulement.</span><span class="en">The audit measured 19.5 seconds to render the main content on mobile. The breakdown was known, and not one of its lines could be fixed: around 850 KiB of code forced onto every page by the platform, a browser cache duration that could not be set, external fonts not preloaded, a logo served thirteen times larger than its display size, and 1,700 KiB recoverable on six images alone.</span></p>
+      <p><span class="fr">Le relevé mobile de juin 2026, le jour de l'optimisation de l'accueil, donne 55 en performances sur mobile et 77 sur ordinateur. Deux jours après la bascule, la même page mesure 100, et la navigation agentique est validée 3 sur 3. Le relevé du 12 août 2026 donne 98 en performances, 96 en accessibilité, 100 en bonnes pratiques et 100 en SEO, avec 1,3 seconde d'affichage du contenu principal, 10 millisecondes de blocage et 0,001 de décalage visuel, en émulation Moto G Power sur 4G lente.</span><span class="en">The mobile reading of June 2026, on the day the homepage was optimised, gives 55 for performance on mobile and 77 on desktop. Two days after the switch, the same page measures 100, and agentic navigation passes 3 out of 3. The reading of 12 August 2026 gives 98 for performance, 96 for accessibility, 100 for best practices and 100 for SEO, with 1.3 seconds to render the main content, 10 milliseconds of blocking time and 0.001 of layout shift, emulating a Moto G Power on slow 4G.</span></p>
+      <p><span class="fr">Le site tournait sur Squarespace, un système de blocs empilés où l'essentiel du rendu reste hors de portée : le code injecté sur chaque page ne se retire pas, la durée de cache ne se règle pas, les polices ne se préchargent pas. Passer sur un stack entièrement maîtrisé a rendu la main sur les trois niveaux à la fois, le développement, le serveur et le référencement, et c'est ce qui a permis de traiter ces lignes une par une.</span><span class="en">The site ran on Squarespace, a system of stacked blocks where most of the rendering stays out of reach: the code injected into every page cannot be removed, the cache duration cannot be set, the fonts cannot be preloaded. Moving to a fully owned stack gave back control on all three levels at once, development, server and SEO, and that is what made it possible to work through those lines one by one.</span></p>
+      <p><span class="fr">Le choix d'un stack reste une préférence, liée à la façon dont on veut tenir son activité. Ce qui se discute, ce sont les résultats.</span><span class="en">The choice of a stack remains a preference, tied to how you want to run your business. What is up for discussion is the results.</span></p>
+      <hr class="filet-perf">
+      <div class="speed-duo">
+        <figure><div class="cadre"><img src="assets/i40-a710ebf171.webp" alt="Relevé PageSpeed mobile avant optimisation : 55 en performances" loading="lazy"></div><figcaption><span class="fr">Avant l'optimisation, sur mobile</span><span class="en">Before optimisation, on mobile</span></figcaption></figure>
+        <figure><div class="cadre"><img src="assets/i41-d116a4cefd.webp" alt="Relevé PageSpeed ordinateur avant optimisation : 77 en performances" loading="lazy"></div><figcaption><span class="fr">Avant l'optimisation, sur ordinateur</span><span class="en">Before optimisation, on desktop</span></figcaption></figure>
+      </div>
+      <figure class="speed-total"><div class="cadre"><img src="assets/i42-5cf5ab5cca.png" alt="Relevé PageSpeed après optimisation : performances 100, accessibilité 96, bonnes pratiques 100, SEO 100, navigation agentique 3 sur 3" loading="lazy"></div><figcaption><span class="fr">Après l’optimisation</span><span class="en">After optimisation</span></figcaption></figure>
+    </div>
+  </section>
+
+  <!-- 08 LA SUITE -->
+  <section>
+    <div class="tete">
+      <p class="etiquette"><span class="fr">08 · Ce qui vient ensuite</span><span class="en">08 · What comes next</span></p>
+      <h2><span class="fr">La restructuration en silos</span><span class="en">Restructuring into silos</span></h2>
+    </div>
+    <div class="corps">
+      <p><span class="fr">La migration a rendu le site modifiable. La restructuration répond à une autre question : non plus « qu'est-ce que je ne dois pas perdre » mais « qu'est-ce que je dois changer ». Le plan est arrêté et daté : l'exécution est calée sur la sortie de la période de gel, au 20 août 2026.</span><span class="en">The migration made the site editable. Restructuring answers a different question: no longer "what must I not lose" but "what must I change". The plan is settled and dated: execution is scheduled for the end of the freeze period, on 20 August 2026.</span></p>
+      <ul class="rangs">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.2" y1="16.2" x2="21" y2="21"/></svg><span><span class="fr">936 requêtes réelles analysées : le plan part des recherches faites, pas de mots-clés supposés</span><span class="en">936 real queries analysed: the plan starts from searches actually made, not assumed keywords</span></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2.5 22 8 12 13.5 2 8"/><polyline points="2 13 12 18.5 22 13"/><polyline points="2 17.5 12 23 22 17.5"/></svg><span><span class="fr">6 silos étanches et deux sous-silos, chacun avec sa page mère et ses filles</span><span class="en">6 watertight silos and two sub-silos, each with its parent page and children</span></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.4"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9.5" r="2.6"/><path d="M16 15.5a5.6 5.6 0 0 1 5.5 4.5"/></svg><span><span class="fr">4 profils de visiteurs croisés avec les données avant tout arbitrage éditorial</span><span class="en">4 visitor profiles cross-checked with the data before any editorial call</span></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="14" r="4.5"/><path d="M11.4 11.2 20 2.6"/><line x1="16.4" y1="6.2" x2="19" y2="8.8"/></svg><span><span class="fr">Un mot-clé principal par page : deux pages sur la même requête se privent mutuellement</span><span class="en">One primary keyword per page: two pages on the same query starve each other</span></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7.2-7.2A2 2 0 0 1 2.8 12V4.8a2 2 0 0 1 2-2H12a2 2 0 0 1 1.4.6l7.2 7.2a2 2 0 0 1 0 2.8Z"/><circle cx="7.5" cy="7.5" r="1.3"/></svg><span><span class="fr">Chaque page a son statut : conservée, redirigée ou à créer</span><span class="en">Every page has a status: kept, redirected or to be created</span></span></li>
+      </ul>
+      <figure class="plan-cible">
+        <div class="fenetre">
+          <div class="chrome"><span class="pt"></span><span class="pt"></span><span class="pt"></span><span class="adresse"></span></div>
+          <img src="assets/i43-3077c15f32.jpg" alt="Arborescence en silos du site: six silos thématiques étanches partant de la page d'accueil, avec pages mères, pages filles et deux sous-silos" loading="lazy">
+        </div>
+        <button type="button" class="loupe" aria-label="Agrandir le plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3M11 8.2v5.6M8.2 11h5.6"/></svg></button>
+      </figure>
+    </div>
+  </section>
+
+  <!-- GALERIE -->
+  <section>
+    <div class="tete">
+      <p class="etiquette"><span class="fr">09 · Les annexes</span><span class="en">09 · Appendices</span></p>
+      <h2><span class="fr">Les relevés datés du projet</span><span class="en">The project’s dated readings</span></h2>
+      <p style="color:var(--gris);font-size:.92rem"><span class="fr">Les captures ont été prises au fil du chantier, quand le moment s’y prêtait. Tout n’a pas pu l’être : l’essentiel du suivi a été écrit, dans des notes et des fichiers, plutôt que photographié. Ce qui a pu être récupéré est ici, dans l’ordre chronologique, et chaque capture porte sa date et sa fenêtre de mesure.</span><span class="en">The screenshots were taken as the work went along, whenever the moment allowed. Not all of it could be: most of the tracking was written down, in notes and files, rather than captured. What could be recovered is here, in chronological order, and every screenshot carries its date and measurement window.</span></p>
+    </div>
+    <div class="galerie">
+      <figure tabindex="0" role="button">
+        <div class="cadre"><img src="assets/i44-649df5695d.jpg" alt="Rapport Search Console sur trois mois au 2 mars 2026 : 1 290 clics, 29 200 impressions, position moyenne 17,7" loading="lazy"></div>
+        <figcaption><span class="date">03/2026</span><span class="fr">Le point de départ, avant tout travail : 29 200 impressions et une position moyenne de 17,7 sur trois mois.</span><span class="en">The starting point, before any work: 29,200 impressions and an average position of 17.7 over three months.</span></figcaption>
+      </figure>
+      <figure tabindex="0" role="button">
+        <div class="cadre"><img src="assets/i45-231b3900f7.jpg" alt="Rapport Search Console sur trois mois glissants en avril 2026: 1 680 clics, 45 400 impressions, position moyenne 11,8" loading="lazy"></div>
+        <figcaption><span class="date">04/2026</span> <span class="fr">Trois mois plus tard : 1 680 clics, 45 400 impressions, position moyenne 11,8 sur trois mois glissants.</span><span class="en">Three months later: 1,680 clicks, 45,400 impressions, average position 11.8 over three rolling months.</span></figcaption>
+      </figure>
+      <figure tabindex="0" role="button">
+        <div class="cadre"><img src="assets/i46-f50dd016fa.jpg" alt="Comparaison Search Console de trois mois contre les trois mois précédents : 55 700 impressions contre 29 000, position 10,2 contre 17,4" loading="lazy"></div>
+        <figcaption><span class="date">05/2026</span><span class="fr">Trois mois comparés aux trois précédents : le travail éditorial et local produit ses effets avant toute migration.</span><span class="en">Three months compared with the previous three: 55,700 impressions against 29,000, and an average position moving from 17.4 to 10.2. The editorial and local work delivers before any migration.</span></figcaption>
+      </figure>
+      <figure tabindex="0" role="button">
+        <div class="cadre"><img src="assets/i47-3803a98b78.jpg" alt="Rapport Search Console de désaveu de liens entrants portant sur deux domaines" loading="lazy"></div>
+        <figcaption><span class="date">06/2026</span> <span class="fr">Désaveu de deux domaines toxiques, après examen du profil de liens entrants.</span><span class="en">Disavowal of two toxic domains, after reviewing the backlink profile.</span></figcaption>
+      </figure>
+      <figure tabindex="0" role="button">
+        <div class="cadre"><img src="assets/i48-c40172d7cc.jpg" alt="Relevé PageSpeed Insights en version mobile de la page d'accueil" loading="lazy"></div>
+        <figcaption><span class="date">06/2026</span><span class="fr">Le relevé mobile, le jour de l’optimisation de l’accueil.</span><span class="en">The mobile reading, on the day the homepage was optimised.</span></figcaption>
+      </figure>
+      <figure tabindex="0" role="button">
+        <div class="cadre"><img src="assets/i41-d116a4cefd.webp" alt="Relevé PageSpeed Insights en version ordinateur de la page d'accueil" loading="lazy"></div>
+        <figcaption><span class="date">06/2026</span> <span class="fr">Le relevé sur ordinateur, le même jour.</span><span class="en">The desktop reading, the same day.</span></figcaption>
+      </figure>
+      <figure tabindex="0" role="button">
+        <div class="cadre"><img src="assets/i49-2718217045.jpg" alt="Rapport Search Console sur trois mois glissants au 9 juillet 2026: 3 080 clics, 106 000 impressions, position moyenne 8,3" loading="lazy"></div>
+        <figcaption><span class="date">07/2026</span> <span class="fr">Le relevé du 09/07 : 3 080 clics, 106 000 impressions, position moyenne 8,3.</span><span class="en">The 09/07 reading: 3,080 clicks, 106,000 impressions, average position 8.3.</span></figcaption>
+      </figure>
+      <figure tabindex="0" role="button">
+        <div class="cadre"><img src="assets/i50-02bff8ce8d.jpg" alt="Score d'explorabilité SEMrush de 94 % sur 49 pages" loading="lazy"></div>
+        <figcaption><span class="date">07/2026</span> <span class="fr">Score d'explorabilité : 94 % sur 49 pages.</span><span class="en">Crawlability score: 94% across 49 pages.</span></figcaption>
+      </figure>
+
+      <figure tabindex="0" role="button" class="bande">
+        <div class="cadre"><img src="assets/i51-e30b63dde2.jpg" alt="Rapport PageSpeed : Performances 100, Accessibilité 96, Bonnes pratiques 100, SEO 100, navigation agentique 3 sur 3" loading="lazy"></div>
+        <figcaption><span class="date">07/2026</span><span class="fr">Deux jours après la bascule, l’accueil est optimisé et la navigation agentique est validée 3 sur 3.</span><span class="en">Two days after the switch, the homepage is optimised and agentic navigation passes 3 out of 3.</span></figcaption>
+      </figure>
+      <figure tabindex="0" role="button">
+        <div class="cadre"><img src="assets/i52-d0ea415f31.jpg" alt="Rapport Search Console des motifs de non-indexation : huit motifs, dont 27 pages en erreur 404 et 20 pages explorées non indexées" loading="lazy"></div>
+        <figcaption><span class="date">08/2026</span><span class="fr">Audit d’indexation après la bascule : les 27 pages en 404 sont du résidu des anciennes plateformes.</span><span class="en">Post-switch indexing audit: the 27 pages returning 404 are residue from the old platforms.</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <footer>
+    <p><span class="fr">État du dossier au 12 août 2026. Ce qui est écrit au futur sur cette page l’est par rapport à cette date.<br>Méthode de lecture. Tous les chiffres de cette page portent leur source et leur date de relevé. Les fenêtres de mesure ne sont comparées qu'entre elles : un relevé sur trois mois glissants ne se compare pas à un relevé sur 28 jours.</span><span class="en">Status as of 12 August 2026. Anything written in the future tense on this page is relative to that date.<br>How to read this. Every figure on this page carries its source and reading date. Measurement windows are only compared like for like: a three-month rolling reading is not comparable with a 28-day one.</span></p>
+    <p><span class="fr">Ce que cette page ne démontre pas. La progression observée est un avant-après, pas une expérience contrôlée. Elle n'établit aucun lien de causalité isolé : la saisonnalité du secteur et les mises à jour des moteurs y contribuent aussi. Et les taux de citation dans les IA sont mesurés par interrogation des modèles, pas des interfaces grand public : un écart existe, il est calibré chaque mois à la main.</span><span class="en">What this page does not prove. The observed progression is a before-and-after, not a controlled experiment. It establishes no isolated causal link: sector seasonality and search-engine updates contribute too. And AI citation rates are measured by querying the models, not the consumer interfaces: a gap exists, and it is calibrated manually each month.</span></p>
+    <p class="note-src"><span class="fr">Sources : Google Search Console (exports datés) · SEMrush (crawls du 15/07/2026) · crawls de parité avant et après bascule du 19/07/2026 · collectes hebdomadaires de l'instrument de suivi (relevé du 10/08/2026).</span><span class="en">Sources: Google Search Console (dated exports) · SEMrush (15 Jul 2026 crawls) · parity crawls before and after the 19 Jul 2026 switch · weekly collections from the tracking instrument (10 Aug 2026 reading).</span></p>
+  </footer>
+</div>
+
+<div class="visio" role="dialog" aria-modal="true" aria-label="Visionneuse des relevés">
+  <button class="visio-prec" type="button" aria-label="Relevé précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 5 8 12 15 19"/></svg></button>
+  <div class="visio-boite">
+    <img class="visio-img" src="" alt="">
+    <p class="visio-leg"></p>
+    <p class="visio-rang"></p>
+  </div>
+  <button class="visio-suiv" type="button" aria-label="Relevé suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"/></svg></button>
+  <button class="visio-fermer" type="button" aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  root.setAttribute("lang","fr");
+
+  var douceur = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(!douceur && "IntersectionObserver" in window){
+    root.classList.add("js-anim");
+
+    // la barre de phases se dessine au chargement
+    var ph=document.querySelector(".phases");
+    if(ph) requestAnimationFrame(function(){ ph.classList.add("joue"); });
+
+    // la frise se dessine quand elle entre dans l'écran
+    var fr=document.querySelector(".frise");
+    if(fr){
+      new IntersectionObserver(function(e,o){
+        if(e[0].isIntersecting){ fr.classList.add("joue"); o.disconnect(); }
+      },{threshold:.15}).observe(fr);
+    }
+
+    // la galerie s'ouvre en grand
+    (function(){
+      var figs=[].slice.call(document.querySelectorAll(".galerie figure"));
+      var boite=document.querySelector(".visio");
+      if(!figs.length || !boite) return;
+      var img=boite.querySelector(".visio-img"),
+          leg=boite.querySelector(".visio-leg"),
+          rang=boite.querySelector(".visio-rang"),
+          n=0, dernier=null;
+      function montrer(){
+        var f=figs[n], src=f.querySelector("img");
+        img.src=src.src; img.alt=src.alt;
+        leg.innerHTML=f.querySelector("figcaption").innerHTML;
+        rang.textContent=(n+1)+" / "+figs.length;
+      }
+      function ouvrir(i){
+        n=i; dernier=figs[i]; montrer();
+        boite.classList.remove("solo");
+        boite.classList.add("ouvert");
+        document.body.style.overflow="hidden";
+        boite.querySelector(".visio-fermer").focus();
+      }
+      function fermer(){
+        boite.classList.remove("ouvert");
+        document.body.style.overflow="";
+        if(dernier) dernier.focus();
+      }
+      function bouger(d){ n=(n+d+figs.length)%figs.length; montrer(); }
+      figs.forEach(function(f,i){
+        f.addEventListener("click",function(){ ouvrir(i); });
+        f.addEventListener("keydown",function(e){
+          if(e.key==="Enter"||e.key===" "){ e.preventDefault(); ouvrir(i); }
+        });
+      });
+      boite.querySelector(".visio-fermer").addEventListener("click",fermer);
+      boite.querySelector(".visio-prec").addEventListener("click",function(){ bouger(-1); });
+      boite.querySelector(".visio-suiv").addEventListener("click",function(){ bouger(1); });
+      boite.addEventListener("click",function(e){ if(e.target===boite) fermer(); });
+      document.addEventListener("keydown",function(e){
+        if(!boite.classList.contains("ouvert")) return;
+        if(e.key==="Escape") fermer();
+        else if(e.key==="ArrowLeft") bouger(-1);
+        else if(e.key==="ArrowRight") bouger(1);
+      });
+    })();
+
+    // le plan cible s'ouvre seul, sans navigation
+    (function(){
+      var fig=document.querySelector(".plan-cible"), boite=document.querySelector(".visio");
+      if(!fig || !boite) return;
+      var src=fig.querySelector("img"),
+          img=boite.querySelector(".visio-img"), leg=boite.querySelector(".visio-leg");
+      function ouvrir(){
+        img.src=src.src; img.alt=src.alt;
+        leg.innerHTML='<span class="fr">Arborescence en silos du site</span>'
+                    + '<span class="en">The site\u2019s silo tree</span>';
+        boite.classList.add("ouvert","solo");
+        document.body.style.overflow="hidden";
+        boite.querySelector(".visio-fermer").focus();
+      }
+      fig.querySelector(".loupe").addEventListener("click",ouvrir);
+      src.addEventListener("click",ouvrir);
+    })();
+
+    // console d'audit : une seule ligne ouverte
+    document.querySelectorAll(".console details").forEach(function(d){
+      d.addEventListener("toggle",function(){
+        if(!d.open) return;
+        document.querySelectorAll(".console details[open]").forEach(function(o){ if(o!==d) o.open=false; });
+      });
+    });
+
+    // un seul volet ouvert a la fois (relais des navigateurs sans l'attribut name)
+    document.querySelectorAll(".faq details").forEach(function(d){
+      d.addEventListener("toggle",function(){
+        if(!d.open) return;
+        document.querySelectorAll(".faq details[open]").forEach(function(o){ if(o!==d) o.open=false; });
+      });
+    });
+
+    // sommaire lateral, construit depuis les sections
+    (function(){
+      var secs=[].slice.call(document.querySelectorAll(".enveloppe > section"));
+      if(secs.length<3) return;
+      var nav=document.createElement("nav");
+      nav.className="sommaire";
+      var voile=document.createElement("div");
+      voile.className="voile-som";
+      document.body.appendChild(voile);
+      nav.setAttribute("aria-label","Sommaire");
+      var liens=[];
+      secs.forEach(function(s,i){
+        var et=s.querySelector(".tete > .etiquette");
+        if(!et) return;
+        var brut0=(et.textContent||"").trim();
+        if(!/^\d\d\s/.test(brut0)) return;
+        if(!s.id) s.id="chap-"+i;
+        var a=document.createElement("a");
+        a.href="#"+s.id;
+        var brut=(et.textContent||"").trim();
+        a.className="som-l"+(/^\d\d\s/.test(brut) ? " chap" : "");
+        var t=document.createElement("span");
+        t.className="som-t";
+        t.innerHTML=et.innerHTML;
+        var b=document.createElement("span");
+        b.className="som-b";
+        a.appendChild(t); a.appendChild(b);
+        nav.appendChild(a);
+        liens.push({a:a,s:s});
+      });
+      if(!liens.length) return;
+      document.body.appendChild(nav);
+      var attend=false;
+      function maj(){
+        attend=false;
+        var ligne=window.innerHeight*0.35, courant=0;
+        liens.forEach(function(o,n){
+          if(o.s.getBoundingClientRect().top<=ligne) courant=n;
+        });
+        liens.forEach(function(o,n){ o.a.classList.toggle("vu", n===courant); });
+      }
+      function demande(){ if(!attend){ attend=true; requestAnimationFrame(maj); } }
+      window.addEventListener("scroll",demande,{passive:true});
+      window.addEventListener("resize",demande);
+      maj();
+
+      // sur téléphone le rail est masqué : la barre porte un menu déroulant
+      (function(){
+        var barre=document.querySelector(".barre"), seg=barre && barre.querySelector(".segmente");
+        if(!barre || !seg) return;
+        var btn=document.createElement("button");
+        btn.type="button"; btn.className="somm-btn";
+        btn.setAttribute("aria-label","Sommaire");
+        btn.setAttribute("aria-expanded","false");
+        btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+          +'stroke-width="2.4" stroke-linecap="round" aria-hidden="true">'
+          +'<g class="traits"><path d="M4 7h16M4 12h16M4 17h16"/></g>'
+          +'<g class="croix"><path d="M6 6l12 12M18 6L6 18"/></g></svg>';
+        var menu=document.createElement("nav");
+        menu.className="somm-m";
+        menu.setAttribute("aria-label","Sommaire");
+        function fermerMenu(){
+          barre.classList.remove("menu-ouvert");
+          btn.setAttribute("aria-expanded","false");
+        }
+        liens.forEach(function(o){
+          var a=document.createElement("a");
+          a.href="#"+o.s.id;
+          a.innerHTML=o.a.querySelector(".som-t").innerHTML;
+          a.addEventListener("click",fermerMenu);
+          menu.appendChild(a);
+        });
+        seg.parentNode.appendChild(btn);
+        barre.appendChild(menu);
+        btn.addEventListener("click",function(){
+          var ouvert=barre.classList.toggle("menu-ouvert");
+          btn.setAttribute("aria-expanded",ouvert?"true":"false");
+        });
+        document.addEventListener("keydown",function(e){
+          if(e.key==="Escape") fermerMenu();
+        });
+      })();
+
+      // au survol du sommaire, la page passe en arrière-plan
+      function flou(o){ document.body.classList.toggle("som-ouvert", o); }
+      nav.addEventListener("mouseenter",function(){ flou(true); });
+      nav.addEventListener("mouseleave",function(){ flou(false); });
+      nav.addEventListener("focusin",function(){ flou(true); });
+      nav.addEventListener("focusout",function(e){
+        if(!nav.contains(e.relatedTarget)) flou(false);
+      });
+    })();
+
+    // le protocole se coche au fil de la lecture
+    (function(){
+      var liste=document.querySelector(".etapes-cadre");
+      if(!liste) return;
+      var jauge=liste.querySelector(".jauge");
+      var coches=[].slice.call(liste.querySelectorAll(".coche"));
+      var attend=false;
+      function maj(){
+        attend=false;
+        var r=liste.getBoundingClientRect();
+        var ligne=window.innerHeight*0.58;
+        var haut=r.height-4;
+        var p=(ligne-r.top-2)/haut;
+        if(p<0)p=0; if(p>1)p=1;
+        jauge.style.height=(p*haut)+"px";
+        coches.forEach(function(c){
+          c.classList.toggle("cochee", c.getBoundingClientRect().top<ligne);
+        });
+      }
+      function demande(){ if(!attend){ attend=true; requestAnimationFrame(maj); } }
+      window.addEventListener("scroll",demande,{passive:true});
+      window.addEventListener("resize",demande);
+      maj();
+    })();
+
+    // révélation à l'entrée dans l'écran
+    var cibles=document.querySelectorAll("section > .tete, section > .corps > *, section > .chiffres, .galerie > figure, footer > p");
+    cibles.forEach(function(el){ el.classList.add("reveler"); });
+    var obs=new IntersectionObserver(function(entrees){
+      entrees.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add("vu"); obs.unobserve(e.target); }
+      });
+    },{rootMargin:"0px 0px -8% 0px",threshold:.06});
+    cibles.forEach(function(el){ obs.observe(el); });
+  }
+
+
+  document.querySelectorAll("[data-lang]").forEach(function(b){
+    b.addEventListener("click",function(){
+      var l=b.getAttribute("data-lang");
+      root.setAttribute("lang",l);
+      document.querySelectorAll("[data-lang]").forEach(function(o){
+        o.setAttribute("aria-pressed", o.getAttribute("data-lang")===l ? "true": "false");
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
