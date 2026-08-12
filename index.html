@@ -56,6 +56,9 @@
   --panneau-carte:rgba(255,255,255,.07);
 
   --ombre:0 1px 2px rgba(0,0,0,.04), 0 6px 16px -8px rgba(0,0,0,.09);
+  --carte-trait:rgba(20,16,42,.07);
+  --carte-ombre:0 1px 2px rgba(20,16,42,.04), 0 10px 22px -14px rgba(20,16,42,.24),
+                inset 0 1px 0 rgba(255,255,255,.9);
   --ombre-forte:0 1px 3px rgba(0,0,0,.05), 0 14px 30px -14px rgba(0,0,0,.15);
 
   --font-display:system-ui,-apple-system,"Helvetica Neue","Segoe UI",Roboto,sans-serif;
@@ -134,14 +137,14 @@ p{margin:0}
 /* ============ HÉROS ============ */
 .hero{background:var(--degrade);color:#fff;border-bottom:2px solid #1B0A3D}
 /* la pastille est posée sur du violet : elle devient du verre, pas un aplat */
-.hero-i{padding:60px 24px 52px;display:flex;flex-direction:column;gap:28px}
+.hero-i{padding:80px 24px 72px;display:flex;flex-direction:column;gap:30px}
 .hero h1{font-size:clamp(1.42rem,3.1vw,1.96rem);line-height:1.22;letter-spacing:-.008em;
   text-transform:uppercase;margin:0}
 .hero .meta{margin:0;padding-top:0}
 .hero-contexte{padding-top:26px;border-top:1px solid var(--trait);display:flex;flex-direction:column;gap:11px}
 .hero .chapeau{font-size:1.02rem;line-height:1.7;margin:0}
 .hero .phases{margin-top:4px;padding-bottom:26px;border-bottom:1px solid var(--trait)}
-.hero h1{color:#fff;margin:0 0 8px}
+.hero h1{color:#fff;margin:0 0 22px}
 .hero .etiquette{color:rgba(255,255,255,.66)}
 .hero .meta-k{color:rgba(255,255,255,.6)}
 .hero .meta-v{color:#fff}
@@ -272,26 +275,39 @@ section{padding:44px 0;border-top:1px solid var(--trait)}
 .corps p{color:var(--encre-2)}
 
 /* ============ CHIFFRES ============ */
-.chiffres{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:14px}
-.chiffre{border:2px solid transparent;border-radius:16px;
-  background:linear-gradient(var(--surface),var(--surface)) padding-box,var(--degrade-doux) border-box;
-  padding:20px 22px;box-shadow:var(--ombre);display:flex;flex-direction:column;gap:16px}
-.chiffre-tete{display:flex;align-items:center;gap:9px}
-.chiffre-tete svg{width:17px;height:17px;flex:none}
-.chiffre-tete .k{font-size:.94rem;font-weight:700;color:var(--encre);line-height:1.25}
-.chiffre-bas{display:flex;align-items:flex-end;justify-content:space-between;gap:18px}
-.chiffre-gauche{display:flex;flex-direction:column;gap:4px;min-width:0}
-.chiffre .d{font-family:var(--font-data);font-size:.74rem;color:var(--gris);
-  font-variant-numeric:tabular-nums;letter-spacing:.02em}
-.chiffre .v{font-family:var(--font-display);font-size:2.1rem;font-weight:900;line-height:1;
-  letter-spacing:-.04em;font-variant-numeric:tabular-nums;color:var(--encre)}
-.courbette{width:118px;height:40px;flex:none}
-.chiffre.vedette{background:var(--surface);border:2px solid rgba(245,166,35,.5)}
-.chiffre.vedette .v{color:var(--ambre-fonce)}
+.chiffres{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.chiffre{border:1px solid var(--carte-trait);border-radius:16px;background:var(--surface);
+  padding:22px 24px 18px;box-shadow:var(--carte-ombre);display:flex;flex-direction:column;gap:14px}
+
+/* l'en-tete : ce qu'on mesure a gauche, avec quoi on l'a mesure a droite */
+.chiffre-tete{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.chiffre-tete .k{font-size:.95rem;font-weight:700;color:var(--encre);line-height:1.3}
+.outil{flex:none;font-family:var(--font-data);font-size:.56rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--gris-2);white-space:nowrap;
+  border:1px solid var(--trait);border-radius:999px;padding:5px 11px;line-height:1.1;
+  background:var(--surface)}
+
+/* le chiffre, et ce qu'il compte */
+.chiffre-val{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:2px}
+.chiffre .v{font-family:var(--font-display);font-size:2.9rem;font-weight:900;line-height:.95;
+  letter-spacing:-.045em;font-variant-numeric:tabular-nums;color:var(--encre)}
+.chiffre .vd{font-family:var(--font-data);font-size:.72rem;line-height:1.4;color:var(--gris-2);
+  max-width:212px}
+.chiffre-txt{margin:0;font-size:.95rem;line-height:1.5;color:var(--encre-2)}
+
+/* la courbe se cale en bas : d'une tuile a l'autre, elles s'alignent */
+.courbe-l{width:100%;height:auto;display:block;margin-top:auto;overflow:visible}
+
+/* le pied : d'ou l'on part a gauche, ou l'on en est, avec sa date, a droite */
+.chiffre-pied{display:flex;align-items:center;gap:12px;font-family:var(--font-data);
+  font-size:.68rem;color:var(--gris-2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.pied-a{color:var(--gris-2)}
+.pied-b{color:var(--gris)}
+.pied-filet{flex:1;height:1px;background:var(--trait);min-width:14px}
 /* ============ CARTES DE VILLE ============ */
 .villes-grille{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
-.ville-c{grid-column:span 2;position:relative;height:172px;border:1px solid var(--trait);
-  border-radius:14px;overflow:hidden;box-shadow:var(--ombre);background:var(--surface-2)}
+.ville-c{grid-column:span 2;position:relative;height:172px;border:1px solid var(--carte-trait);
+  border-radius:14px;overflow:hidden;box-shadow:var(--carte-ombre);background:var(--surface-2)}
 .ville-c:nth-child(4),.ville-c:nth-child(5){grid-column:span 3}
 
 .ville-plan{position:absolute;inset:0;overflow:hidden}
@@ -386,8 +402,9 @@ section{padding:44px 0;border-top:1px solid var(--trait)}
   border-radius:12px;padding:11px 14px;font-size:.92rem;color:var(--panneau-texte)}
 
 /* ============ BLOC DÉCISION (blanc) ============ */
-.decision{background:var(--surface);border:1px solid var(--trait);border-left:3px solid var(--violet-500);
-  border-radius:14px;padding:24px 26px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--ombre)}
+.decision{background:var(--surface);border:1px solid var(--carte-trait);
+  border-radius:14px;padding:24px 26px;display:flex;flex-direction:column;gap:10px;
+  box-shadow:var(--carte-ombre)}
 .decision .enonce{font-size:1rem;font-weight:400;line-height:1.6;color:var(--encre);
   text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 .decision .etiquette{display:flex;align-items:center;gap:8px}
@@ -400,8 +417,8 @@ section{padding:44px 0;border-top:1px solid var(--trait)}
   object-fit:cover;display:block}
 
 /* ============ CARTE = preuve ============ */
-.carte{background:var(--surface);border:1px solid var(--trait);border-radius:18px;
-  padding:22px;box-shadow:var(--ombre)}
+.carte{background:var(--surface);border:1px solid var(--carte-trait);border-radius:18px;
+  padding:22px;box-shadow:var(--carte-ombre)}
 .carte h3{margin-bottom:8px}
 .carte p{color:var(--encre-2);font-size:.96rem}
 .grille2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
@@ -539,8 +556,8 @@ section{padding:44px 0;border-top:1px solid var(--trait)}
 
 /* ============ COURBES ============ */
 .courbes{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
-.courbe{background:var(--surface);border:1px solid var(--trait);border-radius:18px;
-  padding:20px;box-shadow:var(--ombre)}
+.courbe{background:var(--surface);border:1px solid var(--carte-trait);border-radius:18px;
+  padding:20px;box-shadow:var(--carte-ombre)}
 .courbe .titre{font-family:var(--font-display);font-weight:900;letter-spacing:-.02em;font-size:1rem;
   margin-bottom:3px;color:var(--encre)}
 .courbe .sous{font-size:.85rem;color:var(--gris);margin-bottom:14px}
@@ -695,15 +712,9 @@ figcaption .date{font-family:var(--font-data);font-size:.7rem;letter-spacing:.05
   box-shadow:var(--ombre-forte);background:var(--surface)}
 
 /* ============ EMPLACEMENT EN ATTENTE ============ */
-.chiffres.une{grid-template-columns:1fr;text-align:center}
-.chiffres.une .chiffre{align-items:center;background:var(--surface);
-  border:1px solid rgba(20,16,42,.07);
-  box-shadow:0 1px 2px rgba(20,16,42,.04), 0 10px 22px -14px rgba(20,16,42,.24),
-             inset 0 1px 0 rgba(255,255,255,.9)}
-.chiffres.une .chiffre-tete{justify-content:center}
-.chiffres.une .chiffre-bas{justify-content:center}
-.chiffres.une .chiffre-gauche{align-items:center;text-align:center}
-.chiffres.une .s{text-align:center}
+.chiffres.une{grid-template-columns:1fr}
+.chiffres.une .vd{max-width:none}
+.chiffres.une .courbe-l{margin-top:6px}
 .corps > p.cta-centre{text-align:center;margin-top:18px;hyphens:none}
 
 /* ============ LIEN DÉPÔT ============ */
@@ -714,8 +725,8 @@ figcaption .date{font-family:var(--font-data);font-size:.7rem;letter-spacing:.05
 .speed-duo .cadre{aspect-ratio:910/730;display:grid;place-items:center}
 .speed-duo .cadre img{width:100%;height:100%;object-fit:contain}
 .speed-total{margin-top:14px}
-.speed-duo .cadre,.speed-total .cadre{border:1px solid var(--trait);border-radius:14px;
-  overflow:hidden;background:#fff;box-shadow:var(--ombre);padding:10px}
+.speed-duo .cadre,.speed-total .cadre{border:1px solid var(--carte-trait);border-radius:14px;
+  overflow:hidden;background:#fff;box-shadow:var(--carte-ombre);padding:10px}
 @media (max-width:620px){.speed-duo{grid-template-columns:1fr}}
 .depot img{display:block;flex:none}
 .depot{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-data);
@@ -767,7 +778,7 @@ body.som-ouvert .som-l.vu .som-b,body.som-ouvert .som-l.chap.vu .som-b{backgroun
 /* ---- tablette : on resserre sans changer les structures ---- */
 @media (max-width:900px){
   .enveloppe{padding-left:20px;padding-right:20px}
-  .hero-i{padding:48px 20px 44px;gap:24px}
+  .hero-i{padding:64px 20px 56px;gap:26px}
   section{padding-top:44px}
   .console-tete,.console-legende,.ligne > summary{padding-left:16px;padding-right:16px}
   .detail{padding-left:16px;padding-right:16px}
@@ -857,13 +868,17 @@ body.som-ouvert .som-l.vu .som-b,body.som-ouvert .som-l.chap.vu .som-b{backgroun
   .etapes-cadre{padding-left:22px}
   .etapes-cadre::before,.jauge{width:7px}
   .chiffres{grid-template-columns:1fr}
+  .chiffre{padding:20px 20px 16px}
+  .chiffre-tete{flex-direction:column;align-items:flex-start;gap:9px}
+  .chiffre .v{font-size:2.7rem}
+  .chiffre .vd{max-width:none}
   .console-tete h3{font-size:1rem}
 }
 
 /* ---- petit téléphone ---- */
 @media (max-width:400px){
   .enveloppe{padding-left:16px;padding-right:16px}
-  .hero-i{padding:40px 16px 36px}
+  .hero-i{padding:56px 16px 50px}
   .ligne > summary{gap:7px 9px;padding-left:14px;padding-right:14px}
   .grav{font-size:.58rem;padding:3px 6px}
   .zone{font-size:.68rem}
@@ -892,7 +907,7 @@ footer p{
 }
 /* jamais justifier le typographique court: il ferait des trous */
 .principe,.verdict,.pourquoi,figcaption,.defile,.note-src,
-.chiffre .k,.chiffre .s{text-align:left;hyphens:none}
+.chiffre .k,.chiffre-txt,.chiffre-pied{text-align:left;hyphens:none}
 
 html[lang="fr"] .en{display:none}
 html[lang="en"] .fr{display:none}
@@ -972,70 +987,97 @@ html[lang="en"] .fr{display:none}
     <div class="chiffres">
 
       <div class="chiffre">
-        <div class="chiffre-tete"><svg viewBox="0 0 24 24" fill="none" stroke="#7A2F8F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg><span class="k"><span class="fr">Positions gagnées</span><span class="en">Positions gained</span></span></div>
-        <div class="chiffre-bas">
-          <div class="chiffre-gauche">
-            <span class="d">17,7 → 8,3</span>
-            <span class="v">+9,4</span>
-          </div>
-          <svg class="courbette" viewBox="0 0 120 40" role="img" aria-label="Position moyenne : 17,7 puis 11,8 puis 10,2 puis 8,3 : axe inversé, la montée est une amélioration">
-            <path d="M4 35 L42 11 L80 5 L116 6" fill="none" stroke="#7A2F8F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M4 35 L42 11 L80 5 L116 6 L116 40 L4 40 Z" fill="#7A2F8F" opacity=".07"/>
-            <circle cx="116" cy="6" r="3" fill="#7A2F8F"/>
-          </svg>
+        <div class="chiffre-tete">
+          <span class="k"><span class="fr">Position moyenne</span><span class="en">Average position</span></span>
+          <span class="outil">GSC</span>
         </div>
-        <span class="s">GSC · 3 <span class="fr">mois glissants · relevé du</span><span class="en">rolling months · read</span> 09/07/2026</span>
+        <div class="chiffre-val">
+          <span class="v">+9,4</span>
+          <span class="vd"><span class="fr">places gagnées</span><span class="en">positions gained</span></span>
+        </div>
+        <p class="chiffre-txt"><span class="fr">Les requêtes cœur de métier passent du bas de la page 2 au haut de la page 1.</span><span class="en">Core business queries move from the bottom of page 2 to the top of page 1.</span></p>
+        <svg class="courbe-l" viewBox="0 0 400 96" role="img" aria-label="Position moyenne : 17,7 puis 11,8 puis 10,2 puis 8,3. L'axe est inverse : la montee est une amelioration.">
+          <path d="M10 84 C31.1 76.5 94.5 48.4 136.7 38.8 C178.9 29.2 221.1 31.1 263.3 26.6 C305.5 22.1 368.9 14.4 390 12 L390 96 L10 96 Z" fill="#7A2F8F" opacity=".09"/>
+          <path d="M10 84 C31.1 76.5 94.5 48.4 136.7 38.8 C178.9 29.2 221.1 31.1 263.3 26.6 C305.5 22.1 368.9 14.4 390 12" fill="none" stroke="#7A2F8F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="390.0" cy="12.0" r="4.4" fill="var(--surface)" stroke="#7A2F8F" stroke-width="2.6"/>
+        </svg>
+        <div class="chiffre-pied">
+          <span class="pied-a"><span class="fr">17,7 · avril</span><span class="en">17.7 · April</span></span>
+          <span class="pied-filet" aria-hidden="true"></span>
+          <span class="pied-b"><span class="fr">8,3 · 09/07/2026</span><span class="en">8.3 · 09/07/2026</span></span>
+        </div>
       </div>
 
       <div class="chiffre">
-        <div class="chiffre-tete"><svg viewBox="0 0 24 24" fill="none" stroke="#7A2F8F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg><span class="k"><span class="fr">Impressions par trimestre</span><span class="en">Impressions per quarter</span></span></div>
-        <div class="chiffre-bas">
-          <div class="chiffre-gauche">
-            <span class="d">29 000 → 106 000</span>
-            <span class="v">+266 %</span>
-          </div>
-          <svg class="courbette" viewBox="0 0 120 40" role="img" aria-label="Impressions : 29 000 puis 45 400 puis 55 700 puis 106 000">
-            <path d="M4 35 L42 27 L80 11 L116 5" fill="none" stroke="#7A2F8F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M4 35 L42 27 L80 11 L116 5 L116 40 L4 40 Z" fill="#7A2F8F" opacity=".07"/>
-            <circle cx="116" cy="5" r="3" fill="#7A2F8F"/>
-          </svg>
+        <div class="chiffre-tete">
+          <span class="k"><span class="fr">Impressions par trimestre</span><span class="en">Impressions per quarter</span></span>
+          <span class="outil">GSC</span>
         </div>
-        <span class="s">GSC · 3 <span class="fr">mois glissants · relevé du</span><span class="en">rolling months · read</span> 09/07/2026</span>
-      </div>
-
-      <div class="chiffre vedette">
-        <div class="chiffre-tete"><svg viewBox="0 0 24 24" fill="none" stroke="#B8720A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><polyline points="8 12.5 11 15.5 16.5 9"/></svg><span class="k"><span class="fr">Pages migrées, aucune perdue</span><span class="en">Pages migrated, none lost</span></span></div>
-        <div class="chiffre-bas">
-          <div class="chiffre-gauche">
-            <span class="d"><span class="fr">26 redirections</span><span class="en">26 redirects</span></span>
-            <span class="v">40/40</span>
-          </div>
-          <svg class="courbette" viewBox="0 0 120 40" role="img" aria-label="Ligne plate : rien n'a bougé au moment de la bascule">
-            <line x1="4" y1="12" x2="116" y2="12" stroke="#F5A623" stroke-width="2.4" stroke-linecap="round"/>
-            <rect x="4" y="12" width="112" height="28" fill="#F5A623" opacity=".07"/>
-            <line x1="60" y1="4" x2="60" y2="40" stroke="#B8720A" stroke-width="1.2" stroke-dasharray="3 3" opacity=".55"/>
-            <circle cx="116" cy="12" r="3" fill="#F5A623"/>
-          </svg>
+        <div class="chiffre-val">
+          <span class="v">+266 %</span>
+          <span class="vd"><span class="fr">×3,7 en un trimestre</span><span class="en">×3.7 in one quarter</span></span>
         </div>
-        <span class="s"><span class="fr">Crawl de parité · avant et après le</span><span class="en">Parity crawl · before and after</span> 19/07/2026</span>
+        <p class="chiffre-txt"><span class="fr">La visibilité progresse plus vite que le trafic : la demande existe, il reste à la convertir.</span><span class="en">Visibility is growing faster than traffic: the demand is there, it remains to be converted.</span></p>
+        <svg class="courbe-l" viewBox="0 0 400 96" role="img" aria-label="Impressions par trimestre : 29 000 puis 45 400 puis 55 700 puis 106 000.">
+          <path d="M10 84 C31.1 81.5 94.5 72.9 136.7 68.7 C178.9 64.5 221.1 68.5 263.3 59 C305.5 49.5 368.9 19.8 390 12 L390 96 L10 96 Z" fill="#7A2F8F" opacity=".09"/>
+          <path d="M10 84 C31.1 81.5 94.5 72.9 136.7 68.7 C178.9 64.5 221.1 68.5 263.3 59 C305.5 49.5 368.9 19.8 390 12" fill="none" stroke="#7A2F8F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="390.0" cy="12.0" r="4.4" fill="var(--surface)" stroke="#7A2F8F" stroke-width="2.6"/>
+        </svg>
+        <div class="chiffre-pied">
+          <span class="pied-a"><span class="fr">29 000 · avril</span><span class="en">29 000 · April</span></span>
+          <span class="pied-filet" aria-hidden="true"></span>
+          <span class="pied-b"><span class="fr">106 000 · 09/07/2026</span><span class="en">106 000 · 09/07/2026</span></span>
+        </div>
       </div>
 
       <div class="chiffre">
-        <div class="chiffre-tete"><svg viewBox="0 0 24 24" fill="#2F7D5B" aria-hidden="true"><path d="M12 0c.6 6 5.4 10.8 12 12-6.6 1.2-11.4 6-12 12-.6-6-5.4-10.8-12-12C6.6 10.8 11.4 6 12 0z"/></svg><span class="k"><span class="fr">Réponses d'IA qui citent la marque</span><span class="en">AI answers citing the brand</span></span></div>
-        <div class="chiffre-bas">
-          <div class="chiffre-gauche">
-            <span class="d"><span class="fr">de 0 à 59 %</span><span class="en">from 0 to 59%</span></span>
-            <span class="v">59 %</span>
-          </div>
-          <svg class="courbette" viewBox="0 0 120 40" role="img" aria-label="Le taux de citation part de zéro, les robots d'IA étant bloqués avant la bascule, et atteint 59 pour cent">
-            <path d="M4 34 L40 30 L76 20 L116 8" fill="none" stroke="#2F7D5B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M4 34 L40 30 L76 20 L116 8 L116 40 L4 40 Z" fill="#2F7D5B" opacity=".1"/>
-            <circle cx="116" cy="8" r="3" fill="#2F7D5B"/>
-          </svg>
+        <div class="chiffre-tete">
+          <span class="k"><span class="fr">Migration des pages</span><span class="en">Page migration</span></span>
+          <span class="outil">Screaming Frog</span>
         </div>
-        <span class="s"><span class="fr">Quatre moteurs LLM · 10/08/2026</span><span class="en">Four LLM engines · 10/08/2026</span></span>
+        <div class="chiffre-val">
+          <span class="v">40/40</span>
+          <span class="vd"><span class="fr">26 redirections, 0 perdue</span><span class="en">26 redirects, none lost</span></span>
+        </div>
+        <p class="chiffre-txt"><span class="fr">Parité complète avant et après la bascule : aucune page perdue, aucun signal SEO sacrifié.</span><span class="en">Full parity before and after the switch: no page lost, no SEO signal sacrificed.</span></p>
+        <svg class="courbe-l" viewBox="0 0 400 96" role="img" aria-label="Ligne plate : le nombre de pages ne bouge pas au moment de la bascule.">
+          <defs><linearGradient id="platAmbre" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#F5A623" stop-opacity=".18"/>
+            <stop offset="1" stop-color="#F5A623" stop-opacity="0"/>
+          </linearGradient></defs>
+          <rect x="10" y="34" width="380" height="62" fill="url(#platAmbre)"/>
+          <line x1="200" y1="16" x2="200" y2="96" stroke="#B8720A" stroke-width="1.2" stroke-dasharray="3 4" opacity=".35"/>
+          <line x1="10" y1="34" x2="390" y2="34" stroke="#F5A623" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.5 8"/>
+          <circle cx="390" cy="34" r="4.4" fill="var(--surface)" stroke="#F5A623" stroke-width="2.6"/>
+        </svg>
+        <div class="chiffre-pied">
+          <span class="pied-a"><span class="fr">40 pages · avant</span><span class="en">40 pages · before</span></span>
+          <span class="pied-filet" aria-hidden="true"></span>
+          <span class="pied-b"><span class="fr">40 pages · 19/07/2026</span><span class="en">40 pages · 19/07/2026</span></span>
+        </div>
       </div>
 
+      <div class="chiffre">
+        <div class="chiffre-tete">
+          <span class="k"><span class="fr">Citations dans les réponses d'IA</span><span class="en">Citations in AI answers</span></span>
+          <span class="outil">Tracker GEO perso</span>
+        </div>
+        <div class="chiffre-val">
+          <span class="v">59 %</span>
+          <span class="vd"><span class="fr">des réponses citent la marque</span><span class="en">of answers cite the brand</span></span>
+        </div>
+        <p class="chiffre-txt"><span class="fr">Absente des moteurs génératifs en avril, la marque est aujourd'hui citée dans une réponse sur deux.</span><span class="en">Absent from generative engines in April, the brand is now cited in one answer out of two.</span></p>
+        <svg class="courbe-l" viewBox="0 0 400 96" role="img" aria-label="Le taux de citation part de zero, les robots d'IA etant bloques avant la bascule, et atteint 59 pour cent.">
+          <path d="M10 84 C31.1 82.8 94.5 82 136.7 76.7 C178.9 71.4 221.1 63.1 263.3 52.3 C305.5 41.5 368.9 18.7 390 12 L390 96 L10 96 Z" fill="#2F7D5B" opacity=".12"/>
+          <path d="M10 84 C31.1 82.8 94.5 82 136.7 76.7 C178.9 71.4 221.1 63.1 263.3 52.3 C305.5 41.5 368.9 18.7 390 12" fill="none" stroke="#2F7D5B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="390.0" cy="12.0" r="4.4" fill="var(--surface)" stroke="#2F7D5B" stroke-width="2.6"/>
+        </svg>
+        <div class="chiffre-pied">
+          <span class="pied-a"><span class="fr">0 % · avril</span><span class="en">0% · April</span></span>
+          <span class="pied-filet" aria-hidden="true"></span>
+          <span class="pied-b"><span class="fr">59 % · 10/08/2026</span><span class="en">59% · 10/08/2026</span></span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1501,20 +1543,26 @@ html[lang="en"] .fr{display:none}
       <p><span class="fr">L'inventaire des questions se fait avec les outils du métier : le bloc « Autres questions posées » de Google, consulté en navigation privée, les données de Semrush et d'Ahrefs, AlsoAsked pour étendre l'arborescence, et les échanges avec les clients.</span><span class="en">The inventory of questions is built with the tools of the trade: Google's "People also ask" block, consulted in private browsing, Semrush and Ahrefs data, AlsoAsked to extend the tree, and conversations with clients.</span></p>
       <p><span class="fr">Le point de départ est un zéro mesuré : à l’audit manuel de départ, aucune des questions posées ne faisait ressortir la marque, les robots d’IA étant bloqués par l’ancienne plateforme. Tout ce qui précède y concourt : la structure des pages, le balisage en entités, le découpage en sections qui se suffisent à elles-mêmes. Aujourd'hui, 59 % des réponses citent la marque, et le taux reste stable.</span><span class="en">The starting point is a measured zero: in the initial manual audit, none of the questions asked surfaced the brand, the AI crawlers being blocked by the old platform. Everything above feeds into it: the structure of the pages, the entity markup, the split into sections that stand on their own. Today, 59% of answers cite the brand, and the rate stays stable.</span></p>
       <div class="chiffres une">
-        <div class="chiffre">
-        <div class="chiffre-tete"><svg viewBox="0 0 24 24" fill="#2F7D5B" aria-hidden="true"><path d="M12 0c.6 6 5.4 10.8 12 12-6.6 1.2-11.4 6-12 12-.6-6-5.4-10.8-12-12C6.6 10.8 11.4 6 12 0z"/></svg><span class="k"><span class="fr">Réponses d'IA qui citent la marque</span><span class="en">AI answers citing the brand</span></span></div>
-        <div class="chiffre-bas">
-          <div class="chiffre-gauche">
-            <span class="d"><span class="fr">de 0 à 59 %</span><span class="en">from 0 to 59%</span></span>
-            <span class="v">59 %</span>
-          </div>
-          <svg class="courbette" viewBox="0 0 120 40" role="img" aria-label="Le taux de citation part de zéro, les robots d'IA étant bloqués avant la bascule, et atteint 59 pour cent">
-            <path d="M4 34 L40 30 L76 20 L116 8" fill="none" stroke="#2F7D5B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M4 34 L40 30 L76 20 L116 8 L116 40 L4 40 Z" fill="#2F7D5B" opacity=".1"/>
-            <circle cx="116" cy="8" r="3" fill="#2F7D5B"/>
-          </svg>
+      <div class="chiffre">
+        <div class="chiffre-tete">
+          <span class="k"><span class="fr">Citations dans les réponses d'IA</span><span class="en">Citations in AI answers</span></span>
+          <span class="outil">Tracker GEO perso</span>
         </div>
-        <span class="s"><span class="fr">Claude · ChatGPT · Perplexity · AI&nbsp;Overviews · 10/08/2026</span><span class="en">Claude · ChatGPT · Perplexity · AI&nbsp;Overviews · 10/08/2026</span></span>
+        <div class="chiffre-val">
+          <span class="v">59 %</span>
+          <span class="vd"><span class="fr">des réponses citent la marque</span><span class="en">of answers cite the brand</span></span>
+        </div>
+        <p class="chiffre-txt"><span class="fr">Quatre moteurs interrogés, Claude, ChatGPT, Perplexity et AI&nbsp;Overviews : la marque n'apparaissait dans aucune réponse en avril, elle apparaît aujourd'hui dans une sur deux.</span><span class="en">Four engines queried, Claude, ChatGPT, Perplexity and AI&nbsp;Overviews: the brand appeared in no answer in April, it now appears in one out of two.</span></p>
+        <svg class="courbe-l" viewBox="0 0 400 96" role="img" aria-label="Le taux de citation part de zero, les robots d'IA etant bloques avant la bascule, et atteint 59 pour cent.">
+          <path d="M10 84 C31.1 82.8 94.5 82 136.7 76.7 C178.9 71.4 221.1 63.1 263.3 52.3 C305.5 41.5 368.9 18.7 390 12 L390 96 L10 96 Z" fill="#2F7D5B" opacity=".12"/>
+          <path d="M10 84 C31.1 82.8 94.5 82 136.7 76.7 C178.9 71.4 221.1 63.1 263.3 52.3 C305.5 41.5 368.9 18.7 390 12" fill="none" stroke="#2F7D5B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="390.0" cy="12.0" r="4.4" fill="var(--surface)" stroke="#2F7D5B" stroke-width="2.6"/>
+        </svg>
+        <div class="chiffre-pied">
+          <span class="pied-a"><span class="fr">0 % · avril</span><span class="en">0% · April</span></span>
+          <span class="pied-filet" aria-hidden="true"></span>
+          <span class="pied-b"><span class="fr">59 % · 10/08/2026</span><span class="en">59% · 10/08/2026</span></span>
+        </div>
       </div>
       </div>
       <figure class="vitrine">
