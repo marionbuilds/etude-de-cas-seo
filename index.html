@@ -923,6 +923,15 @@ footer p{
 
 html[lang="fr"] .en{display:none}
 html[lang="en"] .fr{display:none}
+
+/* Section 07 : blocs GSC alternés */
+.gsc-grille{display:flex;flex-direction:column;gap:30px;margin-top:34px}
+.gsc-duo{display:flex;gap:30px;align-items:center}
+.gsc-duo.inv{flex-direction:row-reverse}
+.gsc-duo figure{flex:0 0 46%;margin:0}
+.gsc-duo .gsc-txt{flex:1;font-size:.98rem;line-height:1.7}
+.gsc-duo .gsc-txt h3{margin:0 0 8px;font-size:1.02rem;letter-spacing:-.01em}
+@media(max-width:760px){.gsc-duo,.gsc-duo.inv{flex-direction:column;align-items:stretch}.gsc-duo figure{flex:1 1 auto}}
 </style>
 
 <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;pointer-events:none">
@@ -1587,6 +1596,25 @@ html[lang="en"] .fr{display:none}
       <p><span class="fr">Les statistiques d'exploration de la Search Console racontent la migration du point de vue de Googlebot : une ligne de base de 5 à 15 requêtes par jour avant la bascule, un pic de recrawl à plus de 100 requêtes le jour de la migration, le 19 juillet, le temps que Google découvre les redirections et revisite les 41 pages, puis une ligne de base durablement doublée depuis.</span><span class="en">The Search Console crawl stats tell the migration from Googlebot’s point of view: a baseline of 5 to 15 requests per day before the switch, a recrawl spike above 100 requests on migration day, July 19, while Google discovered the redirects and revisited all 41 pages, then a baseline that has stayed at double its previous level ever since.</span></p>
       <p><span class="fr">90 jours après : 81 % des requêtes répondent en 200, moins de 1 % en erreur serveur, et 77 % du crawl est consacré à l'actualisation des pages connues, le reste à la découverte des nouveaux contenus. Google a réévalué le site à la hausse, et il le montre par où il dépense son temps.</span><span class="en">90 days on: 81% of requests return a 200, fewer than 1% hit a server error, and 77% of the crawl goes to refreshing known pages, the rest to discovering new content. Google has re-rated the site upwards, and it shows it by where it spends its time.</span></p>
       <figure class="speed-total"><div class="cadre"><img src="assets/i43-gsc-exploration.png" alt="Statistiques d'exploration Search Console : pic de recrawl le jour de la migration puis ligne de base doublée" loading="lazy"></div><figcaption><span class="fr">Statistiques d'exploration, Search Console · relevé du 19/08/2026, fenêtre de 90 jours</span><span class="en">Crawl stats, Search Console · reading of Aug 19, 2026, 90-day window</span></figcaption></figure>
+      <p><span class="fr">Ces agrégats sont le deuxième étage du diagnostic de crawl ; le détail ligne par ligne relève des journaux serveur. Bloc par bloc, ils disent si les fondations sont saines.</span><span class="en">These aggregates are the second tier of a crawl diagnosis; the line-by-line detail belongs to the server logs. Block by block, they tell whether the foundations are sound.</span></p>
+      <div class="gsc-grille">
+        <div class="gsc-duo">
+          <figure><div class="cadre"><img src="assets/i44-gsc-reponse.png" alt="Répartition du crawl par code de réponse : 81 % en 200, 12 % en 404, 6 % en 301, moins de 1 % d'erreurs serveur" loading="lazy"></div></figure>
+          <div class="gsc-txt"><h3><span class="fr">Par réponse</span><span class="en">By response</span></h3><p><span class="fr">81 % des requêtes répondent en 200, moins de 1 % en erreur serveur. Les 12 % d'introuvables ont été lus ligne par ligne : ils se réduisent à quatre motifs, dont un fichier de contrôle standard que Google demande chaque nuit, et la mémoire de l'ancienne plateforme qui s'éteint, à laquelle le 404 est précisément la bonne réponse. 115 lignes analysées, une seule action retenue.</span><span class="en">81% of requests return a 200, fewer than 1% a server error. The 12% of not-found responses were read line by line: they boil down to four patterns, including a standard control file Google requests every night, and the fading memory of the former platform, to which a 404 is precisely the right answer. 115 lines analysed, a single action retained.</span></p></div>
+        </div>
+        <div class="gsc-duo inv">
+          <figure><div class="cadre"><img src="assets/i45-gsc-objectif.png" alt="Répartition du crawl par objectif : 77 % actualisation, 23 % découverte" loading="lazy"></div></figure>
+          <div class="gsc-txt"><h3><span class="fr">Par objectif</span><span class="en">By purpose</span></h3><p><span class="fr">77 % du crawl actualise des pages connues, 23 % découvre du neuf. C'est le profil d'un site vivant : Google revient vérifier ce qu'il connaît, et trouve régulièrement de nouveaux contenus à indexer.</span><span class="en">77% of the crawl refreshes known pages, 23% discovers new ones. That is the profile of a living site: Google comes back to check what it knows, and regularly finds new content to index.</span></p></div>
+        </div>
+        <div class="gsc-duo">
+          <figure><div class="cadre"><img src="assets/i46-gsc-googlebot.png" alt="Répartition par type de Googlebot : smartphone en tête à 43 %" loading="lazy"></div></figure>
+          <div class="gsc-txt"><h3><span class="fr">Par type de Googlebot</span><span class="en">By Googlebot type</span></h3><p><span class="fr">Le robot smartphone domine à 43 % : l'indexation mobile-first n'est pas un concept, c'est un comportement mesuré. Le site est d'abord lu, jugé et classé dans sa version mobile.</span><span class="en">The smartphone crawler leads at 43%: mobile-first indexing is not a concept, it is a measured behaviour. The site is read, judged and ranked in its mobile version first.</span></p></div>
+        </div>
+        <div class="gsc-duo inv">
+          <figure><div class="cadre"><img src="assets/i47-gsc-fichier.png" alt="Répartition du crawl par type de fichier : 51 % de HTML" loading="lazy"></div></figure>
+          <div class="gsc-txt"><h3><span class="fr">Par type de fichier</span><span class="en">By file type</span></h3><p><span class="fr">51 % des requêtes vont au HTML : le crawl se dépense sur le contenu, pas sur les ressources. Les images, feuilles de style et scripts se partagent le reste, sans jamais dominer.</span><span class="en">51% of requests go to HTML: the crawl is spent on content, not on assets. Images, stylesheets and scripts share the rest, without ever taking over.</span></p></div>
+        </div>
+      </div>
     </div>
   </section>
 
