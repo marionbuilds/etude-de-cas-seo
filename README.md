@@ -52,12 +52,18 @@ le seuil de retour arrière fixé avant de regarder les données.
 **06 · Visibilité dans les LLM.** Le SEO vise le trafic, le GEO vise la mention. Le taux de
 citation est relevé avec un tracker maison : [iametre](https://github.com/marionbuilds/iametre).
 
-**07 · Les performances.** De 19,5 secondes à 1,3 seconde d'affichage sur mobile.
+**07 · Le regard de Googlebot.** La migration vue depuis les statistiques d'exploration
+de la Search Console : le pic de recrawl du jour de la bascule, une demande de crawl
+durablement doublée depuis, puis les quatre blocs du rapport interprétés un par un :
+par réponse, par objectif, par type de Googlebot, par type de fichier. 115 lignes de 404
+analysées, quatre motifs, une seule action retenue.
 
-**08 · Ce qui vient ensuite.** Le plan de restructuration en silos, construit à partir de
+**08 · Les performances.** De 19,5 secondes à 1,3 seconde d'affichage sur mobile.
+
+**09 · Ce qui vient ensuite.** Le plan de restructuration en silos, construit à partir de
 936 requêtes réelles.
 
-**09 · Les annexes.** Les relevés datés du projet, en capture d'origine.
+**10 · Les annexes.** Les relevés datés du projet, en capture d'origine.
 
 ## La page elle-même
 
@@ -95,7 +101,8 @@ at the end of the page.
 
 The page reads in the order of the project: the starting audit and its 21 findings, the local
 SEO call, the migration protocol written before anything moved, what the readings said after
-the switch, brand visibility inside generative engines, and the silo plan that comes next.
+the switch, brand visibility inside generative engines, the migration as Googlebot saw it in
+the Search Console crawl stats, and the silo plan that comes next.
 
 It is a single HTML file with no dependency, no third party script and no network call,
 bilingual, fully responsive, with every chart drawn in SVG from the actual readings.
