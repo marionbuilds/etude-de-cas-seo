@@ -694,12 +694,20 @@ figcaption .date{font-family:var(--font-data);font-size:.7rem;letter-spacing:.05
   -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:background .2s ease}
 .visio button:hover{background:rgba(255,255,255,.25)}
 .visio button svg{width:22px;height:22px}
+.visio-nav{display:contents}
+.visio-date{display:none}
 .visio-prec{left:18px;top:50%;transform:translateY(-50%)}
 .visio-suiv{right:18px;top:50%;transform:translateY(-50%)}
 .visio-fermer{top:18px;right:18px;width:42px;height:42px}
 @media (max-width:620px){
   .visio{padding:14px}
-  .visio-prec{left:8px}.visio-suiv{right:8px}
+  .visio-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:2px}
+  .visio-prec,.visio-suiv{position:static;transform:none;flex:none}
+  .visio:not(.solo) .visio-leg .date{display:none}
+  .visio-date{display:inline-block;font-family:var(--font-data);font-size:.7rem;letter-spacing:.05em;color:#fff;
+    background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.28);padding:2px 9px;
+    border-radius:999px;font-weight:600}
+  .visio.solo .visio-nav{display:none}
   .visio button{width:40px;height:40px}
 }
 
@@ -725,7 +733,7 @@ figcaption .date{font-family:var(--font-data);font-size:.7rem;letter-spacing:.05
 .speed-duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
 .speed-duo figure,.speed-total{margin:0}
 /* les deux captures n'ont pas le même format : on les cale sur une boîte commune */
-.speed-duo .cadre{aspect-ratio:910/730;display:grid;place-items:center}
+.speed-duo .cadre{aspect-ratio:844/652;display:grid;place-items:center}
 .speed-duo .cadre img{width:100%;height:100%;object-fit:contain}
 .speed-total{margin-top:14px}
 .speed-duo .cadre,.speed-total .cadre{border:1px solid var(--carte-trait);border-radius:14px;
@@ -813,6 +821,7 @@ body.som-ouvert .som-l.vu .som-b,body.som-ouvert .som-l.chap.vu .som-b{backgroun
   .tete{text-align:center}
   .tete > .etiquette{text-align:center}
   h3{text-align:center}
+  .frise h3,.carte h3{text-align:left}
   .tete .etiquette{display:block}
   .villes-credit{text-align:center}
 
@@ -1304,7 +1313,7 @@ html[lang="en"] .fr{display:none}
         </div></li>
         <li><div>
           <h3><span class="fr">Où l'assistance par IA intervient</span><span class="en">Where AI assistance comes in</span></h3>
-          <p><span class="fr">Extraction des titres et méta-descriptions, production des 26 redirections, déploiement. Elle n'a décidé ni quelles adresses méritaient d'être conservées, ni le seuil d'alerte, ni le moment d'arrêter. La migration a été faite avec l'IA. Elle ne lui a pas été confiée.</span><span class="en">Extracting titles and meta descriptions, producing the 26 redirects, deploying. The AI decided neither which addresses deserved to be kept, nor the alert threshold, nor when to stop. The migration was done with AI. It was not handed over to it.</span></p>
+          <p><span class="fr">Extraction des titres et méta-descriptions, production des 26 redirections, déploiement. Elle n'a décidé ni quelles adresses méritaient d'être conservées, ni le moment d'arrêter. La migration a été faite avec l'IA. Elle ne lui a pas été confiée.</span><span class="en">Extracting titles and meta descriptions, producing the 26 redirects, deploying. The AI decided neither which addresses deserved to be kept, nor when to stop. The migration was done with AI. It was not handed over to it.</span></p>
         </div></li>
         <li><div>
           <h3><span class="fr">La parité des pages</span><span class="en">On-page parity</span></h3>
@@ -1406,24 +1415,17 @@ html[lang="en"] .fr{display:none}
           </div>
         </details>
         <details name="faq-chiffres">
-          <summary><svg class="faq-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/><line x1="15" y1="6" x2="15" y2="18"/><circle cx="15" cy="12" r="2.6"/></svg><span class="faq-q"><span class="fr">À partir de quel moment une intervention se justifie-t-elle ?</span><span class="en">At what point does an intervention become justified?</span></span><span class="faq-n">03</span><svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
-          <div class="faq-r">
-          <p><span class="fr">À partir d'un seuil fixé avant de regarder les chiffres : −10 % sur trente jours, contre une position de référence de 8,6 relevée la veille de la bascule.</span><span class="en">At a threshold set before looking at any numbers: −10% over thirty days, against a reference position of 8.6 recorded the day before the switch.</span></p>
-          <p><span class="fr">Mesure du 4 au 31 juillet : 9,3, soit −8 %. Sous le seuil, donc aucune intervention. Un seuil décidé après coup n'est pas un seuil, c'est une justification.</span><span class="en">Measured 4 to 31 July: 9.3, i.e. −8%. Below the threshold, so no intervention. A threshold decided afterwards isn’t a threshold, it’s a justification.</span></p>
-          </div>
-        </details>
-        <details name="faq-chiffres">
-          <summary><svg class="faq-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="20" x2="4" y2="11"/><line x1="10" y1="20" x2="10" y2="4"/><line x1="16" y1="20" x2="16" y2="14"/><line x1="22" y1="20" x2="22" y2="8"/></svg><span class="faq-q"><span class="fr">Que vaut la position moyenne comme indicateur ?</span><span class="en">What is average position worth as an indicator?</span></span><span class="faq-n">04</span><svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <summary><svg class="faq-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="20" x2="4" y2="11"/><line x1="10" y1="20" x2="10" y2="4"/><line x1="16" y1="20" x2="16" y2="14"/><line x1="22" y1="20" x2="22" y2="8"/></svg><span class="faq-q"><span class="fr">Que vaut la position moyenne comme indicateur ?</span><span class="en">What is average position worth as an indicator?</span></span><span class="faq-n">03</span><svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
           <div class="faq-r">
           <p><span class="fr">Peu de chose, prise seule. Elle agrège plusieurs centaines de requêtes : elle mélange celles que le site domine et celles où il apparaît en quatrième page.</span><span class="en">Little, on its own. It aggregates several hundred queries: it mixes the ones the site dominates with the ones where it shows up on page four.</span></p>
           <p><span class="fr">Sur les requêtes de cœur de métier, le site est en première position, et sur certaines, cité deux fois dans les cinq premiers résultats. Une moyenne ne se lit jamais seule.</span><span class="en">On core queries the site ranks first, and on some it appears twice in the top five results. An average is never read on its own.</span></p>
           </div>
         </details>
         <details name="faq-chiffres">
-          <summary><svg class="faq-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/></svg><span class="faq-q"><span class="fr">Y a-t-il des choses à corriger ?</span><span class="en">Was there anything to fix?</span></span><span class="faq-n">05</span><svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+          <summary><svg class="faq-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/></svg><span class="faq-q"><span class="fr">Y a-t-il des choses à corriger ?</span><span class="en">Was there anything to fix?</span></span><span class="faq-n">04</span><svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
           <div class="faq-r">
-          <p><span class="fr">Oui, mais pas là où l'alerte les désignait. L'analyse a mis au jour le vrai gisement : 36 972 impressions pour 2,3 % de clics. Sur la majorité des meilleures requêtes, aucune page dédiée n'existe : c'est l'accueil ou un article générique qui remonte, et l'internaute ne reconnaît pas sa réponse dans le titre.</span><span class="en">Yes, but not where the alert pointed. The analysis surfaced the real opportunity: 36,972 impressions for a 2.3% click rate. For most top queries no dedicated page exists: the homepage or a generic article surfaces instead, and readers don’t recognize their answer in the title.</span></p>
-          <p><span class="fr">L'effort a donc été réaffecté à la réécriture des titres et au découpage des pages existantes, plutôt qu'à une correction technique qui n'avait pas lieu d'être. La conclusion n'a pas été « tout va bien », mais « le problème n'est pas là, il est ici ».</span><span class="en">Effort was therefore redirected to rewriting titles and splitting existing pages, rather than to a technical fix that had no reason to exist. The conclusion wasn’t “everything is fine”, it was “the problem isn’t there, it’s here”.</span></p>
+          <p><span class="fr">Sur la migration, non. Les quarante pages ont été recontrôlées une à une : aucun dégât, rien à réparer. La baisse était saisonnière, elle ne justifiait aucune correction.</span><span class="en">On the migration itself, no. All forty pages were re-checked one by one: no damage, nothing to repair. The decline was seasonal and called for no fix.</span></p>
+          <p><span class="fr">L'analyse a en revanche mis au jour un chantier sans rapport avec la bascule : 36 972 impressions pour 2,3 % de clics. Sur la majorité des meilleures requêtes, aucune page dédiée n'existe : c'est l'accueil ou un article générique qui remonte, et l'internaute ne reconnaît pas sa réponse dans le titre. Le levier identifié : réécrire les titres et découper les pages existantes, pas corriger la technique. La conclusion n'a pas été « tout va bien », mais « le problème n'est pas là, il est ici ».</span><span class="en">The analysis did, however, surface a project unrelated to the switch: 36,972 impressions for a 2.3% click rate. For most top queries no dedicated page exists: the homepage or a generic article surfaces instead, and readers don’t recognize their answer in the title. The lever identified: rewriting titles and splitting existing pages, not a technical fix. The conclusion wasn’t “everything is fine”, it was “the problem isn’t there, it’s here”.</span></p>
           </div>
         </details>
       </div>
@@ -1588,8 +1590,8 @@ html[lang="en"] .fr{display:none}
       <p><span class="fr">Le choix d'un stack reste une préférence, liée à la façon dont on veut tenir son activité. Ce qui se discute, ce sont les résultats.</span><span class="en">The choice of a stack remains a preference, tied to how you want to run your business. What is up for discussion is the result.</span></p>
       <hr class="filet-perf">
       <div class="speed-duo">
-        <figure><div class="cadre"><img src="assets/i40-a710ebf171.webp" alt="Relevé PageSpeed mobile avant optimisation : 55 en performances" loading="lazy"></div><figcaption><span class="fr">Avant l'optimisation, sur mobile</span><span class="en">Before optimization, on mobile</span></figcaption></figure>
-        <figure><div class="cadre"><img src="assets/i41-d116a4cefd.webp" alt="Relevé PageSpeed ordinateur avant optimisation : 77 en performances" loading="lazy"></div><figcaption><span class="fr">Avant l'optimisation, sur ordinateur</span><span class="en">Before optimization, on desktop</span></figcaption></figure>
+        <figure><div class="cadre"><img src="assets/i40-61e8187efc.webp" alt="Relevé PageSpeed mobile avant optimisation : 55 en performances" loading="lazy"></div><figcaption><span class="fr">Avant l'optimisation, sur mobile</span><span class="en">Before optimization, on mobile</span></figcaption></figure>
+        <figure><div class="cadre"><img src="assets/i41-653db5be62.webp" alt="Relevé PageSpeed ordinateur avant optimisation : 77 en performances" loading="lazy"></div><figcaption><span class="fr">Avant l'optimisation, sur ordinateur</span><span class="en">Before optimization, on desktop</span></figcaption></figure>
       </div>
       <figure class="speed-total"><div class="cadre"><img src="assets/i42-5cf5ab5cca.png" alt="Relevé PageSpeed après optimisation : performances 100, accessibilité 96, bonnes pratiques 100, SEO 100, navigation agentique 3 sur 3" loading="lazy"></div><figcaption><span class="fr">Après l’optimisation</span><span class="en">After optimization</span></figcaption></figure>
     </div>
@@ -1602,7 +1604,7 @@ html[lang="en"] .fr{display:none}
       <h2><span class="fr">La restructuration en silos</span><span class="en">Restructuring into silos</span></h2>
     </div>
     <div class="corps">
-      <p><span class="fr">La migration a rendu le site modifiable. La restructuration répond à une autre question : non plus « qu'est-ce que je ne dois pas perdre » mais « qu'est-ce que je dois changer ». Le plan est arrêté et daté : l'exécution est calée sur la sortie de la période de gel, au 20 août 2026.</span><span class="en">The migration made the site editable. Restructuring answers a different question: no longer “what must I not lose” but “what must I change”. The plan is settled and dated: execution is scheduled for the end of the freeze period, on 20 August 2026.</span></p>
+      <p><span class="fr">La restructuration répond à une autre question : non plus « qu'est-ce que je ne dois pas perdre » mais « qu'est-ce que je dois changer ». Le plan est arrêté et daté : l'exécution est calée sur la sortie de la période de gel, au 20 août 2026.</span><span class="en">Restructuring answers a different question: no longer “what must I not lose” but “what must I change”. The plan is settled and dated: execution is scheduled for the end of the freeze period, on 20 August 2026.</span></p>
       <ul class="rangs">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.2" y1="16.2" x2="21" y2="21"/></svg><span><span class="fr">936 requêtes réelles analysées : le plan part des recherches faites, pas de mots-clés supposés</span><span class="en">936 real queries analysed: the plan starts from searches actually made, not assumed keywords</span></span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2.5 22 8 12 13.5 2 8"/><polyline points="2 13 12 18.5 22 13"/><polyline points="2 17.5 12 23 22 17.5"/></svg><span><span class="fr">6 silos étanches et deux sous-silos, chacun avec sa page mère et ses filles</span><span class="en">6 watertight silos and two sub-silos, each with its parent page and children</span></span></li>
@@ -1649,7 +1651,7 @@ html[lang="en"] .fr{display:none}
         <figcaption><span class="date">06/2026</span><span class="fr">Le relevé mobile, le jour de l’optimisation de l’accueil.</span><span class="en">The mobile reading, on the day the homepage was optimized.</span></figcaption>
       </figure>
       <figure tabindex="0" role="button">
-        <div class="cadre"><img src="assets/i41-d116a4cefd.webp" alt="Relevé PageSpeed Insights en version ordinateur de la page d'accueil" loading="lazy"></div>
+        <div class="cadre"><img src="assets/i41-653db5be62.webp" alt="Relevé PageSpeed Insights en version ordinateur de la page d'accueil" loading="lazy"></div>
         <figcaption><span class="date">06/2026</span> <span class="fr">Le relevé sur ordinateur, le même jour.</span><span class="en">The desktop reading, the same day.</span></figcaption>
       </figure>
       <figure tabindex="0" role="button">
@@ -1680,13 +1682,16 @@ html[lang="en"] .fr{display:none}
 </div>
 
 <div class="visio" role="dialog" aria-modal="true" aria-label="Visionneuse des relevés">
-  <button class="visio-prec" type="button" aria-label="Relevé précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 5 8 12 15 19"/></svg></button>
   <div class="visio-boite">
     <img class="visio-img" src="" alt="">
     <p class="visio-leg"></p>
+    <div class="visio-nav">
+      <button class="visio-prec" type="button" aria-label="Relevé précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 5 8 12 15 19"/></svg></button>
+      <span class="visio-date"></span>
+      <button class="visio-suiv" type="button" aria-label="Relevé suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"/></svg></button>
+    </div>
     <p class="visio-rang"></p>
   </div>
-  <button class="visio-suiv" type="button" aria-label="Relevé suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 5 16 12 9 19"/></svg></button>
   <button class="visio-fermer" type="button" aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button>
 </div>
 
@@ -1724,6 +1729,9 @@ html[lang="en"] .fr{display:none}
         var f=figs[n], src=f.querySelector("img");
         img.src=src.src; img.alt=src.alt;
         leg.innerHTML=f.querySelector("figcaption").innerHTML;
+        var dte=leg.querySelector(".date"), pill=boite.querySelector(".visio-date");
+        pill.textContent=dte?dte.textContent:"";
+        pill.style.display=dte?"":"none";
         rang.textContent=(n+1)+" / "+figs.length;
       }
       function ouvrir(i){
