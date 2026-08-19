@@ -764,6 +764,10 @@ figcaption .date{font-family:var(--font-data);font-size:.7rem;letter-spacing:.05
 .sommaire:hover .som-t,.sommaire:focus-within .som-t{opacity:1;transform:none}
 .som-l:hover .som-b,.som-l:focus-visible .som-b{background:var(--violet-600);width:34px}
 .som-l:focus-visible{outline:2.5px solid var(--ambre);outline-offset:4px;border-radius:4px}
+.som-titre{writing-mode:vertical-rl;font-family:var(--font-data);font-size:.64rem;
+  font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--gris-2);
+  align-self:flex-end;margin-bottom:4px;transition:color .22s ease;pointer-events:none;user-select:none}
+.sommaire:hover .som-titre,body.som-ouvert .som-titre{color:#fff}
 .voile-som{position:fixed;inset:0;z-index:25;pointer-events:none;opacity:0;
   transition:opacity .28s ease;background:rgba(20,16,42,.22);
   -webkit-backdrop-filter:blur(4px) brightness(.62);backdrop-filter:blur(4px) brightness(.62)}
@@ -1850,6 +1854,10 @@ html[lang="en"] .fr{display:none}
       voile.className="voile-som";
       document.body.appendChild(voile);
       nav.setAttribute("aria-label","Sommaire");
+      var titre=document.createElement("span");
+      titre.className="som-titre";
+      titre.textContent="Sommaire";
+      nav.appendChild(titre);
       var liens=[];
       secs.forEach(function(s,i){
         var et=s.querySelector(".tete > .etiquette");
