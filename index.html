@@ -430,6 +430,9 @@ section{padding:44px 0;border-top:1px solid var(--trait)}
   display:flex;align-items:center;gap:11px;text-align:left;hyphens:none}
 .rangs li svg{width:16px;height:16px;flex:none;color:var(--violet-500)}
 .rangs li b{color:var(--encre);font-weight:700}
+.cadre-annot{position:relative;display:block;background:#fff}
+.cadre-annot img{display:block;width:100%}
+.cadre-annot .annot{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .plan-cible{position:relative}
 .plan-cible .fenetre img{display:block;width:100%;cursor:zoom-in}
 .loupe{position:absolute;right:12px;bottom:12px;z-index:3;width:40px;height:40px;
@@ -964,7 +967,7 @@ p.just{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 
 <header class="hero">
   <div class="enveloppe hero-i">
-    <h1><span class="fr">De 29 000 à 106 000 impressions par trimestre avec migration et refonte structurelle</span><span class="en">From 29,000 to 106,000 impressions per quarter through a site migration and a structural overhaul</span></h1>
+    <h1><span class="fr">De 29 000 à 124 000 impressions par trimestre avec migration et refonte structurelle</span><span class="en">From 29,000 to 124,000 impressions per quarter through a site migration and a structural overhaul</span></h1>
     <div class="meta">
       <div class="meta-item">
         <img class="meta-logo" src="assets/i01-09c5e19f3c.png" alt="">
@@ -1499,6 +1502,44 @@ p.just{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
     </div>
   </section>
 
+  <!-- LE VERDICT -->
+  <section>
+    <div class="tete">
+      <p class="etiquette"><span class="fr">Le verdict</span><span class="en">The verdict</span></p>
+      <h2><span class="fr">Une migration réussie ne se voit pas</span><span class="en">A successful migration is invisible</span></h2>
+    </div>
+    <div class="corps">
+      <p><span class="fr">Une migration qui échoue laisse une trace qui ne s'effface pas : le trafic tombe le jour de la bascule et ne revient pas de lui-même. C'est pour ça que le test n'est pas le jour J, mais les semaines qui suivent. Voici la fenêtre complète, du 9 juin au 7 septembre 2026, bascule comprise.</span><span class="en">A failed migration leaves a mark that does not fade: traffic drops on the day of the switch and never comes back on its own. That is why the test is not the day itself, but the weeks that follow. Here is the full window, from 9 June to 7 September 2026, switch included.</span></p>
+
+      <figure>
+        <div class="fenetre">
+          <div class="chrome"><span class="pt"></span><span class="pt"></span><span class="pt"></span><span class="adresse">search.google.com/search-console</span></div>
+          <div class="cadre-annot">
+            <img src="assets/i53-gsc-3mois-bascule.jpg" alt="Rapport Search Console sur trois mois, du 9 juin au 7 septembre 2026 : 2 780 clics, 124 000 impressions, position moyenne 9,2. La courbe quotidienne ne montre aucune rupture au 19 juillet, jour de la migration." loading="lazy">
+            <svg class="annot" viewBox="0 0 1700 906" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+              <line x1="762" y1="352" x2="762" y2="570" stroke="#C2453C" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 10"/>
+              <path d="M746 564 L762 598 L778 564 Z" fill="#C2453C"/>
+              <rect x="607" y="306" width="310" height="42" rx="21" fill="#C2453C"/>
+              <text class="fr" x="762" y="336" fill="#fff" font-size="24" font-weight="700" font-family="ui-monospace,SFMono-Regular,monospace" text-anchor="middle">19 JUILLET · BASCULE</text>
+              <text class="en" x="762" y="336" fill="#fff" font-size="24" font-weight="700" font-family="ui-monospace,SFMono-Regular,monospace" text-anchor="middle">19 JULY · THE SWITCH</text>
+            </svg>
+          </div>
+        </div>
+        <figcaption><span class="date">11/09/2026</span><span class="fr">Search Console, trois mois du 09/06 au 07/09/2026, relevé du 11/09. La flèche marque le jour de la bascule.</span><span class="en">Search Console, three months from 9 June to 7 September 2026, read on 11 September. The arrow marks the day of the switch.</span></figcaption>
+      </figure>
+
+      <p><span class="fr">Le 19 juillet est au milieu de la courbe, et rien ne le marque. La descente est déjà installée avant, elle continue après sur la même pente, sans rupture. Elle ne vient pas du site : le métier est cyclique, les sélections sont passées et les vacances ont commencé. La même descente existe aux mêmes dates en 2025.</span><span class="en">19 July sits in the middle of the curve, and nothing marks it. The decline is already under way before it, and continues afterwards on the same slope, with no break. It does not come from the site: the business is cyclical, selection tests are over and the holidays have started. The same decline appears on the same dates in 2025.</span></p>
+
+      <p><span class="fr">Puis la demande revient, et le site la reprend entière : 771 clics sur les 28 jours au 8 septembre, contre 579 sur les 28 jours au 14 août, à position inchangée (9,9 contre 10). Quand le volume remonte sans que le classement bouge, c'est bien la saison qui parlait, et la place du site est intacte.</span><span class="en">Then demand returns, and the site takes all of it back: 771 clicks over the 28 days to 8 September, against 579 over the 28 days to 14 August, at an unchanged position (9.9 against 10). When volume rises while ranking stays put, the season was indeed the cause, and the site's position is intact.</span></p>
+
+      <div class="decision">
+        <p class="etiquette"><svg class="drapeau" viewBox="0 0 24 24" fill="none" stroke="#2F7D5B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 22V3.5"/><path d="M5 4.5h11l-2.2 3.6L16 11.7H5z" fill="#2F7D5B" stroke="none"/></svg><span class="fr">Le verdict</span><span class="en">The verdict</span></p>
+        <p class="enonce"><span class="fr">Sur le même trimestre calendaire d'une année à l'autre, du 9 juin au 7 septembre : les impressions passent de 33 300 à 124 000, soit ×3,7. Les clics de 971 à 2 780, soit ×2,9. La position moyenne de 20,7 à 9,2, soit 11,5 places gagnées. La migration est au milieu de cet écart. (Search Console, relevé du 11 septembre 2026.)</span><span class="en">Over the same calendar quarter from one year to the next, 9 June to 7 September: impressions go from 33,300 to 124,000, a 3.7× increase. Clicks from 971 to 2,780, a 2.9× increase. Average position from 20.7 to 9.2, eleven and a half places gained. The migration sits in the middle of that gap. (Search Console, read on 11 September 2026.)</span></p>
+        <p class="enonce"><span class="fr">Le taux de clic passe de 2,9 % à 2,2 %, et c'est une conséquence de l'expansion : avec 272 % d'impressions supplémentaires, le site apparaît sur beaucoup plus de requêtes de longue traîne, vues sans être cliquées. Les clics, eux, ont presque triplé.</span><span class="en">The click-through rate goes from 2.9% to 2.2%, and that is a consequence of the expansion: with 272% more impressions, the site appears on far more long-tail queries, seen without being clicked. The clicks themselves have almost tripled.</span></p>
+      </div>
+    </div>
+  </section>
+
   <!-- L'IA COMME ASSISTANT -->
   <section>
     <div class="tete">
@@ -1655,7 +1696,7 @@ p.just{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
       <h2><span class="fr">La restructuration en silos</span><span class="en">Restructuring into silos</span></h2>
     </div>
     <div class="corps">
-      <p><span class="fr">La restructuration répond à une autre question : non plus « qu'est-ce que je ne dois pas perdre » mais « qu'est-ce que je dois changer ». Le plan est arrêté et daté : l'exécution est calée sur la sortie de la période de gel, au 20 août 2026.</span><span class="en">Restructuring answers a different question: no longer “what must I not lose” but “what must I change”. The plan is settled and dated: execution is scheduled for the end of the freeze period, on 20 August 2026.</span></p>
+      <p><span class="fr">La restructuration répond à une autre question : non plus « qu'est-ce que je ne dois pas perdre » mais « qu'est-ce que je dois changer ». Le plan est arrêté et daté : l'exécution a commencé à la sortie de la période de gel, le 20 août 2026.</span><span class="en">Restructuring answers a different question: no longer “what must I not lose” but “what must I change”. The plan is settled and dated: execution began when the freeze period ended, on 20 August 2026.</span></p>
       <ul class="rangs">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.2" y1="16.2" x2="21" y2="21"/></svg><span><span class="fr">936 requêtes réelles analysées : le plan part des recherches faites, pas de mots-clés supposés</span><span class="en">936 real queries analysed: the plan starts from searches actually made, not assumed keywords</span></span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2.5 22 8 12 13.5 2 8"/><polyline points="2 13 12 18.5 22 13"/><polyline points="2 17.5 12 23 22 17.5"/></svg><span><span class="fr">6 silos étanches et deux sous-silos, chacun avec sa page mère et ses filles</span><span class="en">6 watertight silos and two sub-silos, each with its parent page and children</span></span></li>
